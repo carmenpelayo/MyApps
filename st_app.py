@@ -62,49 +62,51 @@ def page2():
     if D2 == "Yes":
         input_vector.append(1)
     else:
-        input_vector.append(1)
+        input_vector.append(0)
     
     
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological Madurity')
     st.write('explain...')
-    D4_val = ['Integration', 'Product Development', 'Deep Tech']
+    D4_val = ['Integration', 'Development', 'Deep Tech']
     D4 = st.multiselect(
          'What is your organization working on?', D4_val, 'Deep Tech')
     
     # Filling indexes 12, 13 and 14 of the input_vector
-    if D2 == "Yes":
-        input_vector.append(1)
-    else:
-        input_vector.append(1)
+    for maturity in D4_val:
+        if maturity in D4:
+            input_vector.append(1)
+        else:
+            input_vector.append(0)
+  
+    
+    
+#OTHER ELECTIVES
+#     st.subheader('Capital Needs')
+#     st.write('explain...')
+#     D2_val = ['Low', 'High']
+#     D2 = st.radio(
+#          'Select your value in this dimension',
+#          tuple(D2_val),key=2, horizontal=True)
+
+#     st.subheader('Qualified personnel')
+#     st.write('explain...')
+#     D3_val=['Low', 'High/Engineers']
+#     D3 = st.select_slider(
+#          'Select desired qualification for your employees',key=3,
+#          options=D3_val)
+
+#     st.subheader('Networking')
+#     st.write('explain...')
+#     D5_val = ['Low', 'High']
+#     D5 = st.select_slider(
+#          'Select your value in this dimension',key=5,
+#          options=D5_val)
+
     
     
     
-    st.subheader('Capital Needs')
-    st.write('explain...')
-    D2_val = ['Low', 'High']
-    D2 = st.radio(
-         'Select your value in this dimension',
-         tuple(D2_val),key=2, horizontal=True)
-
-
-    st.subheader('Qualified personnel')
-    st.write('explain...')
-    D3_val=['Low', 'High/Engineers']
-    D3 = st.select_slider(
-         'Select desired qualification for your employees',key=3,
-         options=D3_val)
-
-    
-
-    st.subheader('Networking')
-    st.write('explain...')
-    D5_val = ['Low', 'High']
-    D5 = st.select_slider(
-         'Select your value in this dimension',key=5,
-         options=D5_val)
-
     # Complete the bussiness vector (others)
     vals = np.array(D2_val + D3_val + D4_val + D5_val)
     sels = np.array([D2, D2, D3, D3, D4, D4, D4, D5, D5])
