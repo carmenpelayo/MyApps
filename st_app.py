@@ -7,6 +7,7 @@ import numpy as np
 import pydeck as pdk
 import plotly.express as px
 from PIL import Image
+import scipy
 from scipy.spatial import distance
 
 
