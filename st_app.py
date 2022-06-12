@@ -10,12 +10,12 @@ from PIL import Image
 
 
 def main_page():
-    st.title("HOLA BUENAS : Business Location Recommendation System")
+    st.title("Location Recommendation System for European Businesses in ICT")
     image = Image.open('MatchingProjects.jpg')
     st.image(image)
-    st.markdown("🇪🇺 Main page ")
+    #st.markdown("🇪🇺 Main page ")
     st.write('explain...DIMENSIONS')
-    st.sidebar.markdown("🇪🇺 Main page")
+    #st.sidebar.markdown("🇪🇺 Main page")
 
 def page2():
     st.header("🏢 YOUR BUSINESS DIMENSIONS")
