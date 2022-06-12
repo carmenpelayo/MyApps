@@ -179,8 +179,8 @@ def page2():
     bestcoord = pd.DataFrame()
     for i in range(len(best)):
         reg = best["Region"].iloc[i]
-        lon = dfcoord[dfcoord["NUTS_ID"] == REG]]["lon"].iloc[0]
-        lat = dfcoord[dfcoord["NUTS_ID"] == REG]]["lat"].iloc[0]
+        lon = dfcoord[dfcoord["NUTS_ID"] == REG]["lon"].iloc[0]
+        lat = dfcoord[dfcoord["NUTS_ID"] == REG]["lat"].iloc[0]
         regcoord = {"Region": reg, "Lon": lon, "Lat": lat}
         bestcoord.append(regcoord, ignore_index = True)
     st.map(bestcoord, zoom=3) 
