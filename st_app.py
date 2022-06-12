@@ -91,8 +91,11 @@ def page2():
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
         weights.append(weight)
+    st.write(weights)
     total_weight = sum(weights)
     weights_vector = []
+    
+    
     for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
