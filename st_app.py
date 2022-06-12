@@ -21,6 +21,7 @@ def page2():
     st.header("🏢 YOUR BUSINESS DIMENSIONS")
     #st.sidebar.markdown("🏢 YOUR BUSINESS DIMENSIONS")
     
+    #STEP 1: Creating the input vector
     input_vector = []
 
     
@@ -40,14 +41,12 @@ def page2():
              'SME',
              'Software']
     D1 = st.multiselect("Market area: ", areas, areas)
-    
     # Filling first 10 values of the input_vector 
     for a in areas:
         if a in D1:
             input_vector.append(1)
         else:
             input_vector.append(0)
-    
     
     
     # DIMENSION 2: Company Size
@@ -57,13 +56,11 @@ def page2():
     D2 = st.radio(
          'Is your business a SME?',
          tuple(D2_val), key=2, horizontal=True)
-    
     # Filling index 11 of the input_vector
     if D2 == "Yes":
         input_vector.append(1)
     else:
         input_vector.append(0)
-    
     
     
     # DIMENSION 3: Technological Maturity
@@ -72,7 +69,6 @@ def page2():
     D4_val = ['Integration', 'Development', 'Deep Tech']
     D4 = st.multiselect(
          'What is your organization working on?', D4_val, 'Deep Tech')
-    
     # Filling indexes 12, 13 and 14 of the input_vector
     for maturity in D4_val:
         if maturity in D4:
@@ -104,29 +100,40 @@ def page2():
 #          'Select your value in this dimension',key=5,
 #          options=D5_val)
 
-    
-    
-    
     # Complete the bussiness vector (others)
-    vals = np.array(D2_val + D3_val + D4_val + D5_val)
-    sels = np.array([D2, D2, D3, D3, D4, D4, D4, D5, D5])
-    business2 = ( sels == vals)
+#     vals = np.array(D2_val + D3_val + D4_val + D5_val)
+#     sels = np.array([D2, D2, D3, D3, D4, D4, D4, D5, D5])
+#     business2 = ( sels == vals)
+
+#     st.markdown("""---""")
+#     st.subheader('Importance')
+#     st.write('Mark business dimensions to be taken int account to recommend a location')
+
+#     D1_mask = st.checkbox('Market areas', value = True)
+#     D2_mask = st.checkbox('Capital Needs', value = True)
+#     D3_mask = st.checkbox('Qualified personnel', value = True)
+#     D4_mask = st.checkbox('Technology Madurity', value = True)
+#     D5_mask = st.checkbox('Networking', value = True)
+
+#     st.subheader('Your business dimensions:')
+#     business = np.append(business, business2).reshape((1,-1)) # Vector booleano
+#     # Para operar con el como 'float' hay que multiplicarlo por 1.0
+#     # Aqui lo saca como booleano. Se podría sacar también como números
+#     st.write(business)
 
     st.markdown("""---""")
-    st.subheader('Importance')
-    st.write('Mark business dimensions to be taken int account to recommend a location')
 
-    D1_mask = st.checkbox('Market areas', value = True)
-    D2_mask = st.checkbox('Capital Needs', value = True)
-    D3_mask = st.checkbox('Qualified personnel', value = True)
-    D4_mask = st.checkbox('Technology Madurity', value = True)
-    D5_mask = st.checkbox('Networking', value = True)
+    
+    weights_vector = []
+    st.subheader('Importance of the Dimensions')
+    st.write('How important is the tech area for you?')
+    D5_val = ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']
+    D5 = st.select_slider(
+         'Select your value in this dimension',key=5,
+         options=D5_val)
 
-    st.subheader('Your business dimensions:')
-    business = np.append(business, business2).reshape((1,-1)) # Vector booleano
-    # Para operar con el como 'float' hay que multiplicarlo por 1.0
-    # Aqui lo saca como booleano. Se podría sacar también como números
-    st.write(business)
+
+
 
 def page3():
     st.header("🏆 RECOMMENDATIONS")
