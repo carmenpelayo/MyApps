@@ -134,8 +134,8 @@ def page3():
 
 page_names_to_funcs = {
     "Main Page": main_page,
-    "DIMENSIONS": page2,
-    "RECOMMENDATIONS": page3,
+    "Business Analysis": page2,
+    "Recommendation": page3,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
