@@ -83,7 +83,7 @@ def page2():
                   "Company Size",
                   "Technological Maturity",
                   "Capital",
-                  "Human Resources"
+                  "Human Resources",
                   "Innovative Ecosystem",
                   "Legal Framework",
                   "Technological Infrastructure"]
