@@ -16,7 +16,7 @@ def main_page():
     image = Image.open('MatchingProjects.jpg')
     st.image(image)
     #st.markdown("🇪🇺 Main page ")
-    st.write('explain...DIMENSIONS')
+    st.write('This web was made by Carmen Pelayo Fernandez in 2022')
     #st.sidebar.markdown("🇪🇺 Main page")
 
 def page2():
