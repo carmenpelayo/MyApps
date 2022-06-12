@@ -5,4 +5,4 @@ numpy
 protobuf~=3.19.0
 openpyxl
 plotly
-scipy.spatial
+scipy
