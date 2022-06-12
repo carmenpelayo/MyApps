@@ -99,7 +99,7 @@ def page2():
     regions = list(dfn.index)
     
     st.write(input_vector)
-    st.write(weights
+    st.write(weights)
     
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
