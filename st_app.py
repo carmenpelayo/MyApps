@@ -179,7 +179,6 @@ def page3():
         return match
     
     recommendation = recommendation(input_vector, weights_vector) 
-    st.write(error) : Prints an exception specially
     
     #Plotting results
     best = recommendation.iloc[1:6]
