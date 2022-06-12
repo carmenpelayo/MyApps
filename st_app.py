@@ -101,9 +101,7 @@ def page2():
     #Loading the dataframe containing the vectors on regional scores
     dfn = pd.read_excel('Regional Vectors.xlsx')
     regions = list(dfn.index)
-    
-    st.write(input_vector)
-    
+
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
         #assert len(input_vector) == 14 #len(input_vector) must always be always 14 (1 value for each dimesion)
@@ -161,8 +159,6 @@ def page2():
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
         #Matchmaking (using cosine distances)
-        st.write(weighted_regions.shape)
-        st.write(weighted_input.shape)
         distances = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
         match = pd.DataFrame(distances)
         match["Region"] = regions
