@@ -175,7 +175,15 @@ def page2():
     #Plotting results
     best = recommendation.iloc[1:6]
     st.write(best)
-    st.map(best, zoom=3) 
+    dfcoord = pd.read_excel('nuts2.xlsx')
+    bestcoord = pd.DataFrame()
+    for i in range(len(best)):
+        reg = best["Region"].iloc[i]
+        lon = dfcoord[dfcoord["NUTS_ID"] == REG]]["lon"].iloc[0]
+        lat = dfcoord[dfcoord["NUTS_ID"] == REG]]["lat"].iloc[0]
+        regcoord = {"Region": reg, "Lon": lon, "Lat": lat}
+        bestcoord.append(regcoord, ignore_index = True)
+    st.map(bestcoord, zoom=3) 
       
 
         
