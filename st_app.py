@@ -112,8 +112,6 @@ def page3():
     
     #Loading the dataframe containing the vectors on regional scores
     dfn = pd.read_excel('Regional Vectors.xlsx')
-    st.write(input_vector)
-    st.write(weights_vector)
     
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
@@ -182,8 +180,8 @@ def page3():
     recommendation = recommendation(input_vector, weights_vector) 
     
     #Plotting results
-    st.dataframe(recommendation)
     best = recommendation.iloc[1:6]
+    st.write(best)
     st.map(best, zoom=3)
     
     
