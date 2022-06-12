@@ -125,14 +125,29 @@ def page2():
 
     
     weights_vector = []
-    st.subheader('Importance of the Dimensions')
-    D5_val = ['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']
-    D5 = st.select_slider(
-         'Select your value in this dimension',key=5,
-         options=D5_val)
+    st.subheader('Importance of the Dimensions (0-100')
+    st.write('explain...')
     
-    st.slider("importance", min_value=0, max_value=100, value=50)
-
+    dimensions = ["Technological Areas",
+                  "Company Size",
+                  "Technological Maturity",
+                  "Capital",
+                  "Human Resources"
+                  "Innovative Ecosystem",
+                  "Legal Framework",
+                  "Technological Infrastructure"]
+    
+    for d in dimensions:
+        weight = st.slider(d, min_value=0, max_value=100, value=100)
+        weights_vector.append(weight)
+    
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
+#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
 
 
 
