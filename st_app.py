@@ -75,7 +75,7 @@ def page2():
 
     #STEP 2: Creating the weights vector (8 values)
     st.markdown("""---""")
-    weights_vector = []
+    weights = []
     st.subheader('Importance of the Dimensions')
     st.write('explain...')
     
@@ -90,7 +90,11 @@ def page2():
     
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
-        weights_vector.append(weight/100)
+        weights.append(weight)
+    total_weight = sum(weights)
+    weights_vector = []
+    for w in weights:
+        weights_vector.append(weights[w]/total_weight)
 
     #RECOMMENDATION
     
