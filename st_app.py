@@ -19,24 +19,36 @@ def main_page():
 
 def page2():
     st.header("🏢 YOUR BUSINESS DIMENSIONS")
-    st.sidebar.markdown("🏢 YOUR BUSINESS DIMENSIONS")
+    #st.sidebar.markdown("🏢 YOUR BUSINESS DIMENSIONS")
     
-    lista = [] # Vector con resultados
+    lista = [] # Input values
     business = []
 
-    st.subheader('Market areas')
+    # DIMENSION 1: Tech areas
+    st.subheader('Tech Areas')
     st.write('explain...')
-    # Market areas
-    areas = ['AI', 'Big_Data', 'Cloud','Media','Communication','IoT']
-    D1 = st.multiselect("Market area: ",
-                             ['AI', 'Big_Data', 'Cloud','Media','Communication','IoT'],
-                             ['AI'])
+    areas = ['AI',
+             'Big Data',
+             'Computation',
+             'Cybersecurity',
+             'Innovation',
+             'Internet',
+             'IoT',
+             'Media & Communication',
+             'Other',
+             'Robotics',
+             'SME',
+             'Software']
+    D1 = st.multiselect("Market area: ", areas, ['AI'])
+    
     # Create the bussiness vector (market)
     for a in areas:
         business.append(a in D1)
     business = np.array(business)    
 
-     
+    
+    
+    
     st.subheader('Capital Needs')
     st.write('explain...')
     D2_val = ['Low', 'High']
