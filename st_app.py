@@ -131,7 +131,7 @@ def page2():
          'Select your value in this dimension',key=5,
          options=D5_val)
     
-    st.slider(label, min_value=0, max_value=100, value=50)
+    st.slider("importance", min_value=0, max_value=100, value=50)
 
 
 
