@@ -126,7 +126,7 @@ def page2():
         n_areas = sum(input_vector[:10])
         n_matur = sum(input_vector[12:15])
         #Non-weighted input vector and dataframe converted to arrays
-        array = np.array(dfn)[:,[1:]]
+        array = np.array(dfn)[:,1:]
         input_array = np.array(input_vector)
         #Getting the complete weights
         complete_weights = [0] * 24
