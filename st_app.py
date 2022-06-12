@@ -161,8 +161,8 @@ def page2():
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
         #Matchmaking (using cosine distances)
-        st.write(weighted_regions)
-        st.write(weighted_input)
+        st.write(weighted_regions.shape)
+        st.write(weighted_input.shape)
         distances = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
         match = pd.DataFrame(distances)
         match["Region"] = regions
