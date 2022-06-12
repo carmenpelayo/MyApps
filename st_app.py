@@ -45,6 +45,9 @@ def page2():
             input_vector.append(1)
         else:
             input_vector.append(0)
+    st.write("tech areas")
+    st.write(input_vector)
+            
     
     # DIMENSION 2: Company Size
     st.subheader('Company Size')
@@ -58,6 +61,8 @@ def page2():
         input_vector.append(1)
     else:
         input_vector.append(0)
+    st.write("size")
+    st.write(input_vector)
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological Madurity')
@@ -71,6 +76,8 @@ def page2():
             input_vector.append(1)
         else:
             input_vector.append(0)
+    st.write("matur")
+    st.write(input_vector)
   
 
     #STEP 2: Creating the weights vector (8 values)
@@ -91,7 +98,6 @@ def page2():
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
         weights.append(weight)
-    st.write(weights)
     total_weight = sum(weights)
     weights_vector = []
     
@@ -106,7 +112,6 @@ def page2():
     regions = list(dfn.index)
     
     st.write(input_vector)
-    st.write(weights_vector)
     
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
