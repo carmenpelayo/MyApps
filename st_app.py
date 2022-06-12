@@ -21,9 +21,9 @@ def page2():
     st.header("🏢 YOUR BUSINESS DIMENSIONS")
     #st.sidebar.markdown("🏢 YOUR BUSINESS DIMENSIONS")
     
-    lista = [] # Input values
-    business = []
+    input_vector = []
 
+    
     # DIMENSION 1: Tech areas
     st.subheader('Tech Areas')
     st.write('explain...')
@@ -39,13 +39,45 @@ def page2():
              'Robotics',
              'SME',
              'Software']
-    D1 = st.multiselect("Market area: ", areas, ['AI'])
+    D1 = st.multiselect("Market area: ", areas, areas)
     
-    # Create the bussiness vector (market)
+    # Filling first 10 values of the input_vector 
     for a in areas:
-        business.append(a in D1)
-    business = np.array(business)    
-
+        if a in D1:
+            input_vector.append(1)
+        else:
+            input_vector.append(0)
+    
+    
+    
+    # DIMENSION 2: Company Size
+    st.subheader('Company Size')
+    st.write('explain...: Small and Mid-Size Enterprise (SME), Large Enterprise (LE)')
+    D2_val = ['Yes', 'No']
+    D2 = st.radio(
+         'Is your business a SME?',
+         tuple(D2_val), key=2, horizontal=True)
+    
+    # Filling index 11 of the input_vector
+    if D2 == "Yes":
+        input_vector.append(1)
+    else:
+        input_vector.append(1)
+    
+    
+    
+    # DIMENSION 3: Technological Maturity
+    st.subheader('Technological Madurity')
+    st.write('explain...')
+    D4_val = ['Integration', 'Product Development', 'Deep Tech']
+    D4 = st.multiselect(
+         'What is your organization working on?', D4_val, 'Deep Tech')
+    
+    # Filling indexes 12, 13 and 14 of the input_vector
+    if D2 == "Yes":
+        input_vector.append(1)
+    else:
+        input_vector.append(1)
     
     
     
@@ -64,12 +96,7 @@ def page2():
          'Select desired qualification for your employees',key=3,
          options=D3_val)
 
-    st.subheader('Technology Madurity')
-    st.write('explain...')
-    D4_val = ['Integration', 'Product_development', 'Deep_tech']
-    D4 = st.select_slider(
-         'Select your value in this dimension',key=4,
-         options=D4_val)
+    
 
     st.subheader('Networking')
     st.write('explain...')
