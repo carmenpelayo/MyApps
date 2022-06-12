@@ -92,22 +92,6 @@ def page2():
         weight = st.slider(d, min_value=0, max_value=100, value=100)
         weights_vector.append(weight)
 
-
-        
-def page3():
-    st.header("🏆 RECOMMENDATIONS")
-    st.sidebar.markdown("🏆 RECOMMENDATIONS")
-
-    # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
-    # las dimensiones obtenidas.
-    df_radar = pd.DataFrame(dict(
-        r=[1, 5, 2, 2, 3],
-        theta=['Market areas','Capital Needs','Qualified personnel',
-               'Technology Madurity', 'Networking']))
-    fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
-    st.plotly_chart(fig, use_container_width=True)
-
-
     #RECOMMENDATION
     
     #Loading the dataframe containing the vectors on regional scores
@@ -183,7 +167,25 @@ def page3():
     #Plotting results
     best = recommendation.iloc[1:6]
     st.write(best)
-    st.map(best, zoom=3)
+    st.map(best, zoom=3) 
+      
+
+        
+def page3():
+    st.header("🏆 RECOMMENDATIONS")
+    st.sidebar.markdown("🏆 RECOMMENDATIONS")
+
+    # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
+    # las dimensiones obtenidas.
+    df_radar = pd.DataFrame(dict(
+        r=[1, 5, 2, 2, 3],
+        theta=['Market areas','Capital Needs','Qualified personnel',
+               'Technology Madurity', 'Networking']))
+    fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    
     
     
 #     simil = np.random.rand(len(df)) # aquí habría que aplicar la similitud del coseno
