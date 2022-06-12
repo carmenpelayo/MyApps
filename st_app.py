@@ -43,10 +43,7 @@ def page2():
             input_vector.append(1)
         else:
             input_vector.append(0)
-    st.write("tech areas")
-    st.write(input_vector)
             
-    
     # DIMENSION 2: Company Size
     st.subheader('Company Size')
     st.write('explain...: Small and Mid-Size Enterprise (SME), Large Enterprise (LE)')
@@ -59,8 +56,6 @@ def page2():
         input_vector.append(1)
     else:
         input_vector.append(0)
-    st.write("size")
-    st.write(input_vector)
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological Madurity')
@@ -74,8 +69,6 @@ def page2():
             input_vector.append(1)
         else:
             input_vector.append(0)
-    st.write("matur")
-    st.write(input_vector)
   
 
     #STEP 2: Creating the weights vector (8 values)
@@ -165,6 +158,8 @@ def page2():
                 complete_weights[23] = weights[7]
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
+        st.write(array)
+        st.write(weights_array)
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
         #Matchmaking (using cosine distances)
