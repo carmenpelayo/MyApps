@@ -93,7 +93,7 @@ def page2():
         weights.append(weight)
     total_weight = sum(weights)
     weights_vector = []
-    for w in weights:
+    for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
     #RECOMMENDATION
