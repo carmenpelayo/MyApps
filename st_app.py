@@ -90,7 +90,7 @@ def page2():
     
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
-        weights_vector.append(weight)
+        weights_vector.append(weight/100)
 
     #RECOMMENDATION
     
