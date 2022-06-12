@@ -30,13 +30,11 @@ def page2():
              'Big Data',
              'Computation',
              'Cybersecurity',
-             'Innovation',
              'Internet',
              'IoT',
              'Media & Communication',
              'Other',
              'Robotics',
-             'SME',
              'Software']
     D1 = st.multiselect("Market area: ", areas, areas)
     # Filling first 10 values of the input_vector 
