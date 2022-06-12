@@ -19,12 +19,10 @@ def main_page():
 
 def page2():
     st.header("🏢 YOUR BUSINESS DIMENSIONS")
-    #st.sidebar.markdown("🏢 YOUR BUSINESS DIMENSIONS")
     
-    #STEP 1: Creating the input vector
+    #STEP 1: Creating the input vector (14 values)
     input_vector = []
 
-    
     # DIMENSION 1: Tech areas
     st.subheader('Tech Areas')
     st.write('explain...')
@@ -48,7 +46,6 @@ def page2():
         else:
             input_vector.append(0)
     
-    
     # DIMENSION 2: Company Size
     st.subheader('Company Size')
     st.write('explain...: Small and Mid-Size Enterprise (SME), Large Enterprise (LE)')
@@ -61,7 +58,6 @@ def page2():
         input_vector.append(1)
     else:
         input_vector.append(0)
-    
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological Madurity')
@@ -76,56 +72,11 @@ def page2():
         else:
             input_vector.append(0)
   
-    
-    
-#OTHER ELECTIVES
-#     st.subheader('Capital Needs')
-#     st.write('explain...')
-#     D2_val = ['Low', 'High']
-#     D2 = st.radio(
-#          'Select your value in this dimension',
-#          tuple(D2_val),key=2, horizontal=True)
 
-#     st.subheader('Qualified personnel')
-#     st.write('explain...')
-#     D3_val=['Low', 'High/Engineers']
-#     D3 = st.select_slider(
-#          'Select desired qualification for your employees',key=3,
-#          options=D3_val)
-
-#     st.subheader('Networking')
-#     st.write('explain...')
-#     D5_val = ['Low', 'High']
-#     D5 = st.select_slider(
-#          'Select your value in this dimension',key=5,
-#          options=D5_val)
-
-    # Complete the bussiness vector (others)
-#     vals = np.array(D2_val + D3_val + D4_val + D5_val)
-#     sels = np.array([D2, D2, D3, D3, D4, D4, D4, D5, D5])
-#     business2 = ( sels == vals)
-
-#     st.markdown("""---""")
-#     st.subheader('Importance')
-#     st.write('Mark business dimensions to be taken int account to recommend a location')
-
-#     D1_mask = st.checkbox('Market areas', value = True)
-#     D2_mask = st.checkbox('Capital Needs', value = True)
-#     D3_mask = st.checkbox('Qualified personnel', value = True)
-#     D4_mask = st.checkbox('Technology Madurity', value = True)
-#     D5_mask = st.checkbox('Networking', value = True)
-
-#     st.subheader('Your business dimensions:')
-#     business = np.append(business, business2).reshape((1,-1)) # Vector booleano
-#     # Para operar con el como 'float' hay que multiplicarlo por 1.0
-#     # Aqui lo saca como booleano. Se podría sacar también como números
-#     st.write(business)
-
+    #STEP 2: Creating the weights vector (8 values)
     st.markdown("""---""")
-
-    
     weights_vector = []
-    st.subheader('Importance of the Dimensions (0-100')
+    st.subheader('Importance of the Dimensions')
     st.write('explain...')
     
     dimensions = ["Technological Areas",
@@ -140,17 +91,9 @@ def page2():
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
         weights_vector.append(weight)
-    
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
-#     D1_weight = st.slider("Tech Areas", min_value=0, max_value=100, value=100)
 
 
-
+        
 def page3():
     st.header("🏆 RECOMMENDATIONS")
     st.sidebar.markdown("🏆 RECOMMENDATIONS")
@@ -165,14 +108,89 @@ def page3():
     st.plotly_chart(fig, use_container_width=True)
 
 
-
-    df = pd.read_excel('nuts2xy.xlsx')
-    simil = np.random.rand(len(df)) # aquí habría que aplicar la similitud del coseno
-    df['similitude'] = simil
-    df_sel = df.iloc[1:6] # aquí habría que seleccionar los N de mayor similitud
-    st.subheader('Similar regions:')
-    st.dataframe(df_sel) # Habría que describir más datos
-    #st.map(df_sel, zoom=3)
+    #RECOMMENDATION
+    
+    #Loading the dataframe containing the vectors on regional scores
+    dfn = pd.read_excel('Regional Vectors.xlsx')
+    
+    #Matchmaking algorithm
+    def recommendation(input_vector, weights = None):
+        assert len(input_vector) == 14 #len(input_vector) must always be always 8 (1 value for each dimesion)
+        matur_input = input_vector[-3:]
+        input_vector.extend([0])
+        if input_vector[10] == 1: #The user is a SME
+            input_vector[11] = 0
+            input_vector[-3:] = matur_input
+        else: #The user is a Large Enterprise
+            input_vector[11] = 1
+            input_vector[-3:] = matur_input
+        good_vals = [1] * 9 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
+        idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
+        input_vector.extend(good_vals)
+        #Assigning weights of importance to each dimension
+        if weights == None:
+            weights = [1/8] * 8 
+        assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each dimesion)
+        #Weighting the input and master dataframe
+        n_areas = sum(input_vector[:10])
+        n_matur = sum(input_vector[12:15])
+        #Non-weighted input vector and dataframe converted to arrays
+        array = np.array(dfn)
+        input_array = np.array(input_vector)
+        #Getting the complete weights
+        complete_weights = [0] * 24
+        for i in range(len(weights)):
+            if i == 0: #Weight of tech areas
+                for j in range(10):
+                    if j in idx_yes:
+                        complete_weights[j] = weights[0] / n_areas             
+            elif i == 1: #Weight of SME/LE
+                if input_vector[10] == 1:
+                    complete_weights[10] = weights[1]
+                    complete_weights[11] = 0
+                else:
+                    complete_weights[10] = 0
+                    complete_weights[11] = weights[1]
+            elif i == 2: #Weight of tech maturity
+                for j in range(12,15):
+                    if j in idx_yes:
+                        complete_weights[j] = weights[2] / n_matur 
+            elif i == 3: #Weight of capital
+                complete_weights[15:18] = [weights[3] / 3] * 3                                   
+            elif i == 4: #Weight of hhrr
+                complete_weights[18:20] = [weights[4] / 2] * 2 
+            elif i == 5: #Weight of innovative ecosystem
+                complete_weights[20:22] = [weights[5] / 2] * 2 
+            elif i == 6:
+                complete_weights[22] = weights[6]
+            elif i == 7:
+                complete_weights[23] = weights[7]
+        #Weighting
+        weights_array = np.array(complete_weights).reshape(1, -1)
+        weighted_regions = array * weights_array
+        weighted_input = (input_array * weights_array)
+        #Matchmaking (using cosine distances)
+        distances = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
+        match = pd.DataFrame(distances)
+        match["Region"] = regions
+        match.columns = ["Score", "Region"]
+        match = match.sort_values(by = 'Score', ascending=False, ignore_index=True) #.set_index("Region")
+        return match
+    
+    recommendation = recommendation(input_vector, weights_vector) 
+    
+    #Plotting results
+    st.dataframe(recommendation)
+    best = recommendation.iloc[1:6]
+    st.map(best, zoom=3)
+    
+    
+#     simil = np.random.rand(len(df)) # aquí habría que aplicar la similitud del coseno
+#     df['similitude'] = simil
+#     df_sel = df.iloc[1:6] # aquí habría que seleccionar los N de mayor similitud
+#     st.subheader('Similar regions:')
+#     st.dataframe(df_sel) # Habría que describir más datos
+#     #st.map(df_sel, zoom=3)
 
 
 
