@@ -10,7 +10,7 @@ from PIL import Image
 
 
 def main_page():
-    st.title("B-RECOMMENDER : Business Location Recommendation System")
+    st.title("HOLA BUENAS : Business Location Recommendation System")
     image = Image.open('MatchingProjects.jpg')
     st.image(image)
     st.markdown("🇪🇺 Main page ")
