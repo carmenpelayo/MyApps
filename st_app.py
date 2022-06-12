@@ -159,7 +159,7 @@ def page2():
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
         weighted_regions = array * weights_array
-        weighted_input = (input_array * weights_array)
+        weighted_input = (input_array * weights_array).reshape(-1, 1)
         #Matchmaking (using cosine distances)
         st.write(weighted_regions.shape)
         st.write(weighted_input.shape)
