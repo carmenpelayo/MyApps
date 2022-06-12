@@ -126,11 +126,12 @@ def page2():
     
     weights_vector = []
     st.subheader('Importance of the Dimensions')
-    st.write('How important is the tech area for you?')
-    D5_val = ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']
+    D5_val = ['0%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']
     D5 = st.select_slider(
          'Select your value in this dimension',key=5,
          options=D5_val)
+    
+    st.slider(label, min_value=0, max_value=100, value=100)
 
 
 
