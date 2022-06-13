@@ -125,7 +125,7 @@ def page2():
         #Assigning weights of importance to each dimension
         if weights == None:
             weights = [1/8] * 8 
-        st.write(weigths)
+        st.write(weigths_vector)
         #assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each dimesion)
         #Weighting the input and master dataframe
         n_areas = sum(input_vector[:10])
