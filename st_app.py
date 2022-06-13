@@ -61,7 +61,7 @@ def page2():
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological Madurity')
     st.write('explain...')
-    D4_val = ['Integration', 'Development', 'Deep Tech']
+    D4_val = ['Deep Tech', 'Development', 'Integration']
     D4 = st.multiselect(
          'What is your organization working on?', D4_val, 'Deep Tech')
     # Filling indexes 12, 13 and 14 of the input_vector
