@@ -102,6 +102,7 @@ def page2():
     #Loading the dataframe containing the vectors on regional scores
     dfn = pd.read_excel('Regional Vectors.xlsx')
     regions = list(dfn.index)
+    st.write(regions)
 
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
