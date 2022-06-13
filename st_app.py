@@ -273,7 +273,7 @@ def page2():
 
 page_names_to_funcs = {
     "Home": main_page,
-    "Find your optimal location": page2,
+    "Find Your Optimal Location": page2,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
