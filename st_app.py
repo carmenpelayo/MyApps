@@ -170,9 +170,9 @@ def page2():
     
     recommendation = recommendation(input_vector, weights_vector) 
     
-#     #Plotting results
-     best = recommendation.iloc[1:6]
-     st.write(best)
+    #Plotting results
+    best = recommendation.iloc[1:6]
+    st.write(best)
 #     dfcoord = pd.read_excel('nuts2.xlsx')
 #     bestcoord = pd.DataFrame()
 #     for i in range(len(best)):
