@@ -101,6 +101,7 @@ def page2():
     
     #Loading the dataframe containing the vectors on regional scores
     dfn = pd.read_excel('Regional Vectors.xlsx')
+    st.write(dfn)
     regions = list(dfn.index)
     st.write(regions)
 
