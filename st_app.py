@@ -100,7 +100,7 @@ def page2():
     #RECOMMENDATION
     
     #Loading the dataframe containing the vectors on regional scores
-    dfn = pd.read_excel('Regional Vectors.xlsx')
+    dfn = pd.read_excel('Regional Vectors.xlsx', index_col=0)
     st.write(dfn)
     regions = list(dfn.index)
     st.write(regions)
