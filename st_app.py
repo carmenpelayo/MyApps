@@ -19,7 +19,7 @@ def main_page():
 
 
 def page2():
-    st.header("🏢 YOUR BUSINESS DIMENSIONS")
+    st.header("🏢 YOUR BUSINESS DIMENSIONS 🏢")
     
     #STEP 1: Creating the input vector (14 values)
     input_vector = []
@@ -99,11 +99,12 @@ def page2():
 
     #RECOMMENDATION
     
+    st.header("🗺  YOUR LOCATION RECOMMENDATION 🗺 ")
+    
     #Loading the dataframe containing the vectors on regional scores
     dfn = pd.read_excel('Regional Vectors.xlsx')
-    st.write(dfn)
+    nuts2 = pd.read_excel('Regional Info.xlsx')
     regions = list(dfn["Unnamed: 0"])
-    st.write(regions)
 
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
@@ -167,8 +168,9 @@ def page2():
         match["Region"] = regions
         match.columns = ["Score", "Region"]
         match = match.sort_values(by = 'Score', ascending=False, ignore_index=True) #.set_index("Region")
+        match = pd.merge(match, nuts2, on="Region")
         
-        return match
+        return match[["Region Name", "Score"]].set_index("Region Name")
     
     recommendation = recommendation(input_vector, weights_vector) 
     
