@@ -109,6 +109,8 @@ def page2():
 
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
+        st.write(input_vector)
+        st.write(weights)
         #assert len(input_vector) == 14 #len(input_vector) must always be always 14 (1 value for each dimesion)
         matur_input = input_vector[-3:]
         input_vector.extend([0])
