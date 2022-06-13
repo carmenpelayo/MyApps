@@ -126,7 +126,7 @@ def page2():
         n_areas = sum(input_vector[:10])
         n_matur = sum(input_vector[12:15])
         #Non-weighted input vector and dataframe converted to arrays
-        array = np.array(dfn) #[:,1:]
+        array = np.array(dfn)[:,1:]
         input_array = np.array(input_vector)
         #Getting the complete weights
         complete_weights = [0] * 24
@@ -170,66 +170,66 @@ def page2():
     
     recommendation = recommendation(input_vector, weights_vector) 
     
-    #Plotting results
-    best = recommendation.iloc[1:6]
-    st.write(best)
-    dfcoord = pd.read_excel('nuts2.xlsx')
-    bestcoord = pd.DataFrame()
-    for i in range(len(best)):
-        reg = best["Region"].iloc[i]
-        lon = dfcoord[dfcoord["NUTS_ID"] == REG]["lon"].iloc[0]
-        lat = dfcoord[dfcoord["NUTS_ID"] == REG]["lat"].iloc[0]
-        regcoord = {"Region": reg, "Lon": lon, "Lat": lat}
-        bestcoord.append(regcoord, ignore_index = True)
-    st.map(bestcoord, zoom=3) 
+#     #Plotting results
+#     best = recommendation.iloc[1:6]
+#     st.write(best)
+#     dfcoord = pd.read_excel('nuts2.xlsx')
+#     bestcoord = pd.DataFrame()
+#     for i in range(len(best)):
+#         reg = best["Region"].iloc[i]
+#         lon = dfcoord[dfcoord["NUTS_ID"] == REG]["lon"].iloc[0]
+#         lat = dfcoord[dfcoord["NUTS_ID"] == REG]["lat"].iloc[0]
+#         regcoord = {"Region": reg, "Lon": lon, "Lat": lat}
+#         bestcoord.append(regcoord, ignore_index = True)
+#     st.map(bestcoord, zoom=3) 
       
 
         
-def page3():
-    st.header("🏆 RECOMMENDATIONS")
-    st.sidebar.markdown("🏆 RECOMMENDATIONS")
+# def page3():
+#     st.header("🏆 RECOMMENDATIONS")
+#     st.sidebar.markdown("🏆 RECOMMENDATIONS")
 
-    # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
-    # las dimensiones obtenidas.
-    df_radar = pd.DataFrame(dict(
-        r=[1, 5, 2, 2, 3],
-        theta=['Market areas','Capital Needs','Qualified personnel',
-               'Technology Madurity', 'Networking']))
-    fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
-    st.plotly_chart(fig, use_container_width=True)
+#     # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
+#     # las dimensiones obtenidas.
+#     df_radar = pd.DataFrame(dict(
+#         r=[1, 5, 2, 2, 3],
+#         theta=['Market areas','Capital Needs','Qualified personnel',
+#                'Technology Madurity', 'Networking']))
+#     fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
+#     st.plotly_chart(fig, use_container_width=True)
 
 
     
     
     
-#     simil = np.random.rand(len(df)) # aquí habría que aplicar la similitud del coseno
-#     df['similitude'] = simil
-#     df_sel = df.iloc[1:6] # aquí habría que seleccionar los N de mayor similitud
-#     st.subheader('Similar regions:')
-#     st.dataframe(df_sel) # Habría que describir más datos
-#     #st.map(df_sel, zoom=3)
+# #     simil = np.random.rand(len(df)) # aquí habría que aplicar la similitud del coseno
+# #     df['similitude'] = simil
+# #     df_sel = df.iloc[1:6] # aquí habría que seleccionar los N de mayor similitud
+# #     st.subheader('Similar regions:')
+# #     st.dataframe(df_sel) # Habría que describir más datos
+# #     #st.map(df_sel, zoom=3)
 
 
 
-    st.pydeck_chart(pdk.Deck(
-         map_style='mapbox://styles/mapbox/light-v9',
-         initial_view_state=pdk.ViewState(
-             latitude=46.9,
-             longitude=7.5,
-             zoom=3,
-             pitch=0,
-         ),
-         layers=[
+#     st.pydeck_chart(pdk.Deck(
+#          map_style='mapbox://styles/mapbox/light-v9',
+#          initial_view_state=pdk.ViewState(
+#              latitude=46.9,
+#              longitude=7.5,
+#              zoom=3,
+#              pitch=0,
+#          ),
+#          layers=[
 
-             pdk.Layer(
-                 'ScatterplotLayer',
-                 data=df_sel,
-                 get_position='[lon, lat]',
-                 get_color='[200, 30, 0, 160]',
-                 get_radius=90000,
-             ),
-         ],
-     ))
+#              pdk.Layer(
+#                  'ScatterplotLayer',
+#                  data=df_sel,
+#                  get_position='[lon, lat]',
+#                  get_color='[200, 30, 0, 160]',
+#                  get_radius=90000,
+#              ),
+#          ],
+#      ))
 
 page_names_to_funcs = {
     "Main Page": main_page,
