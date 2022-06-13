@@ -101,10 +101,11 @@ def page2():
     
     st.header("🗺  YOUR LOCATION RECOMMENDATION 🗺 ")
     
-    #Loading the dataframe containing the vectors on regional scores
+    #Loading the files needed to calculate the recommendation
     dfn = pd.read_excel('Regional Vectors.xlsx')
-    nuts2 = pd.read_excel('Regional Info.xlsx')
     regions = list(dfn["Unnamed: 0"])
+    nuts2 = pd.read_excel('Regional Info.xlsx')
+    countries = pd.read_excel('Regional Info.xlsx')
 
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
@@ -170,7 +171,7 @@ def page2():
         match = match.sort_values(by = 'Score', ascending=False, ignore_index=True) #.set_index("Region")
         match = pd.merge(match, nuts2, on="Region")
         
-        return match[["Region Name", "Score"]].set_index("Region Name")
+        return match[["Score", "Region Name", "Country Name]]
     
     recommendation = recommendation(input_vector, weights_vector) 
     
