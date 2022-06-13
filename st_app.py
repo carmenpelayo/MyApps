@@ -111,7 +111,6 @@ def page2():
     def recommendation(input_vector, weights = None):
         #assert len(input_vector) == 14 #len(input_vector) must always be always 14 (1 value for each dimesion)
         st.write(input_vector)
-        st.write(weigths)
         matur_input = input_vector[-3:]
         input_vector.extend([0])
         if input_vector[10] == 1: #The user is a SME
@@ -126,6 +125,7 @@ def page2():
         #Assigning weights of importance to each dimension
         if weights == None:
             weights = [1/8] * 8 
+        st.write(weigths)
         #assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each dimesion)
         #Weighting the input and master dataframe
         n_areas = sum(input_vector[:10])
