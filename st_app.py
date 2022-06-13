@@ -171,7 +171,7 @@ def page2():
         match = match.sort_values(by = 'Score', ascending=False, ignore_index=True) #.set_index("Region")
         match = pd.merge(match, nuts2, on="Region")
         
-        return match[["Score", "Region Name", "Country Name]]
+        return match[["Score", "Region Name", "Country Name"]]
     
     recommendation = recommendation(input_vector, weights_vector) 
     
