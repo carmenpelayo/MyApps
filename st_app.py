@@ -185,18 +185,18 @@ def page2():
       
 
         
-# def page3():
-#     st.header("🏆 RECOMMENDATIONS")
-#     st.sidebar.markdown("🏆 RECOMMENDATIONS")
+def page3():
+    st.header("🏆 RECOMMENDATIONS")
+    st.sidebar.markdown("🏆 RECOMMENDATIONS")
 
-#     # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
-#     # las dimensiones obtenidas.
-#     df_radar = pd.DataFrame(dict(
-#         r=[1, 5, 2, 2, 3],
-#         theta=['Market areas','Capital Needs','Qualified personnel',
-#                'Technology Madurity', 'Networking']))
-#     fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
-#     st.plotly_chart(fig, use_container_width=True)
+    # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
+    # las dimensiones obtenidas.
+    df_radar = pd.DataFrame(dict(
+        r=[1, 5, 2, 2, 3],
+        theta=['Market areas','Capital Needs','Qualified personnel',
+               'Technology Madurity', 'Networking']))
+    fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
     
@@ -211,25 +211,25 @@ def page2():
 
 
 
-#     st.pydeck_chart(pdk.Deck(
-#          map_style='mapbox://styles/mapbox/light-v9',
-#          initial_view_state=pdk.ViewState(
-#              latitude=46.9,
-#              longitude=7.5,
-#              zoom=3,
-#              pitch=0,
-#          ),
-#          layers=[
+    st.pydeck_chart(pdk.Deck(
+         map_style='mapbox://styles/mapbox/light-v9',
+         initial_view_state=pdk.ViewState(
+             latitude=46.9,
+             longitude=7.5,
+             zoom=3,
+             pitch=0,
+         ),
+         layers=[
 
-#              pdk.Layer(
-#                  'ScatterplotLayer',
-#                  data=df_sel,
-#                  get_position='[lon, lat]',
-#                  get_color='[200, 30, 0, 160]',
-#                  get_radius=90000,
-#              ),
-#          ],
-#      ))
+             pdk.Layer(
+                 'ScatterplotLayer',
+                 data=df_sel,
+                 get_position='[lon, lat]',
+                 get_color='[200, 30, 0, 160]',
+                 get_radius=90000,
+             ),
+         ],
+     ))
 
 page_names_to_funcs = {
     "Main Page": main_page,
