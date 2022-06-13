@@ -110,6 +110,8 @@ def page2():
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
         #assert len(input_vector) == 14 #len(input_vector) must always be always 14 (1 value for each dimesion)
+        st.write(input_vector)
+        st.write(weigths)
         matur_input = input_vector[-3:]
         input_vector.extend([0])
         if input_vector[10] == 1: #The user is a SME
