@@ -107,7 +107,6 @@ def page2():
     nuts2 = pd.read_excel('Regional Info.xlsx')
     countries = pd.read_excel('Regional Info.xlsx')
 
-    st.write(weigths_vector)
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
         #assert len(input_vector) == 14 #len(input_vector) must always be always 14 (1 value for each dimesion)
