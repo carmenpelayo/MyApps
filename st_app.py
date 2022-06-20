@@ -113,6 +113,7 @@ def page3():
     countries['Code'] = countries.Region.str[:2]
     countries = countries.rename(columns={'Region':'NUTS2', 'Country Name':'Country' }) 
     
+    st.markdown("""---""")
     st.header("🏆 YOUR RECOMMENDATIONS")
     
     #Loading the files needed to calculate the recommendation
