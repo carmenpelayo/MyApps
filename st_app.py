@@ -9,7 +9,6 @@ import plotly.express as px
 from PIL import Image
 import scipy
 from scipy.spatial import distance
-#import altair as alt
 
 
 
@@ -105,14 +104,15 @@ def page2():
     st.header("🗺  YOUR LOCATION RECOMMENDATION 🗺 ")
     
     #Loading the files needed to calculate the recommendation
-    dfn = pd.read_excel('Regional Vectors.xlsx')
+    dfn = pd.read_excel('Regional Vectors DEF.xlsx')
     regions = list(dfn["Unnamed: 0"])
-    nuts2 = pd.read_excel('Regional Info.xlsx')
+    nuts2 = pd.read_excel('Regional Info DEF.xlsx')
     countries = pd.read_excel('Regional Info.xlsx')
 
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
-        #assert len(input_vector) == 14 #len(input_vector) must always be always 14 (1 value for each dimesion)
+        
+        assert len(input_vector) == 14 #len(input_vector) must always be always 8 (1 value for each dimesion)
         matur_input = input_vector[-3:]
         input_vector.extend([0])
         if input_vector[10] == 1: #The user is a SME
@@ -121,21 +121,25 @@ def page2():
         else: #The user is a Large Enterprise
             input_vector[11] = 1
             input_vector[-3:] = matur_input
-        good_vals = [1] * 9 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
+        good_vals = [1] * 8 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
         idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
         input_vector.extend(good_vals)
+
         #Assigning weights of importance to each dimension
         if weights == None:
             weights = [1/8] * 8 
-        #assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each dimesion)
+        assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each dimesion)
+
         #Weighting the input and master dataframe
         n_areas = sum(input_vector[:10])
         n_matur = sum(input_vector[12:15])
+
         #Non-weighted input vector and dataframe converted to arrays
-        array = np.array(dfn)[:,1:]
+        array = np.array(dfn)
         input_array = np.array(input_vector)
+
         #Getting the complete weights
-        complete_weights = [0] * 24
+        complete_weights = [0] * 23
         for i in range(len(weights)):
             if i == 0: #Weight of tech areas
                 for j in range(10):
@@ -155,17 +159,19 @@ def page2():
             elif i == 3: #Weight of capital
                 complete_weights[15:18] = [weights[3] / 3] * 3                                   
             elif i == 4: #Weight of hhrr
-                complete_weights[18:20] = [weights[4] / 2] * 2 
+                complete_weights[18] = weights[4]
             elif i == 5: #Weight of innovative ecosystem
-                complete_weights[20:22] = [weights[5] / 2] * 2 
+                complete_weights[19:21] = [weights[5] / 2] * 2 
             elif i == 6:
-                complete_weights[22] = weights[6]
+                complete_weights[21] = weights[6]
             elif i == 7:
-                complete_weights[23] = weights[7]
+                complete_weights[22] = weights[7]
+        
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
+        
         #Matchmaking (using cosine distances)
         distances = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
         match = pd.DataFrame(distances)
