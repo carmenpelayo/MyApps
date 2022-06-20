@@ -20,7 +20,7 @@ def main_page():
     
 
 
-def page2():
+def page3():
     st.header("🏢 YOUR BUSINESS ATTRIBUTES")
     
  #CAPTURING INPUT
@@ -250,12 +250,17 @@ def page2():
        ],
     ))
     st.dataframe(match.head(nplot))
-    #st.bar_chart(sel.Score)
+    
+
+#def page2():
+    #st.header("How does the tool work?")
+    
 
 
 page_names_to_funcs = {
     "Home": main_page,
-    "Find Your Optimal Location": page2,
+    "How does it work?": page2 #,
+    #"Find the optimal location for your ICT business": page3,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
