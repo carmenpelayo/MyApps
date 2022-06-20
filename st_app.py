@@ -259,7 +259,7 @@ def page3():
 
 page_names_to_funcs = {
     "Home": main_page,
-    "How does it work?": page2 #,
+    "How does it work?": page2
     #"Find the optimal location for your ICT business": page3,
 }
 
