@@ -259,8 +259,8 @@ def page3():
 
 page_names_to_funcs = {
     "Home": main_page,
-    "How does it work?": page2
-    #"Find the optimal location for your ICT business": page3,
+    #"How does it work?": page2,
+    "Find the optimal location for your ICT business": page3 #,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
