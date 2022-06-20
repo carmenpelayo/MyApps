@@ -107,7 +107,7 @@ def page2():
     dfn = pd.read_excel('Regional Vectors DEF.xlsx')
     regions = list(dfn["Unnamed: 0"])
     nuts2 = pd.read_excel('Regional Info DEF.xlsx')
-    countries = pd.read_excel('Regional Info.xlsx')
+    countries = pd.read_excel('Regional Info DEF.xlsx')
 
     #Matchmaking algorithm
     def recommendation(input_vector, weights = None):
