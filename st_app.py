@@ -101,26 +101,46 @@ def page2():
 
     #RECOMMENDATION
     
+    # Regions
+    projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
+    projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
+    regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
+    regions = regions[1:]
+    df_regions = pd.DataFrame({'NUTS2': regions}) # List of regions (with data)
+    nuts2 = pd.read_excel("Regional Info DEF.xlsx")
+
+    # Countries
+    countries = nuts2[['Region','Country Name']]
+    countries['Code'] = countries.Region.str[:2]
+    countries = countries.rename(columns={'Region':'NUTS2', 'Country Name':'Country' }) 
+    
     st.header("🗺  YOUR LOCATION RECOMMENDATION 🗺 ")
     
     #Loading the files needed to calculate the recommendation
-    dfn = pd.read_excel('Regional Vectors DEF.xlsx')
-    regions = list(dfn["Unnamed: 0"])
-    nuts2 = pd.read_excel('Regional Info DEF.xlsx')
-    countries = pd.read_excel('Regional Info DEF.xlsx')
-
-    #Matchmaking algorithm
+    #dfn = pd.read_excel('Regional Vectors DEF.xlsx')
+    #regions = list(dfn["Unnamed: 0"])
+    #countries = pd.read_excel('Regional Info DEF.xlsx')
+    
+    # Regional Vectors (normalized)
+    df = pd.read_excel('Regional Vectors DEF.xlsx')
+    df = df.rename(columns={'Unnamed: 0':'NUTS2'})
+    df_regvectors = pd.merge(df_regions, df, on='NUTS2', how='left') 
+    df_regvectors.fillna(0, inplace = True)
+    dfn = np.array(df_regvectors)[:,1:]
+    
     def recommendation(input_vector, weights = None):
-        
+        #Matchmaking algorithm
         assert len(input_vector) == 14 #len(input_vector) must always be always 8 (1 value for each dimesion)
         matur_input = input_vector[-3:]
         input_vector.extend([0])
+
         if input_vector[10] == 1: #The user is a SME
             input_vector[11] = 0
             input_vector[-3:] = matur_input
         else: #The user is a Large Enterprise
             input_vector[11] = 1
             input_vector[-3:] = matur_input
+
         good_vals = [1] * 8 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
         idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
         input_vector.extend(good_vals)
@@ -140,11 +160,13 @@ def page2():
 
         #Getting the complete weights
         complete_weights = [0] * 23
+
         for i in range(len(weights)):
             if i == 0: #Weight of tech areas
-                for j in range(10):
+                for j in range(10): #EPC
                     if j in idx_yes:
-                        complete_weights[j] = weights[0] / n_areas             
+                        complete_weights[j] = weights[0] / n_areas    
+                        #complete_weights[j] = weights[0] / 10      #EPC         
             elif i == 1: #Weight of SME/LE
                 if input_vector[10] == 1:
                     complete_weights[10] = weights[1]
@@ -166,30 +188,28 @@ def page2():
                 complete_weights[21] = weights[6]
             elif i == 7:
                 complete_weights[22] = weights[7]
-        
+
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
-        
+
         #Matchmaking (using cosine distances)
-        distances = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
-        match = pd.DataFrame(distances)
+        simil = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
+        match = pd.DataFrame(simil)
         match["Region"] = regions
         match.columns = ["Score", "Region"]
-        match = match.sort_values(by = 'Score', ascending=False, ignore_index=True) #.set_index("Region")
-        match = pd.merge(match, nuts2, on="Region")
-        match = match[["Score", "Region", "Region Name", "Country Name"]]
+        match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
+        match = pd.merge(match, nuts2, how="inner", on="Region")
         match = match.fillna(0)
-        
-        return match
+
+        return match[["Score","Region","Region Name","Country Name"]] #EPC
+
     
     match = recommendation(input_vector, weights_vector) 
     
     #Plotting results
-    #best = recommendation.iloc[1:6]
     st.subheader('Recommended regions:')
-    
     
     # Plot
     nplot = 10
@@ -210,7 +230,6 @@ def page2():
     
     df_sel = df[df['NUTS_ID'].isin(list(match.head(topplot).Region))]
     df_sel2 = df[df['NUTS_ID'].isin(list(match.head(nplot).Region))]
-
 
     st.pydeck_chart(pdk.Deck(
        map_style='mapbox://styles/mapbox/light-v9',
