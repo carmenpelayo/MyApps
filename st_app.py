@@ -21,7 +21,7 @@ def main_page():
 
 
 def page2():
-    st.header("🏢 YOUR BUSINESS DIMENSIONS ")
+    st.header("🏢 YOUR BUSINESS ATTRIBUTES")
     
  #CAPTURING INPUT
 
@@ -29,7 +29,7 @@ def page2():
     input_vector = []
 
     # DIMENSION 1: Tech areas
-    st.subheader('Tech Areas')
+    st.subheader('Tech areas')
     st.write('In which technological areas are you interested?')
     areas = ['AI',
              'Big Data',
@@ -41,7 +41,7 @@ def page2():
              'Other',
              'Robotics',
              'Software']
-    D1 = st.multiselect("Market area: ", areas, areas)
+    D1 = st.multiselect(areas, areas)
     # Filling first 10 values of the input_vector 
     for a in areas:
         if a in D1:
@@ -50,12 +50,10 @@ def page2():
             input_vector.append(0)
             
     # DIMENSION 2: Company Size
-    st.subheader('Company Size')
+    st.subheader('Company size')
     st.write('Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?')
     D2_val = ['SME', 'LE']
-    D2 = st.radio(
-         'Is your business a SME?',
-         tuple(D2_val), key=2, horizontal=True)
+    D2 = st.radio(tuple(D2_val), key=2, horizontal=True)
     # Filling index 11 of the input_vector
     if D2 == "Yes":
         input_vector.append(1)
@@ -63,11 +61,10 @@ def page2():
         input_vector.append(0)
     
     # DIMENSION 3: Technological Maturity
-    st.subheader('Technological Madurity')
+    st.subheader('Technological maturity')
     st.write('What is your dimension of technological specialization?')
     D4_val = ['Deep Tech', 'Development', 'Integration']
-    D4 = st.multiselect(
-         'What is your organization working on?', D4_val, 'Deep Tech')
+    D4 = st.multiselect(D4_val, 'Deep Tech')
     # Filling indexes 12, 13 and 14 of the input_vector
     for maturity in D4_val:
         if maturity in D4:
@@ -79,7 +76,7 @@ def page2():
     #STEP 2: Creating the weights vector (8 values)
     st.markdown("""---""")
     weights = []
-    st.subheader('Importance of the Dimensions')
+    st.header("🛠️ YOUR BUSINESS PREFERENCES")
     st.write('How important are the following business parameters in your location decision?')
     
     dimensions = ["Technological Areas",
@@ -116,7 +113,7 @@ def page2():
     countries['Code'] = countries.Region.str[:2]
     countries = countries.rename(columns={'Region':'NUTS2', 'Country Name':'Country' }) 
     
-    st.header("🗺  YOUR LOCATION RECOMMENDATION 🗺 ")
+    st.header("🏆 YOUR RECOMMENDATIONS")
     
     #Loading the files needed to calculate the recommendation
     #dfn = pd.read_excel('Regional Vectors DEF.xlsx')
@@ -213,7 +210,7 @@ def page2():
     match = recommendation(input_vector, weights_vector) 
    
 #RESULTS
-    st.subheader('Recommended regions:')
+    st.subheader("Given your business attributes and preferences, your recommended locations are...")
     
     # Plot
     nplot = 10
