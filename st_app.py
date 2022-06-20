@@ -21,14 +21,16 @@ def main_page():
 
 
 def page2():
-    st.header("🏢 YOUR BUSINESS DIMENSIONS 🏢")
+    st.header("🏢 YOUR BUSINESS DIMENSIONS ")
     
-    #STEP 1: Creating the input vector (14 values)
+ #CAPTURING INPUT
+
+    #STEP 1: Creating the selection vector (14 values)
     input_vector = []
 
     # DIMENSION 1: Tech areas
     st.subheader('Tech Areas')
-    st.write('explain...')
+    st.write('In which technological areas are you interested?')
     areas = ['AI',
              'Big Data',
              'Computation',
@@ -49,8 +51,8 @@ def page2():
             
     # DIMENSION 2: Company Size
     st.subheader('Company Size')
-    st.write('explain...: Small and Mid-Size Enterprise (SME), Large Enterprise (LE)')
-    D2_val = ['Yes', 'No']
+    st.write('Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?')
+    D2_val = ['SME', 'LE']
     D2 = st.radio(
          'Is your business a SME?',
          tuple(D2_val), key=2, horizontal=True)
@@ -62,7 +64,7 @@ def page2():
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological Madurity')
-    st.write('explain...')
+    st.write('What is your dimension of technological specialization?')
     D4_val = ['Deep Tech', 'Development', 'Integration']
     D4 = st.multiselect(
          'What is your organization working on?', D4_val, 'Deep Tech')
@@ -78,7 +80,7 @@ def page2():
     st.markdown("""---""")
     weights = []
     st.subheader('Importance of the Dimensions')
-    st.write('explain...')
+    st.write('How important are the following business parameters in your location decision?')
     
     dimensions = ["Technological Areas",
                   "Company Size",
@@ -99,7 +101,7 @@ def page2():
     for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
-    #RECOMMENDATION
+ #DATABASE IMPORT AND PREPARATION
     
     # Regions
     projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
@@ -127,6 +129,8 @@ def page2():
     df_regvectors = pd.merge(df_regions, df, on='NUTS2', how='left') 
     df_regvectors.fillna(0, inplace = True)
     dfn = np.array(df_regvectors)[:,1:]
+    
+ #MATCHMAKING
     
     def recommendation(input_vector, weights = None):
         #Matchmaking algorithm
@@ -207,24 +211,15 @@ def page2():
 
     
     match = recommendation(input_vector, weights_vector) 
-    
-    #Plotting results
+   
+#RESULTS
     st.subheader('Recommended regions:')
+    st.dataframe(match.head(nplot))
     
     # Plot
     nplot = 10
     topplot = 3
     sel=match.head(nplot).set_index('Region') 
-    
-    # dfcoord = pd.read_excel('nuts2.xlsx')
-    # bestcoord = pd.DataFrame()
-    # for i in range(len(best)):
-    #     reg = best["Region"].iloc[i]
-    #     lon = dfcoord[dfcoord["NUTS_ID"] == REG]["lon"].iloc[0]
-    #     lat = dfcoord[dfcoord["NUTS_ID"] == REG]["lat"].iloc[0]
-    #     regcoord = {"Region": reg, "Lon": lon, "Lat": lat}
-    #     bestcoord.append(regcoord, ignore_index = True)
-    # st.map(bestcoord, zoom=3) 
  
     df = pd.read_excel('nuts2xy.xlsx')
     
@@ -258,8 +253,7 @@ def page2():
            ),
        ],
     ))
-    st.dataframe(match.head(nplot))
-    st.bar_chart(sel.Score)
+    #st.bar_chart(sel.Score)
 
         
 # def page3():
