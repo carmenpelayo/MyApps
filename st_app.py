@@ -41,7 +41,7 @@ def page2():
              'Other',
              'Robotics',
              'Software']
-    D1 = st.multiselect(areas, areas)
+    D1 = st.multiselect("", areas, areas)
     # Filling first 10 values of the input_vector 
     for a in areas:
         if a in D1:
@@ -53,7 +53,7 @@ def page2():
     st.subheader('Company size')
     st.write('Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?')
     D2_val = ['SME', 'LE']
-    D2 = st.radio(tuple(D2_val), key=2, horizontal=True)
+    D2 = st.radio("", tuple(D2_val), key=2, horizontal=True)
     # Filling index 11 of the input_vector
     if D2 == "Yes":
         input_vector.append(1)
@@ -64,7 +64,7 @@ def page2():
     st.subheader('Technological maturity')
     st.write('What is your dimension of technological specialization?')
     D4_val = ['Deep Tech', 'Development', 'Integration']
-    D4 = st.multiselect(D4_val, 'Deep Tech')
+    D4 = st.multiselect("", D4_val, 'Deep Tech')
     # Filling indexes 12, 13 and 14 of the input_vector
     for maturity in D4_val:
         if maturity in D4:
