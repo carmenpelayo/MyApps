@@ -14,7 +14,7 @@ from scipy.spatial import distance
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
-    image = Image.open('MatchingProjects.jpg')
+    image = Image.open('How-to-Find-the-Perfect-Location-for-Your-Small-Business.jpg')
     st.image(image)
     st.write('This web was made by Carmen Pelayo Fernandez in 2022')
     
