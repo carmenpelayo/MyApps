@@ -13,7 +13,7 @@ from scipy.spatial import distance
 
 
 def main_page():
-    st.title("Location Recommendation System for European Businesses in ICT")
+    st.title("Location Recommendation System for Businesses in the European ICT Industry")
     image = Image.open('MatchingProjects.jpg')
     st.image(image)
     st.write('This web was made by Carmen Pelayo Fernandez in 2022')
@@ -62,7 +62,7 @@ def page2():
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological maturity')
-    st.write('What is your dimension of technological specialization?')
+    st.write('What are you working on?')
     D4_val = ['Deep Tech', 'Development', 'Integration']
     D4 = st.multiselect("", D4_val, 'Deep Tech')
     # Filling indexes 12, 13 and 14 of the input_vector
@@ -79,14 +79,14 @@ def page2():
     st.header("🛠️ YOUR BUSINESS PREFERENCES")
     st.write('How important are the following business parameters in your location decision?')
     
-    dimensions = ["Technological Areas",
-                  "Company Size",
-                  "Technological Maturity",
+    dimensions = ["Technological areas",
+                  "Company size",
+                  "Technological maturity",
                   "Capital",
-                  "Human Resources",
-                  "Innovative Ecosystem",
-                  "Legal Framework",
-                  "Technological Infrastructure"]
+                  "Human resources",
+                  "Innovative ecosystem",
+                  "Legal framework",
+                  "Technological infrastructure"]
     
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
@@ -210,7 +210,7 @@ def page2():
     match = recommendation(input_vector, weights_vector) 
    
 #RESULTS
-    st.subheader("Given your business attributes and preferences, your recommended locations are...")
+    st.subheader("Given your business attributes and preferences, your recommended regions in Europe are...")
     
     # Plot
     nplot = 10
@@ -252,40 +252,6 @@ def page2():
     st.dataframe(match.head(nplot))
     #st.bar_chart(sel.Score)
 
-        
-# def page3():
-#     st.header("🏆 RECOMMENDATIONS")
-#     st.sidebar.markdown("🏆 RECOMMENDATIONS")
-
-#     # Ejemplo de representación en 'radar'. Habría que poner en r los valores de
-#     # las dimensiones obtenidas.
-#     df_radar = pd.DataFrame(dict(
-#         r=[1, 5, 2, 2, 3],
-#         theta=['Market areas','Capital Needs','Qualified personnel',
-#                'Technology Madurity', 'Networking']))
-#     fig = px.line_polar(df_radar, r='r', theta='theta', line_close=True)
-#     st.plotly_chart(fig, use_container_width=True)
-
-
-#     st.pydeck_chart(pdk.Deck(
-#          map_style='mapbox://styles/mapbox/light-v9',
-#          initial_view_state=pdk.ViewState(
-#              latitude=46.9,
-#              longitude=7.5,
-#              zoom=3,
-#              pitch=0,
-#          ),
-#          layers=[
-
-#              pdk.Layer(
-#                  'ScatterplotLayer',
-#                  data=df_sel,
-#                  get_position='[lon, lat]',
-#                  get_color='[200, 30, 0, 160]',
-#                  get_radius=90000,
-#              ),
-#          ],
-#      ))
 
 page_names_to_funcs = {
     "Home": main_page,
