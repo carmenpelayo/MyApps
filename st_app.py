@@ -13,7 +13,7 @@ from scipy.spatial import distance
 
 
 def main_page():
-    st.title("Location Recommendation System for Businesses in the European ICT Industry")
+    st.title("HOLA Location Recommendation System for Businesses in the European ICT Industry")
     st.subheader('This web was made by Carmen Pelayo Fernandez in 2022')
     st.write("Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution for entities operating in the European ICT (Information and Communication Technologies) industry.")
     image = Image.open('How-to-Find-the-Perfect-Location-for-Your-Small-Business.jpg')
