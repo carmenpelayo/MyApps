@@ -214,7 +214,6 @@ def page2():
    
 #RESULTS
     st.subheader('Recommended regions:')
-    st.dataframe(match.head(nplot))
     
     # Plot
     nplot = 10
@@ -253,6 +252,7 @@ def page2():
            ),
        ],
     ))
+    st.dataframe(match.head(nplot))
     #st.bar_chart(sel.Score)
 
         
