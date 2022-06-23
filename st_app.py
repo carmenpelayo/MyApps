@@ -258,11 +258,14 @@ def page3():
     
 
 def page2():
+    projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
+    projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
+    regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
     st.header("Which regions would you like to compare?")
     #comp = st.multiselect("", regions, "ES30")
     #st.write(comp)
     st.write(regions)
-    st.dataframe(df_regvectors)
+    #st.dataframe(df_regvectors)
 
 
 page_names_to_funcs = {
