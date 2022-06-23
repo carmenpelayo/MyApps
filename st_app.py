@@ -259,8 +259,9 @@ def page3():
 
 def page2():
     st.header("Which regions would you like to compare?")
-    comp = st.multiselect("", regions, "ES30")
-    st.write(comp)
+    #comp = st.multiselect("", regions, "ES30")
+    #st.write(comp)
+    st.write(regions)
     st.dataframe(df_regvectors)
 
 
