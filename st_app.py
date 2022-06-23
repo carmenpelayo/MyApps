@@ -264,9 +264,9 @@ def page2():
     regions = regions[1:]
     st.header("Which regions would you like to compare?")
     comp = st.multiselect("", regions, "ES30")
-    #st.write(comp)
-    st.write(comp)
-    #st.dataframe(df_regvectors)
+    df = pd.read_excel('Regional Vectors DEF.xlsx')
+    df = df.rename(columns={'Unnamed: 0':'NUTS2'})
+    st.dataframe(df.loc[comp])
 
 
 page_names_to_funcs = {
