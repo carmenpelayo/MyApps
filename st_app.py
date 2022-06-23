@@ -257,14 +257,15 @@ def page3():
     st.dataframe(match.head(nplot))
     
 
-#def page2():
-    #st.header("How does the tool work?")
-    
+def page2():
+    st.header("Which regions would you like to compare?")
+    comp = st.multiselect("", regions, "ES30")
+    st.dataframe(df_regvectors[[comp]])
 
 
 page_names_to_funcs = {
     "Home": main_page,
-    #"How does it work?": page2,
+    "Region comparator": page2,
     "Find the optimal location for your firm": page3 #,
 }
 
