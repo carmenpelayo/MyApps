@@ -260,7 +260,8 @@ def page3():
 def page2():
     st.header("Which regions would you like to compare?")
     comp = st.multiselect("", regions, "ES30")
-    st.dataframe(df_regvectors[[comp]])
+    st.write(comp)
+    st.dataframe(df_regvectors)
 
 
 page_names_to_funcs = {
