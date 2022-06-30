@@ -257,21 +257,21 @@ def page3():
     st.dataframe(match.head(nplot))
     
 
-def page2():
-    projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
-    projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
-    regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
-    regions = regions[1:]
-    st.header("Which regions would you like to compare?")
-    comp = st.multiselect("", regions, "ES30")
-    df = pd.read_excel('Regional Vectors DEF.xlsx')
-    df = df.rename(columns={'Unnamed: 0':'NUTS2'})
-    st.dataframe(df.loc[comp])
+#def page2():
+    #projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
+    #projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
+    #regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
+    #regions = regions[1:]
+    #st.header("Which regions would you like to compare?")
+    #comp = st.multiselect("", regions, "ES30")
+    #df = pd.read_excel('Regional Vectors DEF.xlsx')
+    #df = df.rename(columns={'Unnamed: 0':'NUTS2'})
+    #st.dataframe(df.loc[comp])
 
 
 page_names_to_funcs = {
     "Home": main_page,
-    "Region comparator": page2,
+    #"Region comparator": page2,
     "Find the optimal location for your firm": page3 #,
 }
 
