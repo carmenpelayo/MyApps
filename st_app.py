@@ -142,78 +142,79 @@ def recommendation():
     nuts2
     
     def recommendation(input_vector, weights = None):
-    
-      assert len(input_vector) == 14 #len(input_vector) must always be always 13 (one value for each dimesion)
-      idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
-      good_vals = [1] * 7 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
-      input_vector.extend(good_vals)
+        
+        print(input_vector, weights)
+        assert len(input_vector) == 14 #len(input_vector) must always be always 13 (one value for each dimesion)
+        idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
+        good_vals = [1] * 7 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
+        input_vector.extend(good_vals)
 
-      #Assigning weights of importance to each dimension
-      if weights == None:
-          weights = [1/8] * 8 
-      assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each evaluation block)
-      assert sum(weights) == 1 #total weight needs to be 1
+        #Assigning weights of importance to each dimension
+        if weights == None:
+        weights = [1/8] * 8 
+        assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each evaluation block)
+        assert sum(weights) == 1 #total weight needs to be 1
 
-      #Weighting the input and master dataframe
-      n_areas = sum(input_vector[:8])
-      n_matur = sum(input_vector[11:13])
+        #Weighting the input and master dataframe
+        n_areas = sum(input_vector[:8])
+        n_matur = sum(input_vector[11:13])
 
-      #Non-weighted input vector and dataframe converted to arrays
-      array = np.array(dfn)
-      input_array = np.array(input_vector)
+        #Non-weighted input vector and dataframe converted to arrays
+        array = np.array(dfn)
+        input_array = np.array(input_vector)
 
-      #Getting the complete weights
-      complete_weights = [0] * 21
+        #Getting the complete weights
+        complete_weights = [0] * 21
 
-      for i in range(len(weights)):
+        for i in range(len(weights)):
 
         if i == 0: #Weight of tech areas
-          for j in range(9):
-            if j in idx_yes:
-              complete_weights[j] = weights[0] / n_areas        
+        for j in range(9):
+        if j in idx_yes:
+          complete_weights[j] = weights[0] / n_areas        
 
         elif i == 1: #Weight of SME/LE
-          if input_vector[9] == 1:
-            complete_weights[9] = weights[1]
-            complete_weights[10] = 0
-          else:
-            complete_weights[9] = 0
-            complete_weights[10] = weights[1]
+        if input_vector[9] == 1:
+        complete_weights[9] = weights[1]
+        complete_weights[10] = 0
+        else:
+        complete_weights[9] = 0
+        complete_weights[10] = weights[1]
 
         elif i == 2: #Weight of tech maturity
-          for j in range(11,14):
-            if j in idx_yes:
-              complete_weights[j] = weights[2] / n_matur 
+        for j in range(11,14):
+        if j in idx_yes:
+          complete_weights[j] = weights[2] / n_matur 
 
         elif i == 3: #Weight of capital
-          complete_weights[14:17] = [weights[3] / 3] * 3
+        complete_weights[14:17] = [weights[3] / 3] * 3
 
         elif i == 4: #Weight of hhrr
-          complete_weights[17] = weights[4] 
+        complete_weights[17] = weights[4] 
 
         elif i == 5: #Weight of innovative ecosystem
-          complete_weights[18] = weights[5] 
+        complete_weights[18] = weights[5] 
 
         elif i == 6: #Weight of government
-          complete_weights[19] = weights[6]
+        complete_weights[19] = weights[6]
 
         elif i == 7: #Weight of tech infrastructure
-          complete_weights[20] = weights[7]
+        complete_weights[20] = weights[7]
 
-      #Weighting
-      weights_array = np.array(complete_weights).reshape(1, -1)
-      weighted_regions = array * weights_array
-      weighted_input = (input_array * weights_array)
+        #Weighting
+        weights_array = np.array(complete_weights).reshape(1, -1)
+        weighted_regions = array * weights_array
+        weighted_input = (input_array * weights_array)
 
-      #Matchmaking (using cosine distances)
-      simil = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
-      match = pd.DataFrame(simil)
-      match["Region"] = regions
-      match.columns = ["Score", "Region"]
-      match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
-      match = pd.merge(match, nuts2, how="inner", on="Region")
+        #Matchmaking (using cosine distances)
+        simil = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
+        match = pd.DataFrame(simil)
+        match["Region"] = regions
+        match.columns = ["Score", "Region"]
+        match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
+        match = pd.merge(match, nuts2, how="inner", on="Region")
 
-      return match
+        return match
 
     
     match = recommendation(input_vector, weights_vector) 
