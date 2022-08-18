@@ -151,7 +151,7 @@ def recommendation():
 
         #Assigning weights of importance to each dimension
         if weights == None:
-        weights = [1/8] * 8 
+            weights = [1/8] * 8 
         assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each evaluation block)
         assert sum(weights) == 1 #total weight needs to be 1
 
@@ -167,39 +167,38 @@ def recommendation():
         complete_weights = [0] * 21
 
         for i in range(len(weights)):
-
-        if i == 0: #Weight of tech areas
-        for j in range(9):
-        if j in idx_yes:
-          complete_weights[j] = weights[0] / n_areas        
+            if i == 0: #Weight of tech areas
+                for j in range(9):
+                    if j in idx_yes:
+                      complete_weights[j] = weights[0] / n_areas        
 
         elif i == 1: #Weight of SME/LE
-        if input_vector[9] == 1:
-        complete_weights[9] = weights[1]
-        complete_weights[10] = 0
-        else:
-        complete_weights[9] = 0
-        complete_weights[10] = weights[1]
+            if input_vector[9] == 1:
+                complete_weights[9] = weights[1]
+                complete_weights[10] = 0
+            else:
+            complete_weights[9] = 0
+            complete_weights[10] = weights[1]
 
         elif i == 2: #Weight of tech maturity
-        for j in range(11,14):
-        if j in idx_yes:
-          complete_weights[j] = weights[2] / n_matur 
+            for j in range(11,14):
+                if j in idx_yes:
+                    complete_weights[j] = weights[2] / n_matur 
 
         elif i == 3: #Weight of capital
-        complete_weights[14:17] = [weights[3] / 3] * 3
+            complete_weights[14:17] = [weights[3] / 3] * 3
 
         elif i == 4: #Weight of hhrr
-        complete_weights[17] = weights[4] 
+            complete_weights[17] = weights[4] 
 
         elif i == 5: #Weight of innovative ecosystem
-        complete_weights[18] = weights[5] 
+            complete_weights[18] = weights[5] 
 
         elif i == 6: #Weight of government
-        complete_weights[19] = weights[6]
+            complete_weights[19] = weights[6]
 
         elif i == 7: #Weight of tech infrastructure
-        complete_weights[20] = weights[7]
+            complete_weights[20] = weights[7]
 
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
