@@ -226,7 +226,7 @@ def recommendation():
     
     # Dataframe showing scores
     match = recommendation(input_vector, weights_vector) 
-    st.table(match)
+    st.table(match).head(10)
     #with st.spinner('Wait for it...'):
         #time.sleep(5)
     #st.success('Done!')
