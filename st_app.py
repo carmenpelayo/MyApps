@@ -106,7 +106,7 @@ def recommendation():
     for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
-st.markdown("""---""")
+    st.markdown("""---""")
 
 #DATABASE IMPORT AND PREPARATION
     
