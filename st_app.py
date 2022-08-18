@@ -140,10 +140,9 @@ def recommendation():
     #Database containing region names
     nuts = pd.read_excel("Regional Info DEF.xlsx")
     nuts2 = nuts[["Region", "Region Name"]]
-    st.table(nuts2)
     
     #Database containing region values
-    dfn = pd.read_excel("FINAL Regional Info.xlsx")
+    dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
     st.table(dfn)
     
     def recommendation(input_vector, weights = None):
