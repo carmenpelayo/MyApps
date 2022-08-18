@@ -263,8 +263,10 @@ def comparator():
     st.write("Which regions would you like to compare?")
     reg = st.multiselect("", regions, "ES30")
     st.table(dfn.loc[reg])
-    st.write("Scores are given in a -100 to 100 scale, being 0 the average value in all regions.")
-
+    st.write("Scores are given in a -1 to 1 scale.")
+    st.write("A score of 0 represents the mean score of the regions.")
+    st.write("A score of -1 represents the region is in the lower 15.9% of the regions. Lower scores correspond to left outliers.")
+    st.write("A score of 1 represents the region is in the top 15.9% of the regions. Higher scores correspond to right outliers.")
 
 page_names_to_funcs = {
     "Presentation": home,
