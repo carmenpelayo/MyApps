@@ -261,8 +261,7 @@ def comparator():
     st.header("REGION COMPARATOR")
     st.write("Which regions would you like to compare?")
     reg = st.multiselect("", regions, "ES30")
-    st.write(type(reg))
-    st.dataframe(df.loc[[reg]])
+    st.dataframe(dfn.loc[reg])
 
 
 page_names_to_funcs = {
