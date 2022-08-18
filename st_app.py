@@ -28,7 +28,7 @@ def main_page():
     image = Image.open('How-to-Find-the-Perfect-Location-for-Your-Small-Business.jpg')
     st.image(image)
     
-def recommendation():
+def location_recommendation():
     st.header("🏢 SELECT YOUR BUSINESS ATTRIBUTES")
     
  #CAPTURING INPUT
@@ -247,23 +247,29 @@ def recommendation():
     ))
     st.subheader("To make a new search, just go back to the top and modify your configuration!")
 
-#def page2():
-    #projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
-    #projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
-    #regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
-    #regions = regions[1:]
-    #st.header("Which regions would you like to compare?")
-    #comp = st.multiselect("", regions, "ES30")
-    #df = pd.read_excel('Regional Vectors DEF.xlsx')
-    #df = df.rename(columns={'Unnamed: 0':'NUTS2'})
-    #st.dataframe(df.loc[comp])
+#def comparator():
+    #DATABASE IMPORT AND PREPARATION
+    
+    #Database containing region names
+    nuts = pd.read_excel("Regional Info DEF.xlsx")
+    nuts2 = nuts[["Region", "Region Name", "Country Name"]]
+    
+    #Database containing region values
+    dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
+    regions = dfn["NUTS 2 Code"].tolist()
+    
+    st.header("REGION COMPARATOR")
+    st.write("Which regions would you like to compare?")
+    reg = st.multiselect("", regions, "ES30")
+    st.write(type(reg))
+    #st.dataframe(df.loc[[reg]])
 
 
 page_names_to_funcs = {
     "Presentation": home,
     "Intro Apps": main_page,
-    #"Region comparator": page2,
-    "Find your optimal location": recommendation #,
+    "Find Your Optimal Location": location_recommendation,
+    "Region Comparator": comparator
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
