@@ -283,7 +283,7 @@ def comparator():
     st.subheader("How to interpret the parameters displayed:")
     st.write(
         """
-        - *AI*: Total value of AI (Artificial Intelligence) projects developed in the region.
+        - **AI**: Total value of AI (Artificial Intelligence) projects developed in the region.
         - Big Data: Total value of Big Data projects developed in the region.
         - Computing: Total value of Computing projects developed in the region.
         - Cybersecurity: Total value of Cybersecurityprojects developed in the region.
