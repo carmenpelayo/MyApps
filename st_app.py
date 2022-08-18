@@ -267,7 +267,9 @@ def comparator():
     st.write("A score of 0 represents the mean score of the regions.")
     st.write("A score of -1 represents the region is in the lower 15.9% of the regions. Lower scores correspond to left outliers.")
     st.write("A score of 1 represents the region is in the top 15.9% of the regions. Higher scores correspond to right outliers.")
-
+    #image = Image.open('How-to-Find-the-Perfect-Location-for-Your-Small-Business.jpg')
+    #st.image(image)
+    
 page_names_to_funcs = {
     "Presentation": home,
     "Intro Apps": main_page,
