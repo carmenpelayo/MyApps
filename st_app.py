@@ -10,7 +10,7 @@ from PIL import Image
 import scipy
 from scipy.spatial import distance
 
-mots_count
+mots_count = []
 def home():
     st.title("Welcome to my world!")
     st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
