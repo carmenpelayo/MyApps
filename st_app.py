@@ -15,8 +15,10 @@ def home():
     st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
     st.write('What brings you here?')
     mot_vals = ['Just curiosity', 'Your profile seems interesting', 'I wanna hire you!']
+    mots = []
     motivation = st.multiselect("", mot_vals, 'Select your motivation')
-    
+    mots_count = mots.append(motivation)
+    st.write(mots_count)
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
