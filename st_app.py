@@ -144,6 +144,7 @@ def recommendation():
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
     regions = dfn.index.values.tolist()
+    st.write(regions)
     
     def recommendation(input_vector, weights_vector = None):
         
@@ -207,8 +208,6 @@ def recommendation():
         #Weighting
         weights_array = np.array(complete_weights).reshape(1,-1)
         array = array[:,1:]
-        st.write(weights_array)
-        st.write(array)
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
 
