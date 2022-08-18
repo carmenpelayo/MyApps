@@ -265,7 +265,7 @@ def comparator():
     reg = st.multiselect("", regions, "ES30")
     
     #RESULTS
-    st.table(dfn.loc[reg])
+    st.table(dfn.loc[reg].T)
     
     #Results interpretation
     st.subheader("How to read the scores obtained:")
