@@ -143,6 +143,7 @@ def recommendation():
     
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
+    regions = dfn.index.values.tolist()
     
     def recommendation(input_vector, weights = None):
         
