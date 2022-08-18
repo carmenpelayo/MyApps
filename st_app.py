@@ -177,8 +177,8 @@ def recommendation():
                     complete_weights[9] = weights[1]
                     complete_weights[10] = 0
                 else:
-                complete_weights[9] = 0
-                complete_weights[10] = weights[1]
+                    complete_weights[9] = 0
+                    complete_weights[10] = weights[1]
 
             elif i == 2: #Weight of tech maturity
                 for j in range(11,14):
