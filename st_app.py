@@ -106,44 +106,20 @@ def recommendation():
     for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
- #DATABASE IMPORT AND PREPARATION
-    
-    # Regions
-    #projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
-    #projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
-    #regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
-    #regions = regions[1:]
-    #df_regions = pd.DataFrame({'NUTS2': regions}) # List of regions (with data)
-    #nuts2 = pd.read_excel("Regional Info DEF.xlsx")
-
-    # Countries
-    #countries = nuts2[['Region','Country Name']]
-    #countries['Code'] = countries.Region.str[:2]
-    #countries = countries.rename(columns={'Region':'NUTS2', 'Country Name':'Country' }) 
-    
-    #st.markdown("""---""")
+#st.markdown("""---""")
     #st.header("🏆 YOUR RECOMMENDATIONS")
+
+#DATABASE IMPORT AND PREPARATION
     
-    #Loading the files needed to calculate the recommendation
-    #dfn = pd.read_excel('FINAL Regional Vectors.xlsx')
-    #regions = list(dfn["Unnamed: 0"])
-    #countries = pd.read_excel('Regional Info DEF.xlsx')
-    
-    # Regional Vectors (normalized)
-    #df = pd.read_excel('FINAL Regional Vectors.xlsx')
-    #df = df.rename(columns={'Unnamed: 0':'NUTS2'})
-    #df_regvectors = pd.merge(df_regions, df, on='NUTS2', how='left') 
-    #df_regvectors.fillna(0, inplace = True)
-    #dfn = np.array(df_regvectors)[:,1:]
-    
- #MATCHMAKING
     #Database containing region names
     nuts = pd.read_excel("Regional Info DEF.xlsx")
-    nuts2 = nuts[["Region", "Region Name"]]
+    nuts2 = nuts[["Region", "Region Name", "Country Name"]]
     
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
     regions = dfn["NUTS 2 Code"].tolist()
+    
+ #MATCHMAKING
     
     def recommendation(input_vector, weights_vector = None):
         
@@ -216,7 +192,6 @@ def recommendation():
         match["Region"] = regions
         match.columns = ["Score", "Region"]
         match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
-        #st.table(match)
         match = pd.merge(match, nuts2, how="inner", on="Region")
 
         return match
