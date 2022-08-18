@@ -204,10 +204,10 @@ def recommendation():
                 complete_weights[20] = weights[7]
 
         #Weighting
-        weights_array = np.array(complete_weights).reshape(1, -1)
+        weights_array = np.array(complete_weights)
         array = array[:,1:]
-        st.write(array)
         st.write(weights_array)
+        st.write(array)
         weighted_regions = array * weights_array
         weighted_input = (input_array * weights_array)
 
