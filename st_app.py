@@ -9,6 +9,7 @@ import plotly.express as px
 from PIL import Image
 import scipy
 from scipy.spatial import distance
+from scipy.stats import zscore
 
 def home():
     st.title("Welcome to my world!")
