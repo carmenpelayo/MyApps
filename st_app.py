@@ -224,6 +224,7 @@ def page3():
     with st.spinner('Wait for it...'):
     time.sleep(5)
     st.success('Done!')
+    st.balloons()
    
 #RESULTS
     st.subheader("Given your business attributes and preferences, your recommended regions in Europe are...")
