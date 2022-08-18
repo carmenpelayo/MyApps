@@ -260,7 +260,7 @@ def comparator():
     dfn = dfn.set_index("NUTS 2 Code")
     
     #CONFIGURATOR
-    st.header("REGION COMPARATOR")
+    st.header("📊 REGION COMPARATOR")
     st.subheader("Which regions would you like to compare?")
     reg = st.multiselect("", regions, "ES30")
     
