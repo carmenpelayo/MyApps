@@ -218,7 +218,7 @@ def recommendation():
     
     match = recommendation(input_vector, weights_vector) 
     with st.spinner('Wait for it...'):
-    time.sleep(5)
+        time.sleep(5)
     st.success('Done!')
     st.balloons()
    
