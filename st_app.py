@@ -245,7 +245,6 @@ def recommendation():
            ),
        ],
     ))
-    st.dataframe(match.head(nplot))
     
 
 #def page2():
