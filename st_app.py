@@ -221,17 +221,19 @@ def recommendation():
 
         return match
 
+    #RESULTS
+    st.subheader("Given your business attributes and preferences, your recommended regions in Europe are...")
     
+    # Dataframe showing scores
     match = recommendation(input_vector, weights_vector) 
+    st.table(match)
     #with st.spinner('Wait for it...'):
         #time.sleep(5)
     #st.success('Done!')
     #st.balloons()
    
-#RESULTS
-    st.subheader("Given your business attributes and preferences, your recommended regions in Europe are...")
-    
-    # Plot
+
+    # Map
     nplot = 10
     topplot = 3
     sel=match.head(nplot).set_index('Region') 
