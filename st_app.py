@@ -144,7 +144,6 @@ def recommendation():
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
     regions = dfn["NUTS 2 Code"].tolist()
-    st.write(regions)
     
     def recommendation(input_vector, weights_vector = None):
         
@@ -217,8 +216,8 @@ def recommendation():
         match["Region"] = regions
         match.columns = ["Score", "Region"]
         match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
-        st.table(match)
-        #match = pd.merge(match, nuts2, how="inner", on="Region")
+        #st.table(match)
+        match = pd.merge(match, nuts2, how="inner", on="Region")
 
         return match
 
