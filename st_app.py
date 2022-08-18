@@ -218,7 +218,8 @@ def recommendation():
         match["Region"] = regions
         match.columns = ["Score", "Region"]
         match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
-        match = pd.merge(match, nuts2, how="inner", on="Region")
+        st.table(match)
+        #match = pd.merge(match, nuts2, how="inner", on="Region")
 
         return match
 
