@@ -172,33 +172,33 @@ def recommendation():
                     if j in idx_yes:
                       complete_weights[j] = weights[0] / n_areas        
 
-        elif i == 1: #Weight of SME/LE
-            if input_vector[9] == 1:
-                complete_weights[9] = weights[1]
-                complete_weights[10] = 0
-            else:
-            complete_weights[9] = 0
-            complete_weights[10] = weights[1]
+            elif i == 1: #Weight of SME/LE
+                if input_vector[9] == 1:
+                    complete_weights[9] = weights[1]
+                    complete_weights[10] = 0
+                else:
+                complete_weights[9] = 0
+                complete_weights[10] = weights[1]
 
-        elif i == 2: #Weight of tech maturity
-            for j in range(11,14):
-                if j in idx_yes:
-                    complete_weights[j] = weights[2] / n_matur 
+            elif i == 2: #Weight of tech maturity
+                for j in range(11,14):
+                    if j in idx_yes:
+                        complete_weights[j] = weights[2] / n_matur 
 
-        elif i == 3: #Weight of capital
-            complete_weights[14:17] = [weights[3] / 3] * 3
+            elif i == 3: #Weight of capital
+                complete_weights[14:17] = [weights[3] / 3] * 3
 
-        elif i == 4: #Weight of hhrr
-            complete_weights[17] = weights[4] 
+            elif i == 4: #Weight of hhrr
+                complete_weights[17] = weights[4] 
 
-        elif i == 5: #Weight of innovative ecosystem
-            complete_weights[18] = weights[5] 
+            elif i == 5: #Weight of innovative ecosystem
+                complete_weights[18] = weights[5] 
 
-        elif i == 6: #Weight of government
-            complete_weights[19] = weights[6]
+            elif i == 6: #Weight of government
+                complete_weights[19] = weights[6]
 
-        elif i == 7: #Weight of tech infrastructure
-            complete_weights[20] = weights[7]
+            elif i == 7: #Weight of tech infrastructure
+                complete_weights[20] = weights[7]
 
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
