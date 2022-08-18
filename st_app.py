@@ -143,7 +143,7 @@ def recommendation():
     
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
-    regions = dfn.index.values.tolist()
+    regions = dfn["NUTS 2 Code"].tolist()
     st.write(regions)
     
     def recommendation(input_vector, weights_vector = None):
