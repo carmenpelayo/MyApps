@@ -137,7 +137,7 @@ def recommendation():
     #dfn = np.array(df_regvectors)[:,1:]
     
  #MATCHMAKING
-    nuts = pd.read_excel("/content/drive/MyDrive/TFG/Datasets/Regional Info DEF.xlsx")
+    nuts = pd.read_excel("Regional Info DEF.xlsx")
     nuts2 = nuts[["Region", "Region Name"]]
     nuts2
     
