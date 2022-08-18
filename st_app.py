@@ -137,9 +137,12 @@ def recommendation():
     #dfn = np.array(df_regvectors)[:,1:]
     
  #MATCHMAKING
+    #Database containing region names
     nuts = pd.read_excel("Regional Info DEF.xlsx")
     nuts2 = nuts[["Region", "Region Name"]]
-    nuts2
+    
+    #Database containing region values
+    dfn = pd.read_excel("FINAL Regional Info.xlsx")
     
     def recommendation(input_vector, weights = None):
         
