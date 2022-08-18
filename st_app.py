@@ -260,6 +260,7 @@ def comparator():
     
     st.header("REGION COMPARATOR")
     st.write("Which regions would you like to compare?")
+    st.table(dfn)
     reg = st.multiselect("", regions, "ES30")
     st.write(reg)
     comp_dfn = dfn.loc[reg]
