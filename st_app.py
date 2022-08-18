@@ -245,7 +245,7 @@ def recommendation():
            ),
        ],
     ))
-    st.header("To make a new search, just go back to the top and modify your configuration!")
+    st.subheader("To make a new search, just go back to the top and modify your configuration!")
 
 #def page2():
     #projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
