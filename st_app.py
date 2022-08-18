@@ -247,7 +247,7 @@ def location_recommendation():
     ))
     st.subheader("To make a new search, just go back to the top and modify your configuration!")
 
-#def comparator():
+def comparator():
     #DATABASE IMPORT AND PREPARATION
     
     #Database containing region names
