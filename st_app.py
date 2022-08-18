@@ -197,7 +197,7 @@ def recommendation():
         return match
 
     #LOADING...
-    with st.spinner('Wait for it...'):
+    #with st.spinner('Wait for it...'):
         #time.sleep(5)
     st.success('Done!')
     st.balloons()
