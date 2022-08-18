@@ -106,8 +106,7 @@ def recommendation():
     for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
-#st.markdown("""---""")
-    #st.header("🏆 YOUR RECOMMENDATIONS")
+st.markdown("""---""")
 
 #DATABASE IMPORT AND PREPARATION
     
@@ -203,7 +202,7 @@ def recommendation():
     st.balloons()
     
     #RESULTS!
-    st.subheader("Given your business attributes and preferences, your recommended regions in Europe are...")
+    st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
     
     # Dataframe showing scores
     match = recommendation(input_vector, weights_vector) 
@@ -246,7 +245,7 @@ def recommendation():
            ),
        ],
     ))
-    st.write("To make a new search, just go back to the top and modify your configuration!")
+    st.header("To make a new search, just go back to the top and modify your configuration!")
 
 #def page2():
     #projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
