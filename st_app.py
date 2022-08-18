@@ -276,7 +276,7 @@ def page3():
 
 
 page_names_to_funcs = {
-    "Presentation": home
+    "Presentation": home,
     "Home": main_page,
     #"Region comparator": page2,
     "Find the optimal location for your firm": page3 #,
