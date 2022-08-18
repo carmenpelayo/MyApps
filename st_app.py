@@ -205,7 +205,7 @@ def recommendation():
 
         #Weighting
         weights_array = np.array(complete_weights).reshape(1, -1)
-        array = array[1:]
+        array = array[:,1:]
         st.write(array)
         st.write(weights_array)
         weighted_regions = array * weights_array
