@@ -221,6 +221,9 @@ def page3():
 
     
     match = recommendation(input_vector, weights_vector) 
+    with st.spinner('Wait for it...'):
+    time.sleep(5)
+    st.success('Done!')
    
 #RESULTS
     st.subheader("Given your business attributes and preferences, your recommended regions in Europe are...")
