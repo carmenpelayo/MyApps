@@ -257,14 +257,13 @@ def comparator():
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
     regions = dfn["NUTS 2 Code"].tolist()
+    dfn = dfn.set_index("NUTS 2 Code")
     
     st.header("REGION COMPARATOR")
     st.write("Which regions would you like to compare?")
     st.table(dfn)
     reg = st.multiselect("", regions, "ES30")
-    st.write(reg)
-    comp_dfn = dfn.loc[reg]
-    st.table(comp_dfn)
+    st.table(dfn.loc[reg])
 
 
 page_names_to_funcs = {
