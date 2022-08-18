@@ -261,9 +261,9 @@ def comparator():
     
     st.header("REGION COMPARATOR")
     st.write("Which regions would you like to compare?")
-    st.table(dfn)
     reg = st.multiselect("", regions, "ES30")
     st.table(dfn.loc[reg])
+    st.write("Scores are given in a -100 to 100 scale, being 0 the average value in all regions.")
 
 
 page_names_to_funcs = {
