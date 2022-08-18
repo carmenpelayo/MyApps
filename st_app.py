@@ -20,7 +20,7 @@ def home():
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
-    st.subheader('This web was made by Carmen Pelayo Fernandez in 2022')
+    st.subheader('This program was made by Carmen Pelayo Fernandez in 2022')
     st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
              for entities operating in the European ICT (Information and Communication Technologies) industry. It can also be configured to fit other purposes, 
              like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.
@@ -28,10 +28,8 @@ def main_page():
     image = Image.open('How-to-Find-the-Perfect-Location-for-Your-Small-Business.jpg')
     st.image(image)
     
-
-
-def page3():
-    st.header("🏢 YOUR BUSINESS ATTRIBUTES")
+def recommendation():
+    st.header("🏢 SELECT YOUR BUSINESS ATTRIBUTES")
     
  #CAPTURING INPUT
 
@@ -48,11 +46,10 @@ def page3():
              'Internet',
              'IoT',
              'Media & Communication',
-             'Other',
              'Robotics',
              'Software']
     D1 = st.multiselect("", areas, areas)
-    # Filling first 10 values of the input_vector 
+    # Filling first 9 values of the input_vector 
     for a in areas:
         if a in D1:
             input_vector.append(1)
@@ -64,17 +61,19 @@ def page3():
     st.write('Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?')
     D2_val = ['SME', 'LE']
     D2 = st.radio("", tuple(D2_val), key=2, horizontal=True)
-    # Filling index 11 of the input_vector
-    if D2 == "Yes":
+    # Filling index 10 and 11 of the input_vector
+    if D2 == "SME":
         input_vector.append(1)
+        input_vector.append(0)
     else:
         input_vector.append(0)
+        input_vector.append(1)
     
     # DIMENSION 3: Technological Maturity
     st.subheader('Technological maturity')
     st.write('What are you working on?')
-    D4_val = ['Deep Tech', 'Development', 'Integration']
-    D4 = st.multiselect("", D4_val, 'Deep Tech')
+    D4_val = ['Research', 'Development', 'Integration']
+    D4 = st.multiselect("", D4_val, 'Research')
     # Filling indexes 12, 13 and 14 of the input_vector
     for maturity in D4_val:
         if maturity in D4:
@@ -86,7 +85,7 @@ def page3():
     #STEP 2: Creating the weights vector (8 values)
     st.markdown("""---""")
     weights = []
-    st.header("🛠️ YOUR BUSINESS PREFERENCES")
+    st.header("🛠️ CONFIGURE YOUR BUSINESS PREFERENCES")
     st.write('How important are the following business parameters in your location decision?')
     
     dimensions = ["Technological areas",
@@ -104,118 +103,117 @@ def page3():
     total_weight = sum(weights)
     weights_vector = []
     
-    
     for w in range(len(weights)):
         weights_vector.append(weights[w]/total_weight)
 
  #DATABASE IMPORT AND PREPARATION
     
     # Regions
-    projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
-    projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
-    regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
-    regions = regions[1:]
-    df_regions = pd.DataFrame({'NUTS2': regions}) # List of regions (with data)
-    nuts2 = pd.read_excel("Regional Info DEF.xlsx")
+    #projects = pd.read_excel('ICT_H2020.xlsx', 'Proyectos')
+    #projects['NUTS 2 Code'] = projects['NUTS 3 Code'].str[:4]
+    #regions = list(projects.groupby(by = "NUTS 2 Code").count().reset_index()["NUTS 2 Code"])
+    #regions = regions[1:]
+    #df_regions = pd.DataFrame({'NUTS2': regions}) # List of regions (with data)
+    #nuts2 = pd.read_excel("Regional Info DEF.xlsx")
 
     # Countries
-    countries = nuts2[['Region','Country Name']]
-    countries['Code'] = countries.Region.str[:2]
-    countries = countries.rename(columns={'Region':'NUTS2', 'Country Name':'Country' }) 
+    #countries = nuts2[['Region','Country Name']]
+    #countries['Code'] = countries.Region.str[:2]
+    #countries = countries.rename(columns={'Region':'NUTS2', 'Country Name':'Country' }) 
     
-    st.markdown("""---""")
-    st.header("🏆 YOUR RECOMMENDATIONS")
+    #st.markdown("""---""")
+    #st.header("🏆 YOUR RECOMMENDATIONS")
     
     #Loading the files needed to calculate the recommendation
-    #dfn = pd.read_excel('Regional Vectors DEF.xlsx')
+    #dfn = pd.read_excel('FINAL Regional Vectors.xlsx')
     #regions = list(dfn["Unnamed: 0"])
     #countries = pd.read_excel('Regional Info DEF.xlsx')
     
     # Regional Vectors (normalized)
-    df = pd.read_excel('Regional Vectors DEF.xlsx')
-    df = df.rename(columns={'Unnamed: 0':'NUTS2'})
-    df_regvectors = pd.merge(df_regions, df, on='NUTS2', how='left') 
-    df_regvectors.fillna(0, inplace = True)
-    dfn = np.array(df_regvectors)[:,1:]
+    #df = pd.read_excel('FINAL Regional Vectors.xlsx')
+    #df = df.rename(columns={'Unnamed: 0':'NUTS2'})
+    #df_regvectors = pd.merge(df_regions, df, on='NUTS2', how='left') 
+    #df_regvectors.fillna(0, inplace = True)
+    #dfn = np.array(df_regvectors)[:,1:]
     
  #MATCHMAKING
+    nuts = pd.read_excel("/content/drive/MyDrive/TFG/Datasets/Regional Info DEF.xlsx")
+    nuts2 = nuts[["Region", "Region Name"]]
+    nuts2
     
     def recommendation(input_vector, weights = None):
-        #Matchmaking algorithm
-        assert len(input_vector) == 14 #len(input_vector) must always be always 8 (1 value for each dimesion)
-        matur_input = input_vector[-3:]
-        input_vector.extend([0])
+    
+      assert len(input_vector) == 14 #len(input_vector) must always be always 13 (one value for each dimesion)
+      idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
+      good_vals = [1] * 7 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
+      input_vector.extend(good_vals)
 
-        if input_vector[10] == 1: #The user is a SME
-            input_vector[11] = 0
-            input_vector[-3:] = matur_input
-        else: #The user is a Large Enterprise
-            input_vector[11] = 1
-            input_vector[-3:] = matur_input
+      #Assigning weights of importance to each dimension
+      if weights == None:
+          weights = [1/8] * 8 
+      assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each evaluation block)
+      assert sum(weights) == 1 #total weight needs to be 1
 
-        good_vals = [1] * 8 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
-        idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
-        input_vector.extend(good_vals)
+      #Weighting the input and master dataframe
+      n_areas = sum(input_vector[:8])
+      n_matur = sum(input_vector[11:13])
 
-        #Assigning weights of importance to each dimension
-        if weights == None:
-            weights = [1/8] * 8 
-        assert len(weights) == 8 #len(weights_list) must always be always 8 (1 value for each dimesion)
+      #Non-weighted input vector and dataframe converted to arrays
+      array = np.array(dfn)
+      input_array = np.array(input_vector)
 
-        #Weighting the input and master dataframe
-        n_areas = sum(input_vector[:10])
-        n_matur = sum(input_vector[12:15])
+      #Getting the complete weights
+      complete_weights = [0] * 21
 
-        #Non-weighted input vector and dataframe converted to arrays
-        array = np.array(dfn)
-        input_array = np.array(input_vector)
+      for i in range(len(weights)):
 
-        #Getting the complete weights
-        complete_weights = [0] * 23
+        if i == 0: #Weight of tech areas
+          for j in range(9):
+            if j in idx_yes:
+              complete_weights[j] = weights[0] / n_areas        
 
-        for i in range(len(weights)):
-            if i == 0: #Weight of tech areas
-                for j in range(10): #EPC
-                    if j in idx_yes:
-                        complete_weights[j] = weights[0] / n_areas    
-                        #complete_weights[j] = weights[0] / 10      #EPC         
-            elif i == 1: #Weight of SME/LE
-                if input_vector[10] == 1:
-                    complete_weights[10] = weights[1]
-                    complete_weights[11] = 0
-                else:
-                    complete_weights[10] = 0
-                    complete_weights[11] = weights[1]
-            elif i == 2: #Weight of tech maturity
-                for j in range(12,15):
-                    if j in idx_yes:
-                        complete_weights[j] = weights[2] / n_matur 
-            elif i == 3: #Weight of capital
-                complete_weights[15:18] = [weights[3] / 3] * 3                                   
-            elif i == 4: #Weight of hhrr
-                complete_weights[18] = weights[4]
-            elif i == 5: #Weight of innovative ecosystem
-                complete_weights[19:21] = [weights[5] / 2] * 2 
-            elif i == 6:
-                complete_weights[21] = weights[6]
-            elif i == 7:
-                complete_weights[22] = weights[7]
+        elif i == 1: #Weight of SME/LE
+          if input_vector[9] == 1:
+            complete_weights[9] = weights[1]
+            complete_weights[10] = 0
+          else:
+            complete_weights[9] = 0
+            complete_weights[10] = weights[1]
 
-        #Weighting
-        weights_array = np.array(complete_weights).reshape(1, -1)
-        weighted_regions = array * weights_array
-        weighted_input = (input_array * weights_array)
+        elif i == 2: #Weight of tech maturity
+          for j in range(11,14):
+            if j in idx_yes:
+              complete_weights[j] = weights[2] / n_matur 
 
-        #Matchmaking (using cosine distances)
-        simil = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
-        match = pd.DataFrame(simil)
-        match["Region"] = regions
-        match.columns = ["Score", "Region"]
-        match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
-        match = pd.merge(match, nuts2, how="inner", on="Region")
-        match = match.fillna(0)
+        elif i == 3: #Weight of capital
+          complete_weights[14:17] = [weights[3] / 3] * 3
 
-        return match[["Score","Region","Region Name","Country Name"]] #EPC
+        elif i == 4: #Weight of hhrr
+          complete_weights[17] = weights[4] 
+
+        elif i == 5: #Weight of innovative ecosystem
+          complete_weights[18] = weights[5] 
+
+        elif i == 6: #Weight of government
+          complete_weights[19] = weights[6]
+
+        elif i == 7: #Weight of tech infrastructure
+          complete_weights[20] = weights[7]
+
+      #Weighting
+      weights_array = np.array(complete_weights).reshape(1, -1)
+      weighted_regions = array * weights_array
+      weighted_input = (input_array * weights_array)
+
+      #Matchmaking (using cosine distances)
+      simil = (1 - distance.cdist(weighted_regions, weighted_input, 'cosine')) * 100 
+      match = pd.DataFrame(simil)
+      match["Region"] = regions
+      match.columns = ["Score", "Region"]
+      match = match.sort_values(by = 'Score', ascending=False, ignore_index=True)
+      match = pd.merge(match, nuts2, how="inner", on="Region")
+
+      return match
 
     
     match = recommendation(input_vector, weights_vector) 
@@ -281,9 +279,9 @@ def page3():
 
 page_names_to_funcs = {
     "Presentation": home,
-    "Home": main_page,
+    "Intro Apps": main_page,
     #"Region comparator": page2,
-    "Find the optimal location for your firm": page3 #,
+    "Find your optimal location": recommendation #,
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
