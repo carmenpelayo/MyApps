@@ -44,7 +44,7 @@ def location_recommendation():
     input_vector = []
 
     # DIMENSION 1: Tech areas
-    st.write('In which technological areas are you specialized/interested?')
+    st.write('**In which technological areas are you specialized/interested?**')
     areas = ['AI',
              'Big Data',
              'Computation',
@@ -63,8 +63,8 @@ def location_recommendation():
             input_vector.append(0)
             
     # DIMENSION 2: Company Size
-    st.write('Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?')
-    D2_val = ['Small/Mid-sized enterprise', 'Large Enterprise']
+    st.write('**Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?**')
+    D2_val = ['Small/Mid-sized enterprise (<= 250 employees)', 'Large Enterprise (>250 employees)']
     D2 = st.radio("", tuple(D2_val), key=2, horizontal=True)
     # Filling index 10 and 11 of the input_vector
     if D2 == "SME":
@@ -75,7 +75,7 @@ def location_recommendation():
         input_vector.append(1)
     
     # DIMENSION 3: Technological Maturity
-    st.write('Are you researching, developing or integrating technology?')
+    st.write('**Are you researching, developing or integrating technology?**')
     D4_val = ['Research', 'Development', 'Integration']
     D4 = st.multiselect("", D4_val, 'Research')
     # Filling indexes 12, 13 and 14 of the input_vector
@@ -90,17 +90,17 @@ def location_recommendation():
     st.markdown("""---""")
     weights = []
     st.subheader("Step 2: Configure your location preferences.")
-    st.write('How important are the following business parameters in your location decision?')
+    st.write('**How important are the following business parameters in your location decision?**')
     st.write('A score of 0 corresponds to *not important at all* and a score of 100 corresponds to *completely important*.')
     
-    dimensions = ["Technological areas",
-                  "Company size",
-                  "Technological maturity",
-                  "Capital",
-                  "Human resources",
-                  "Innovative ecosystem",
-                  "Legal framework",
-                  "Technological infrastructure"]
+    dimensions = ["Presence of a specialized market in the selected technological areas.",
+                  "Abundance of companies with the same size (SMEs/LEs).",
+                  "Abundance of companies with the same working nature (research/development/integration).",
+                  "Availability of capital.",
+                  "Availability of qualified personnel.",
+                  "Existance of tech hubs.",
+                  "Favourable legal framework.",
+                  "Advanced technical infrastructure."]
     
     for d in dimensions:
         weight = st.slider(d, min_value=0, max_value=100, value=100)
