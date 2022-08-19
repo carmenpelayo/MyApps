@@ -274,6 +274,7 @@ def comparator():
     
     #CONFIGURATOR
     st.header("📊 REGION COMPARATOR")
+    st.write("This app evaluates 270 European regions in 21 socio-economic parameters. Use the *USER GUIDE* below to learn how to configure the search and interpret the results obtained.")
     st.subheader("Which regions would you like to compare?")
     reg = st.multiselect("", regions, "ES30")
     
@@ -281,11 +282,11 @@ def comparator():
     st.table(dfn.loc[reg].T)
     
     #USER GUIDE
-    st.header("User guide")
+    st.header("USER GUIDE")
     tab1, tab2, tab3 = st.tabs(["Regions", "Parameters", "Scores"])
 
     with tab1:
-        st.header("Region codes and names:")
+        st.subheader("Region codes and names:")
         st.table(nuts2)
 
     with tab2:
