@@ -44,8 +44,7 @@ def location_recommendation():
     input_vector = []
 
     # DIMENSION 1: Tech areas
-    st.subheader('Tech areas')
-    st.write('In which technological areas are you interested?')
+    st.write('In which technological areas are you specialized/interested?')
     areas = ['AI',
              'Big Data',
              'Computation',
@@ -64,9 +63,8 @@ def location_recommendation():
             input_vector.append(0)
             
     # DIMENSION 2: Company Size
-    st.subheader('Company size')
     st.write('Are you a small/mid-sized enterprise (SME) or a large enterprise (LE)?')
-    D2_val = ['SME', 'LE']
+    D2_val = ['Small/Mid-sized enterprise', 'Large Enterprise']
     D2 = st.radio("", tuple(D2_val), key=2, horizontal=True)
     # Filling index 10 and 11 of the input_vector
     if D2 == "SME":
@@ -77,8 +75,7 @@ def location_recommendation():
         input_vector.append(1)
     
     # DIMENSION 3: Technological Maturity
-    st.subheader('Technological maturity')
-    st.write('What are you working on?')
+    st.write('Are you researching, developing or integrating technology?')
     D4_val = ['Research', 'Development', 'Integration']
     D4 = st.multiselect("", D4_val, 'Research')
     # Filling indexes 12, 13 and 14 of the input_vector
@@ -93,7 +90,8 @@ def location_recommendation():
     st.markdown("""---""")
     weights = []
     st.subheader("Step 2: Configure your location preferences.")
-    st.write('How important are the following business parameters in your location decision? (0 = not important at all, 100 = completely important')
+    st.write('How important are the following business parameters in your location decision?')
+    st.write('A score of 0 corresponds to *not important at all* and a score of 100 corresponds to *completely important*.')
     
     dimensions = ["Technological areas",
                   "Company size",
