@@ -254,6 +254,7 @@ def comparator():
     #Database containing region names
     nuts = pd.read_excel("Regional Info DEF.xlsx")
     nuts2 = nuts[["Region", "Region Name", "Country Name"]]
+    nuts2 = nuts2.rename(columns = {"Region":"NUTS 2 Code"})
     
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
@@ -307,6 +308,8 @@ def comparator():
         - **Infrastructure**: Score calculated by observing at each region's 4G coverage, fiber coverage, Internet bandwith per user, 5G commercial networks, number of Internet exchange points, the number and maturity of 5G pilots, the time to get electricity, 4G's launch year and 5G spectrum auction plans.
         """
     )
+    st.subheader("Region codes and names:")
+    st.table(nuts2)
     
 page_names_to_funcs = {
     "👩 Introduction": home,
