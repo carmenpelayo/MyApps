@@ -15,7 +15,7 @@ def home():
     st.title("Welcome to my world!")
     st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
     st.write('What brings you here?')
-    mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I wanna hire you!']
+    mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
     motivation = st.selectbox("Select your motivation.", mot_vals)
 
 def main_page():
