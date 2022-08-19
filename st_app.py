@@ -196,10 +196,11 @@ def location_recommendation():
         return match
 
     #LOADING...
-    with st.spinner('Wait for it...'):
-        match = recommendation(input_vector, weights_vector) 
-    st.success('Done!')
-    st.balloons()
+    if st.button('Recommend me!'):
+        with st.spinner('Wait for it...'):
+            match = recommendation(input_vector, weights_vector) 
+        st.success('Done!')
+        st.balloons()
     
     #RESULTS!
     st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
