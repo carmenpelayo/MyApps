@@ -29,7 +29,8 @@ def main_page():
     st.image(image)
     
 def location_recommendation():
-    st.header("🏢 SELECT YOUR BUSINESS ATTRIBUTES")
+    st.header("📍 BUSINESS LOCATION RECOMMENDER")
+    st.subheader("Step 1: Select your entity's attributes.")
     
  #CAPTURING INPUT
 
@@ -85,7 +86,7 @@ def location_recommendation():
     #STEP 2: Creating the weights vector (8 values)
     st.markdown("""---""")
     weights = []
-    st.header("🛠️ CONFIGURE YOUR BUSINESS PREFERENCES")
+    st.subheader("Step 2: Configure your location preferences.")
     st.write('How important are the following business parameters in your location decision?')
     
     dimensions = ["Technological areas",
