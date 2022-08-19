@@ -205,7 +205,6 @@ def location_recommendation():
     
     if result:
         match = recommendation(input_vector, weights_vector) 
-        st.success('Done!')
         st.balloons()
     
     #RESULTS!
