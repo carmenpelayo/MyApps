@@ -20,9 +20,8 @@ def home():
     if motivation == "I want you in my team!":
         st.write("😊 Happy to hear that! You can contact me at:")
         linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-        email = carmenpelayofdez@gmail.com
         st.markdown(linkedin, unsafe_allow_html=True)
-        st.markdown(email, unsafe_allow_html=True)
+        st.write("carmenpelayofdez@gmail.com")
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
