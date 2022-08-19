@@ -24,7 +24,8 @@ def home():
         st.markdown(linkedin, unsafe_allow_html=True)
         st.write("carmenpelayofdez@gmail.com")
     elif motivation == "Just curiosity.":
-        st.write("😊 Sounds good! You can check my apps to get a sense of my work and learn about the tech industry in Europe! To do so, select the *Business location recommender* or the *European region comparator* in the dropdown menu.")
+        st.write("😊 Sounds good!")
+        st.write("You can check my apps to get a sense of my work and learn about the tech industry in Europe! To do so, select the *Business location recommender* or the *European region comparator* in the dropdown menu.")
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
