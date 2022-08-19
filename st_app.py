@@ -34,11 +34,11 @@ def home():
         st.write("Honors in *Environmental Economics* (June 2021)")
         st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
     
+    st.markdown("""---""")
     #USER INTERACTION
     st.write('**What brings you here?**')
     mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
     motivation = st.radio("", tuple(mot_vals), key=3)
-    st.markdown("""---""")
     if motivation == "I want you in my team!":
         st.write("😁 Happy to hear that! You can contact me at:")
         linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
