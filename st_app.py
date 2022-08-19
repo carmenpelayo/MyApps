@@ -18,9 +18,11 @@ def home():
     mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
     motivation = st.radio("", tuple(mot_vals), key=3)
     if motivation == "I want you in my team!":
-        st.write("Happy to hear that! You can contact me at:")
-        link = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-        st.markdown(link, unsafe_allow_html=True)
+        st.write("😊 Happy to hear that! You can contact me at:")
+        linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
+        email = carmenpelayofdez@gmail.com
+        st.markdown(linkedin, unsafe_allow_html=True)
+        st.markdown(email, unsafe_allow_html=True)
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
