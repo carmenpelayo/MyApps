@@ -120,7 +120,6 @@ def location_recommendation():
     regions = dfn["NUTS 2 Code"].tolist()
     
  #MATCHMAKING
-    
     def recommendation(input_vector, weights_vector = None):
         
         print(input_vector, weights_vector)
@@ -197,16 +196,14 @@ def location_recommendation():
         return match
 
     #LOADING...
-    #with st.spinner('Wait for it...'):
-        #time.sleep(5)
+    with st.spinner('Wait for it...'):
+        match = recommendation(input_vector, weights_vector) 
     st.success('Done!')
     st.balloons()
     
     #RESULTS!
     st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
-    
     # Dataframe showing scores
-    match = recommendation(input_vector, weights_vector) 
     st.table(match.head(10))
     
     # Map
