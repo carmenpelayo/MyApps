@@ -315,7 +315,6 @@ def comparator():
     
 page_names_to_funcs = {
     "👩 Introduction": home,
-    "🖥️ My apps": main_page,
     "📍 Business location recommender": location_recommendation,
     "🇪🇺 European region comparator": comparator
 }
