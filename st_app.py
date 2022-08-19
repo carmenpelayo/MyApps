@@ -126,7 +126,6 @@ def location_recommendation():
     regions = dfn["NUTS 2 Code"].tolist()
     
     result = st.button('Recommend me!')
-    st.write(result)
     
  #MATCHMAKING
     def recommendation(input_vector, weights_vector = None):
@@ -207,54 +206,54 @@ def location_recommendation():
  #LOADING...
     
     if result:
-        with st.spinner('Wait for it...'):
-            match = recommendation(input_vector, weights_vector) 
-            st.success('Done!')
-            st.balloons()
+        match = recommendation(input_vector, weights_vector) 
+        st.success('Done!')
+        st.balloons()
     
-        #RESULTS!
+    #RESULTS!
         st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
+        
         # Dataframe showing scores
         st.table(match.head(10))
     
-    # Map
-    nplot = 10
-    topplot = 3
-    sel=match.head(nplot).set_index('Region') 
- 
-    df = pd.read_excel('nuts2xy.xlsx')
-    
-    df_sel = df[df['NUTS_ID'].isin(list(match.head(topplot).Region))]
-    df_sel2 = df[df['NUTS_ID'].isin(list(match.head(nplot).Region))]
+        # Map
+        nplot = 10
+        topplot = 3
+        sel=match.head(nplot).set_index('Region') 
 
-    st.pydeck_chart(pdk.Deck(
-       map_style='mapbox://styles/mapbox/light-v9',
-       initial_view_state=pdk.ViewState(
-           latitude=46.9,
-           longitude=7.5,
-           zoom=3,
-           pitch=0,
-       ),
-       layers=[
+        df = pd.read_excel('nuts2xy.xlsx')
 
-           pdk.Layer(
-               'ScatterplotLayer',
-               data=df_sel,
-               get_position='[lon, lat]',
-               get_color='[200, 30, 0, 254]',
-               get_radius=90000,
+        df_sel = df[df['NUTS_ID'].isin(list(match.head(topplot).Region))]
+        df_sel2 = df[df['NUTS_ID'].isin(list(match.head(nplot).Region))]
+
+        st.pydeck_chart(pdk.Deck(
+           map_style='mapbox://styles/mapbox/light-v9',
+           initial_view_state=pdk.ViewState(
+               latitude=46.9,
+               longitude=7.5,
+               zoom=3,
+               pitch=0,
            ),
-           
-           pdk.Layer(
-               'ScatterplotLayer',
-               data=df_sel2,
-               get_position='[lon, lat]',
-               get_color='[200, 30, 0, 150]',
-               get_radius=50000,
-           ),
-       ],
-    ))
-    st.subheader("To make a new search, just go back to the top and modify your configuration!")
+           layers=[
+
+               pdk.Layer(
+                   'ScatterplotLayer',
+                   data=df_sel,
+                   get_position='[lon, lat]',
+                   get_color='[200, 30, 0, 254]',
+                   get_radius=90000,
+               ),
+
+               pdk.Layer(
+                   'ScatterplotLayer',
+                   data=df_sel2,
+                   get_position='[lon, lat]',
+                   get_color='[200, 30, 0, 150]',
+                   get_radius=50000,
+               ),
+           ],
+        ))
+        st.subheader("To make a new search, just go back to the top and modify your configuration!")
 
 def comparator():
     #DATABASE IMPORT AND PREPARATION
