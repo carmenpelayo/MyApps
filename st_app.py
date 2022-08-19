@@ -130,7 +130,6 @@ def location_recommendation():
  #MATCHMAKING
     def recommendation(input_vector, weights_vector = None):
         
-        st.write(input_vector, weights_vector)
         assert len(input_vector) == 14 #len(input_vector) must always be always 13 (one value for each dimesion)
         idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
         good_vals = [1] * 7 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
@@ -140,7 +139,6 @@ def location_recommendation():
         if weights_vector == None:
             weights_vector = [1/8] * 8 
         assert len(weights_vector) == 8 #len(weights_vector) must always be always 8 (1 value for each evaluation block)
-        assert sum(weights_vector) == 1 #total weight needs to be 1
 
         #Weighting the input and master dataframe
         n_areas = sum(input_vector[:8])
