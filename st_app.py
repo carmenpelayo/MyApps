@@ -29,7 +29,13 @@ def main_page():
     st.image(image)
     
 def location_recommendation():
-    st.header("📍 BUSINESS LOCATION RECOMMENDER")
+    st.title("Location Recommendation System for Businesses in the European ICT Industry")
+    st.subheader('This program was made by Carmen Pelayo Fernandez in 2022')
+    st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
+             for entities operating in the European ICT (Information and Communication Technologies) industry. It can also be configured to fit other purposes, 
+             like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.
+             """)
+    st.header("🔎 CONFIGURE YOUR SEARCH")
     st.subheader("Step 1: Select your entity's attributes.")
     
  #CAPTURING INPUT
@@ -87,7 +93,7 @@ def location_recommendation():
     st.markdown("""---""")
     weights = []
     st.subheader("Step 2: Configure your location preferences.")
-    st.write('How important are the following business parameters in your location decision?')
+    st.write('How important are the following business parameters in your location decision? (0 = not important at all, 100 = completely important')
     
     dimensions = ["Technological areas",
                   "Company size",
@@ -118,6 +124,9 @@ def location_recommendation():
     #Database containing region values
     dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
     regions = dfn["NUTS 2 Code"].tolist()
+    
+    result = st.button('Recommend me!')
+    st.write(result)
     
  #MATCHMAKING
     def recommendation(input_vector, weights_vector = None):
@@ -195,9 +204,8 @@ def location_recommendation():
 
         return match
 
-    #LOADING...
-    result = st.button('Recommend me!')
-    st.write(result)
+ #LOADING...
+    
     if result:
         with st.spinner('Wait for it...'):
             match = recommendation(input_vector, weights_vector) 
