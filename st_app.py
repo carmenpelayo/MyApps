@@ -17,11 +17,14 @@ def home():
     st.write('**What brings you here?**')
     mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
     motivation = st.radio("", tuple(mot_vals), key=3)
+    st.markdown("""---""")
     if motivation == "I want you in my team!":
-        st.write("😊 Happy to hear that! You can contact me at:")
+        st.write("😁 Happy to hear that! You can contact me at:")
         linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
         st.markdown(linkedin, unsafe_allow_html=True)
         st.write("carmenpelayofdez@gmail.com")
+    elif motivation == "Just curiosity.":
+        st.write("😊 Sounds good! You can check my apps to get a sense of my work and learn about the tech industry in Europe! To do so, select the *Business location recommender* or the *European region comparator* in the dropdown menu.")
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
