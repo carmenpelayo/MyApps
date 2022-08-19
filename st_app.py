@@ -14,6 +14,27 @@ from scipy.stats import zscore
 def home():
     st.title("Welcome to my world!")
     st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
+    
+    #RESUME
+    tab1, tab2, tab3 = st.tabs(["Education", "Work", "Other"])
+    with tab1:
+        st.subheader("Education")
+        st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
+        st.write("B.S. in *Business Management and Technology*, **Universidad Carlos III de Madrid** (2018-2022)")
+        st.write("Minor Degree in *Economics*, **Universidad Carlos III de Madrid** (2019-2022)")
+
+    with tab2:
+        st.subheader("Work")
+        st.write("Enterprise Architecture Internship, **Spectrum Brands, Inc.** (Middleton, WI, May-Aug 2022)")
+        st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
+
+    with tab3:
+        st.subheader("Other")
+        st.write("Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry*, July 2022. Grade 10/10.")
+        st.write("Honors in *Environmental Economics* (June 2021)")
+        st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
+    
+    #USER INTERACTION
     st.write('**What brings you here?**')
     mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
     motivation = st.radio("", tuple(mot_vals), key=3)
@@ -26,16 +47,6 @@ def home():
     elif motivation == "Just curiosity.":
         st.write("😊 Sounds good!")
         st.write("You can check my apps to get a sense of my work and learn about the tech industry in Europe! To do so, select the *Business location recommender* or the *European region comparator* in the dropdown menu.")
-
-def main_page():
-    st.title("Location Recommendation System for Businesses in the European ICT Industry")
-    st.subheader('This program was made by Carmen Pelayo Fernandez in 2022')
-    st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
-             for entities operating in the European ICT (Information and Communication Technologies) industry. It can also be configured to fit other purposes, 
-             like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.
-             """)
-    image = Image.open('How-to-Find-the-Perfect-Location-for-Your-Small-Business.jpg')
-    st.image(image)
     
 def location_recommendation():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
