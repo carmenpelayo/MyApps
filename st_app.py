@@ -130,7 +130,7 @@ def location_recommendation():
  #MATCHMAKING
     def recommendation(input_vector, weights_vector = None):
         
-        print(input_vector, weights_vector)
+        st.write(input_vector, weights_vector)
         assert len(input_vector) == 14 #len(input_vector) must always be always 13 (one value for each dimesion)
         idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
         good_vals = [1] * 7 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
