@@ -199,13 +199,13 @@ def location_recommendation():
     if st.button('Recommend me!'):
         with st.spinner('Wait for it...'):
             match = recommendation(input_vector, weights_vector) 
-        st.success('Done!')
-        st.balloons()
+            st.success('Done!')
+            st.balloons()
     
-    #RESULTS!
-    st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
-    # Dataframe showing scores
-    st.table(match.head(10))
+        #RESULTS!
+        st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
+        # Dataframe showing scores
+        st.table(match.head(10))
     
     # Map
     nplot = 10
