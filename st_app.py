@@ -16,7 +16,7 @@ def home():
     st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
     
     #RESUME
-    tab1, tab2, tab3 = st.tabs(["Education", "Work", "Other"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Mentions", "Contact])
     with tab1:
         st.subheader("Education")
         st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
@@ -29,14 +29,20 @@ def home():
         st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
     with tab3:
-        st.subheader("Other")
+        st.subheader("Mentions")
         st.write("Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry*, July 2022. Grade 10/10.")
         st.write("Honors in *Environmental Economics* (June 2021)")
         st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
     
+    with tab4:
+        st.subheader("Contact")
+        linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
+        st.markdown(linkedin, unsafe_allow_html=True)
+        st.write("carmenpelayofdez@gmail.com")
+    
     st.markdown("""---""")
     #USER INTERACTION
-    st.write('**What brings you here?**')
+    st.subheader('**What brings you here?**')
     mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
     motivation = st.radio("", tuple(mot_vals), key=3)
     if motivation == "I want you in my team!":
