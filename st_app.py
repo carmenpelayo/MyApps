@@ -196,7 +196,9 @@ def location_recommendation():
         return match
 
     #LOADING...
-    if st.button('Recommend me!'):
+    result = st.button('Recommend me!')
+    st.write(result)
+    if result:
         with st.spinner('Wait for it...'):
             match = recommendation(input_vector, weights_vector) 
             st.success('Done!')
