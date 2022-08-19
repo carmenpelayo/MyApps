@@ -16,7 +16,7 @@ def home():
     st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
     st.write('What brings you here?')
     mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
-    motivation = st.selectbox("Select your motivation.", mot_vals)
+    motivation = st.radio("", tuple(mot_vals), key=3)
 
 def main_page():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
