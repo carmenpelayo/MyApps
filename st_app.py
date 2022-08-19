@@ -310,8 +310,8 @@ def comparator():
 page_names_to_funcs = {
     "👩 Introduction": home,
     "🖥️ My apps": main_page,
-    "📍 Location recommender": location_recommendation,
-    "📊 Region comparator": comparator
+    "📍 Business location recommender": location_recommendation,
+    "🇪🇺 European region comparator": comparator
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
