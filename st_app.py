@@ -20,7 +20,7 @@ def home():
     #Presentation Video
     col1, col2 = st.columns(2)
     with col1:
-       st.image("watch2.png")
+       st.image("watchdef.png")
 
     with col2:
         video_file = open("IMG_3807.mp4", 'rb')
