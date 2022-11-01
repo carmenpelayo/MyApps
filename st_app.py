@@ -354,7 +354,7 @@ page_names_to_funcs = {
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
-st.sidebar.image("art2.png", use_column_width=True)
+st.sidebar.image("firma art.png", use_column_width=True)
 page_names_to_funcs[selected_page]()
 
 
