@@ -9,8 +9,6 @@ import scipy
 from scipy.spatial import distance
 from scipy.stats import zscore
 
-#APP 1
-
 st.title("Location Recommendation System for Businesses in the European ICT Industry")
 st.subheader('This program was made by Carmen Pelayo Fernandez in 2022')
 st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
@@ -98,11 +96,11 @@ st.markdown("""---""")
 #DATABASE IMPORT AND PREPARATION
 
 #Database containing region names
-nuts = pd.read_excel("Regional Info DEF.xlsx")
+nuts = pd.read_excel("Regional Info.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 
 #Database containing region values
-dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
+dfn = pd.read_excel("Regional Vectors.xlsx")
 regions = dfn["NUTS 2 Code"].tolist()
 
 result = st.button('Recommend me!')
