@@ -52,20 +52,27 @@ def home():
         st.markdown(linkedin, unsafe_allow_html=True)
         st.write("carmenpelayofdez@gmail.com")
     
-    #st.markdown("""---""")
+    st.markdown("""---""")
     #USER INTERACTION
-    #st.subheader('**What brings you here?**')
-    #mot_vals = ['Just curiosity.', 'Your profile seems interesting.', 'I want you in my team!']
-    #motivation = st.radio("", tuple(mot_vals), key=3)
-    #if motivation == "I want you in my team!":
-        #st.write("😁 Happy to hear that! You can contact me at:")
-        #linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-        #st.markdown(linkedin, unsafe_allow_html=True)
-        #st.write("carmenpelayofdez@gmail.com")
-    #elif motivation == "Just curiosity.":
-        #st.write("😊 Sounds good!")
-        #st.write("You can check my apps to get a sense of my work and learn about the tech industry in Europe! To do so, select the *Business location recommender* or the *European region comparator* in the dropdown menu.")
+    st.subheader('**What brings you here?**')
+    mot_vals = ['Just curiosity.', 'I want you in my team!']
+    counts_cur = 0
+    counts_hire = 0
+    motivation = st.radio("", tuple(mot_vals), key=3)
+    if motivation == "I want you in my team!":
+        st.write("😁 Happy to hear that! You can contact me at:")
+        linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
+        st.markdown(linkedin, unsafe_allow_html=True)
+        st.write("carmenpelayofdez@gmail.com")
+        counts_hire +=1
+    elif motivation == "Just curiosity.":
+        st.write("😊 Sounds good!")
+        st.write("You can check my apps to get a sense of my work! To do so, select any of the apps I created in the sidebar menu.")
+        counts_cur += 1
+    st.write(counts_cur)
+    st.write(counts_hire)
     
+#APP 1
 def location_recommendation():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
     st.subheader('This program was made by Carmen Pelayo Fernandez in 2022')
