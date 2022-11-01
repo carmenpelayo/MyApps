@@ -46,7 +46,9 @@ def home():
        st.image("watch2.png")
 
     with col2:
-       st.video("IMG_3807.mp4")
+        video_file = open("IMG_3807.mp4", 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)
     
     #st.markdown("""---""")
     #USER INTERACTION
