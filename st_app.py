@@ -66,11 +66,9 @@ def home():
         st.write("carmenpelayofdez@gmail.com")
         counts_hire +=1
     elif motivation == "Just curiosity.":
-        st.write("😊 Sounds good!")
-        st.write("You can check my apps to get a sense of my work! To do so, select any of the apps I created in the sidebar menu.")
+        st.write("😊 Sounds good!You can check my apps to get a sense of my work! To do so, select any of the apps I created in the sidebar menu.")
         counts_cur += 1
-    st.write(counts_cur)
-    st.write(counts_hire)
+
     
 #APP 1
 def location_recommendation():
