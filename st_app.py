@@ -13,7 +13,8 @@ from scipy.stats import zscore
 
 def home():
     st.title("Welcome to my world!")
-    st.subheader("This is Carmen, a recently-graduated business strategist and program coder looking for exciting new challenges to engage in.")
+    st.subheader("This is Carmen, a recently-graduated business strategist and data analyst looking for exciting new challenges to engage in.")
+    st.image("watch2.png")
     
     #RESUME
     tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Mentions", "Contact"])
