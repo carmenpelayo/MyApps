@@ -355,6 +355,17 @@ page_names_to_funcs = {
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
 st.sidebar.image("firma art.png", use_column_width=True)
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        background-image: linear-gradient(#2e7bcf,#2e7bcf);
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 page_names_to_funcs[selected_page]()
 
 
