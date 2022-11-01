@@ -14,7 +14,6 @@ from scipy.stats import zscore
 def home():
     st.title("Welcome to my world!")
     st.subheader("This is Carmen, a recently-graduated business strategist and data analyst looking for exciting new challenges to engage in.")
-    st.image("watch2.png")
     
     #RESUME
     tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Mentions", "Contact"])
@@ -40,6 +39,14 @@ def home():
         linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
         st.markdown(linkedin, unsafe_allow_html=True)
         st.write("carmenpelayofdez@gmail.com")
+    
+    #Presentation Video
+    col1, col2 = st.columns(2)
+    with col1:
+       st.image("watch2.png")
+
+    with col2:
+       st.video("IMG_3807.mp4")
     
     #st.markdown("""---""")
     #USER INTERACTION
