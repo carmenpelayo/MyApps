@@ -28,7 +28,7 @@ def home():
         st.video(video_bytes)
     
     #RESUME
-    tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Projects", "Contact"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional", "Projects", "Contact"])
     with tab1:
         st.subheader("Education")
         st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
@@ -47,6 +47,9 @@ def home():
         st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
     
     with tab4:
+        st.write("apps")
+    
+    with tab5:
         st.subheader("Contact")
         linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
         st.markdown(linkedin, unsafe_allow_html=True)
