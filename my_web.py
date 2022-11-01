@@ -28,7 +28,7 @@ def home():
         st.video(video_bytes)
     
     #RESUME
-    tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Mentions", "Contact"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Projects", "Contact"])
     with tab1:
         st.subheader("Education")
         st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
