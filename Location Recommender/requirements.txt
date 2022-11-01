@@ -1,1 +1,8 @@
-
+pydeck
+pandas
+streamlit
+numpy
+protobuf~=3.19.0
+openpyxl
+plotly
+scipy
