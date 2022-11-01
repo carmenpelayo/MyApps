@@ -359,13 +359,8 @@ def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
-header_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(
-    img_to_bytes("firma art.png")
-)
-st.markdown(
-    header_html, unsafe_allow_html=True,
-)
-)
+header_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(img_to_bytes("firma art.png"))
+st.markdown(header_html, unsafe_allow_html=True)
 page_names_to_funcs[selected_page]()
 
 
