@@ -77,10 +77,6 @@ elif motivation == "Just curiosity.":
 def location_recommendation():
     st.title("Location Recommendation System for Businesses in the European ICT Industry")
     st.subheader('This program was made by Carmen Pelayo Fernandez in 2022')
-    st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
-             for entities operating in the European ICT (Information and Communication Technologies) industry. It can also be configured to fit other purposes, 
-             like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.
-             """)
     st.header("🔎 CONFIGURE YOUR SEARCH")
     st.subheader("Step 1: Select your entity's attributes.")
     
@@ -378,7 +374,11 @@ st.sidebar.image("art3.png", use_column_width=True)
 page_names_to_funcs[selected_page]()
 """
 
-
+"""
+Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
+             for entities operating in the European ICT (Information and Communication Technologies) industry. It can also be configured to fit other purposes, 
+             like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.
+             """
 
 
 
