@@ -28,7 +28,7 @@ with col2:
     st.video(video_bytes)
 
 #RESUME
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional", "Projects", "Contact"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional", "Apps", "Contact"])
 with tab1:
     st.subheader("Education")
     st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
@@ -41,13 +41,17 @@ with tab2:
     st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
 with tab3:
-    st.subheader("Mentions")
+    st.subheader("Certifications, Awards and Publications")
     st.write("Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry*, July 2022. Grade 10/10.")
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
 with tab4:
-    st.write("apps")
+    st.subheader("Apps")
+    location_recommender = "https://locationrecommender.streamlitapp.com/"
+    st.markdown(location_recommender, unsafe_allow_html=True)
+    region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
+    st.markdown(region_comparator, unsafe_allow_html=True)
 
 with tab5:
     st.subheader("Contact")
