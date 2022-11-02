@@ -326,6 +326,7 @@ def comparator():
         st.subheader("How to interpret the parameters displayed:")
         st.write(
         """
+"""
         - **AI**: Total value of AI (Artificial Intelligence) projects developed in the region.
         - **Big Data**: Total value of Big Data projects developed in the region.
         - **Computing**: Total value of Computing projects developed in the region.
@@ -349,17 +350,17 @@ def comparator():
         - **Infrastructure**: Score calculated by observing at each region's 4G coverage, fiber coverage, Internet bandwith per user, 5G commercial networks, number of Internet exchange points, the number and maturity of 5G pilots, the time to get electricity, 4G's launch year and 5G spectrum auction plans.
         """
         )
-
+"""
     with tab3:
         st.subheader("How to read the scores obtained:")
         st.write("Standard scores are given in a -1 to 1 scale.")
-        st.write(
+        st.write("""
             """
             - A score of 0 represents the mean score of the regions.
             - A score of -1 represents the region is in the lower 15.9% of the regions. Lower scores correspond to left outliers.
             - A score of 1 represents the region is in the top 15.9% of the regions. Higher scores correspond to right outliers.
             """
-        )
+        """)
         image = Image.open('normalstandard.jpg')
         st.image(image)
     
