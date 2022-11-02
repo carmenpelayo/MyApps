@@ -13,12 +13,12 @@ from scipy.stats import zscore
 
 #DATABASE IMPORT AND PREPARATION
 #Database containing region names
-nuts = pd.read_excel("Regional Info DEF.xlsx")
+nuts = pd.read_excel("Region-Comparator/Regional Info DEF.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 nuts2 = nuts2.rename(columns = {"Region":"NUTS 2 Code"})
 
 #Database containing region values
-dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
+dfn = pd.read_excel("Region-Comparator/FINAL Regional Vectors.xlsx")
 regions = dfn["NUTS 2 Code"].tolist()
 dfn = dfn.set_index("NUTS 2 Code")
 
@@ -73,5 +73,5 @@ with tab3:
         - A score of -1 represents the region is in the lower 15.9% of the regions. Lower scores correspond to left outliers.
         - A score of 1 represents the region is in the top 15.9% of the regions. Higher scores correspond to right outliers.
     """)
-    image = Image.open('normalstandard.jpg')
+    image = Image.open('Region-Comparator/normalstandard.jpg')
     st.image(image)
