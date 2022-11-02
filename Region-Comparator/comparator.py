@@ -1,5 +1,17 @@
+# -*- coding: utf-8 -*-
+
+# import module
+import streamlit as st
+import pandas as pd
+import numpy as np
+import pydeck as pdk
+import plotly.express as px
+from PIL import Image
+import scipy
+from scipy.spatial import distance
+from scipy.stats import zscore
+
 #DATABASE IMPORT AND PREPARATION
-    
 #Database containing region names
 nuts = pd.read_excel("Regional Info DEF.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
