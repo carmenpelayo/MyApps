@@ -21,10 +21,10 @@ st.markdown("""---""")
 col1, col2 = st.columns(2)
 
 with col1:
-   st.image("watchdef.png")
+   st.image("Personal-Web/watchdef.png")
 
 with col2:
-    video_file = open("IMG_3807.mp4", 'rb')
+    video_file = open("Personal-Web/IMG_3807.mp4", 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
