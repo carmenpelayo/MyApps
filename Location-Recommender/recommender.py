@@ -96,11 +96,11 @@ st.markdown("""---""")
 #DATABASE IMPORT AND PREPARATION
 
 #Database containing region names
-nuts = pd.read_excel("Regional Info DEF.xlsx")
+nuts = pd.read_excel("Location-Recommender/Regional Info DEF.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 
 #Database containing region values
-dfn = pd.read_excel("FINAL Regional Vectors.xlsx")
+dfn = pd.read_excel("Location-Recommender/FINAL Regional Vectors.xlsx")
 regions = dfn["NUTS 2 Code"].tolist()
 
 result = st.button('Recommend me!')
@@ -196,7 +196,7 @@ if result:
     topplot = 3
     sel=match.head(nplot).set_index('Region') 
 
-    df = pd.read_excel('nuts2xy.xlsx')
+    df = pd.read_excel('Location-Recommender/nuts2xy.xlsx')
 
     df_sel = df[df['NUTS_ID'].isin(list(match.head(topplot).Region))]
     df_sel2 = df[df['NUTS_ID'].isin(list(match.head(nplot).Region))]
