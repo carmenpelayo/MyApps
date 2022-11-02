@@ -71,9 +71,8 @@ motivation = st.radio("", tuple(mot_vals), key=3)
 if motivation == "I want you in my team!":
     st.write("😁 Happy to hear that! You can contact me at:")
     linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-    st.markdown(linkedin, unsafe_allow_html=True)
+    #st.markdown(linkedin, unsafe_allow_html=True)
     st.write("[LinkedIn](%s)" % linkedin)
-    st.markdown("[LinkedIn](%s)" % linkedin)
     st.write("carmenpelayofdez@gmail.com")
     counts_hire +=1
 elif motivation == "Just curiosity.":
