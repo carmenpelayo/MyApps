@@ -61,6 +61,7 @@ with tab5:
     st.write("carmenpelayofdez@gmail.com")
 
 st.markdown("""---""")
+   
 #USER INTERACTION
 st.subheader('**What brings you here?**')
 mot_vals = ['Just curiosity.', 'I want you in my team!']
@@ -76,3 +77,34 @@ if motivation == "I want you in my team!":
 elif motivation == "Just curiosity.":
     st.write("😊 Sounds good!You can check my apps to get a sense of my work! To do so, select any of the apps I created in the sidebar menu.")
     counts_cur += 1
+   
+   
+   #------------
+from streamlit.components.v1 import html
+
+def nav_page(page_name, timeout_secs=3):
+    nav_script = """
+        <script type="text/javascript">
+            function attempt_nav_page(page_name, start_time, timeout_secs) {
+                var links = window.parent.document.getElementsByTagName("a");
+                for (var i = 0; i < links.length; i++) {
+                    if (links[i].href.toLowerCase().endsWith("/" + page_name.toLowerCase())) {
+                        links[i].click();
+                        return;
+                    }
+                }
+                var elasped = new Date() - start_time;
+                if (elasped < timeout_secs * 1000) {
+                    setTimeout(attempt_nav_page, 100, page_name, start_time, timeout_secs);
+                } else {
+                    alert("Unable to navigate to page '" + page_name + "' after " + timeout_secs + " second(s).");
+                }
+            }
+            window.addEventListener("load", function() {
+                attempt_nav_page("%s", new Date(), %d);
+            });
+        </script>
+    """ % (page_name, timeout_secs)
+    html(nav_script)
+if st.button("Location Recommender"):
+    nav_page("https://locationrecommender.streamlitapp.com/")
