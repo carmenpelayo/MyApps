@@ -15,6 +15,9 @@ st.write("""Given the high importance of making the right business location choi
          operations in Europe. This tool can also be configured to fit other purposes, like the search of specialized employment, 
          the visualization of socio-economic data or the discovery of available capital funding.
          """)
+st.markdown("""---""")
+st.write("To discover the European regions that better fit your entity's requirements and location preferences, complete the form below and then click on _Recommend me!_")
+
 st.subheader("💼 Step 1: Select your entity's attributes.")
 
 #CAPTURING INPUT
@@ -185,7 +188,8 @@ if result:
     st.balloons()
 
 #RESULTS!
-    st.header("🏆 Recommended locations:")
+    st.write("Based on your entity's attributes and location preferences, these are the recommended regions in Europe:")
+    #st.subheader("🏆 Your location recommendation")
 
     # Dataframe showing scores
     st.table(match.head(10))
