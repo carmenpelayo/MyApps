@@ -55,7 +55,7 @@ else:
     input_vector.append(1)
 
 # DIMENSION 3: Technological Maturity
-st.write('**Are you researching on new ICT advancements, developing ICTs or integrating technology into products/services?**')
+st.write('**Are you researching on new ICT advancements, developing ICTs or integrating ICTs into products/services?**')
 D4_val = ['Research', 'Development', 'Integration']
 D4 = st.multiselect("", D4_val, 'Research')
 # Filling indexes 12, 13 and 14 of the input_vector
