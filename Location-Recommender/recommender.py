@@ -185,7 +185,7 @@ if result:
     st.balloons()
 
 #RESULTS!
-    st.header("🏆 YOUR LOCATION RECOMMENDATIONS")
+    st.header("🏆 Your Location Recommendation")
 
     # Dataframe showing scores
     st.table(match.head(10))
