@@ -9,7 +9,7 @@ import scipy
 from scipy.spatial import distance
 from scipy.stats import zscore
 
-st.title("Location Recommendation System for Businesses in the European ICT Industry")
+st.title("Location Recommendation Tool for Tech Businesses in Europe")
 st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
          for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their 
          operations in Europe. This tool can also be configured to fit other purposes, like the search of specialized employment, 
