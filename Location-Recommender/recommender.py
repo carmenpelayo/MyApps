@@ -16,7 +16,7 @@ st.write("""Given the high importance of making the right business location choi
          the visualization of socio-economic data or the discovery of available capital funding.
          """)
 st.markdown("""---""")
-st.write("To discover the European regions that better fit your entity's requirements and location preferences, complete the form below and then click on _Recommend me!_")
+st.write("To discover the European regions that better fit your entity's requirements and location preferences, complete the following form and then click on _Recommend me!_")
 
 st.subheader("💼 Step 1: Select your entity's attributes.")
 
@@ -92,8 +92,6 @@ weights_vector = []
 
 for w in range(len(weights)):
     weights_vector.append(weights[w]/total_weight)
-
-st.markdown("""---""")
 
 #DATABASE IMPORT AND PREPARATION
 
@@ -186,10 +184,12 @@ def recommendation(input_vector, weights_vector = None):
 if result:
     match = recommendation(input_vector, weights_vector) 
     st.balloons()
-
+    
+    st.markdown("""---""")
+         
 #RESULTS!
+    st.subheader("🏆 Your results!")
     st.write("Based on your entity's attributes and location preferences, these are the recommended regions in Europe:")
-    #st.subheader("🏆 Your location recommendation")
 
     # Dataframe showing scores
     st.table(match.head(10))
@@ -235,4 +235,4 @@ if result:
 
     st.markdown("""---""")
          
-    st.write('This program was made by Carmen Pelayo Fernández in 2022.')
+    st.write('_This program was made by Carmen Pelayo Fernández in 2022._')
