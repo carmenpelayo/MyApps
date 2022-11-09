@@ -9,14 +9,13 @@ import scipy
 from scipy.spatial import distance
 from scipy.stats import zscore
 
-st.title("Location Recommendation Tool for Tech Businesses in Europe")
+st.title("🔍 Location Recommendation Tool for Tech Businesses in Europe")
 st.write("""Given the high importance of making the right business location choices, this tool aims to provide a decision-making support solution 
          for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their 
          operations in Europe. This tool can also be configured to fit other purposes, like the search of specialized employment, 
          the visualization of socio-economic data or the discovery of available capital funding.
          """)
-st.header("🔎 CONFIGURE YOUR SEARCH")
-st.subheader("Step 1: Select your entity's attributes.")
+st.subheader("💼 Step 1: Select your entity's attributes.")
 
 #CAPTURING INPUT
 
@@ -69,7 +68,7 @@ for maturity in D4_val:
 #STEP 2: Creating the weights vector (8 values)
 st.markdown("""---""")
 weights = []
-st.subheader("Step 2: Configure your location preferences.")
+st.subheader("🗺️ Step 2: Configure your location preferences.")
 st.write('**How important are the following business parameters in your location decision?**')
 st.write('A score of 0 corresponds to *not important at all* and a score of 100 corresponds to *completely important*.')
 
