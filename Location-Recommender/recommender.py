@@ -15,8 +15,9 @@ st.write("""Given the high importance of making the right business location choi
          operations in Europe. This tool can also be configured to fit other purposes, like the search of specialized employment, 
          the visualization of socio-economic data or the discovery of available capital funding.
          """)
-st.markdown("""---""")
 st.write("To discover the European regions that better fit your entity's requirements and location preferences, complete the following form and then click on _Recommend me!_")
+
+st.markdown("""---""")
 
 st.subheader("💼 Step 1: Select your entity's attributes.")
 
@@ -108,7 +109,7 @@ result = st.button('Recommend me!')
 #MATCHMAKING
 def recommendation(input_vector, weights_vector = None):
 
-    assert len(input_vector) == 14 #len(input_vector) must always be always 13 (one value for each dimesion)
+    assert len(input_vector) == 14 #len(input_vector) must always be 14 (one value for each dimesion)
     idx_yes = [i for i in range(len(input_vector)) if input_vector[i] == 1]
     good_vals = [1] * 7 #the remaining (non-elective parameters) will be considered to have a value of 1 (the greater, the better)
     input_vector.extend(good_vals)
