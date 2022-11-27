@@ -67,10 +67,10 @@ with tab5:
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
     
     #LinkedIn button
-    redirect("https://www.linkedin.com/in/carmenpelayofernandez/")
-    linkedin = st.button("LinkedIn")
-    if linkedin:
-      webbrowser.open("https://www.linkedin.com/in/carmenpelayofernandez/")
+    #redirect("https://www.linkedin.com/in/carmenpelayofernandez/")
+    #linkedin = st.button("LinkedIn")
+    #if linkedin:
+      #webbrowser.open("https://www.linkedin.com/in/carmenpelayofernandez/")
 
 st.markdown("""---""")
    
