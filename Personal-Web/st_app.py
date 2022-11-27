@@ -16,6 +16,18 @@ import webbrowser
 st.title("Welcome to my world!")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
 
+#My apps
+st.subheader("My Apps")
+st.write("Here you can find the apps I have developed, check them out and let me know how you like them! 😊"
+
+st.write("*Location Recommendation Tool for Tech Businesses in Europe*)
+location_recommender = "https://locationrecommender.streamlitapp.com/"
+st.markdown(location_recommender, unsafe_allow_html=True)
+
+st.write("*European Region Comparator*)         
+region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
+st.markdown(region_comparator, unsafe_allow_html=True)
+
 #RESUME
 tab1, tab2, tab3 = st.tabs(["Education", "Work", "Additional"])
 with tab1:
@@ -36,11 +48,7 @@ with tab3:
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
 #with tab4:
-    st.subheader("Apps")
-    location_recommender = "https://locationrecommender.streamlitapp.com/"
-    st.markdown(location_recommender, unsafe_allow_html=True)
-    region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
-    st.markdown(region_comparator, unsafe_allow_html=True)
+
 
 #with tab5:
     st.subheader("Contact")
@@ -89,7 +97,4 @@ with col2:
 #elif motivation == "Just curiosity.":
     #st.write("😊 Sounds good!You can check my apps to get a sense of my work! To do so, select any of the apps I created in the menu above.")
     #counts_cur += 1
-
-st.markdown("""---""")
-st.write("Made with love from Madrid, Spain <3")
    
