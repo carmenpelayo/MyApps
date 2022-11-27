@@ -68,7 +68,7 @@ with tab5:
     
     #LinkedIn button
     redirect("https://www.linkedin.com/in/carmenpelayofernandez/")
-    linkedin = st.button(‘LinkedIn’)
+    linkedin = st.button("LinkedIn")
     if linkedin:
       webbrowser.open("https://www.linkedin.com/in/carmenpelayofernandez/")
 
