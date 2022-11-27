@@ -26,21 +26,20 @@ st.markdown("**European Region Comparator**")
 region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
 st.markdown(region_comparator, unsafe_allow_html=True)
 
+st.markdown("""---""")
+
 #RESUME
 tab1, tab2, tab3 = st.tabs(["Education", "Work", "Additional"])
 with tab1:
-    st.subheader("Education")
     st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
     st.write("B.S. in *Business Management and Technology*, **Universidad Carlos III de Madrid** (2018-2022)")
     st.write("Minor Degree in *Economics*, **Universidad Carlos III de Madrid** (2019-2022)")
 
 with tab2:
-    st.subheader("Work")
     st.write("Enterprise Architecture Internship, **Spectrum Brands, Inc.** (Middleton, WI, May-Aug 2022)")
     st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
 with tab3:
-    st.subheader("Certifications, Awards and Publications")
     st.write("Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry*, July 2022. Grade 10/10.")
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
