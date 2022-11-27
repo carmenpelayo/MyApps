@@ -18,17 +18,6 @@ st.subheader("This is Carmen, a business strategist and data analyst looking for
 
 st.markdown("""---""")
 
-#Presentation Video
-col1, col2 = st.columns(2)
-
-with col1:
-   st.subheader("Check my 30-secs intro video!")
-
-with col2:
-    video_file = open("Personal-Web/introvideo.mp4", 'rb')
-    video_bytes = video_file.read()
-    st.video(video_bytes)
-
 #RESUME
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional", "Apps", "Contact"])
 with tab1:
@@ -73,6 +62,19 @@ with tab5:
       #webbrowser.open("https://www.linkedin.com/in/carmenpelayofernandez/")
 
 st.markdown("""---""")
+
+#Presentation Video
+col1, col2 = st.columns(2)
+
+with col1:
+   video_file = open("Personal-Web/introvideo.mp4", 'rb')
+   video_bytes = video_file.read()
+   st.video(video_bytes)   
+
+with col2:
+   st.subheader("Check my 30-sec presentation video!")
+   st.image("Personal-Web/art3")
+    
    
 #USER INTERACTION
 #st.subheader('**What brings you here?**')
