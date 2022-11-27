@@ -18,7 +18,6 @@ st.subheader("This is Carmen, a business strategist and data analyst looking for
 
 #My apps
 st.subheader("My Apps")
-st.write("Here you can find the apps I have developed, check them out and let me know how you like them! 😊")
 st.write("**Location Recommendation Tool for Tech Businesses in Europe**")
 location_recommender = "https://locationrecommender.streamlitapp.com/"
 st.markdown(location_recommender, unsafe_allow_html=True)
