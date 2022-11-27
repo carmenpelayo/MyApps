@@ -17,7 +17,7 @@ st.title("Welcome to my world!")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
 
 #RESUME
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional", "Apps", "Contact"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional"])
 with tab1:
     st.subheader("Education")
     st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
@@ -35,14 +35,14 @@ with tab3:
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
-with tab4:
+#with tab4:
     st.subheader("Apps")
     location_recommender = "https://locationrecommender.streamlitapp.com/"
     st.markdown(location_recommender, unsafe_allow_html=True)
     region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
     st.markdown(region_comparator, unsafe_allow_html=True)
 
-with tab5:
+#with tab5:
     st.subheader("Contact")
     linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
     st.markdown(linkedin, unsafe_allow_html=True)
@@ -52,12 +52,6 @@ with tab5:
     with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
-    
-    #LinkedIn button
-    #redirect("https://www.linkedin.com/in/carmenpelayofernandez/")
-    #linkedin = st.button("LinkedIn")
-    #if linkedin:
-      #webbrowser.open("https://www.linkedin.com/in/carmenpelayofernandez/")
 
 st.markdown("""---""")
 
@@ -71,6 +65,11 @@ with col1:
 
 with col2:
    st.subheader("Check my 30-sec presentation video!")
+   st.markdown("""---""")
+   st.subheader("Contact Info :)")
+   linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
+   st.markdown(linkedin, unsafe_allow_html=True)
+   st.write("carmenpelayofdez@gmail.com")
    st.image("Personal-Web/art3.png")
     
    
@@ -90,6 +89,7 @@ with col2:
 #elif motivation == "Just curiosity.":
     #st.write("😊 Sounds good!You can check my apps to get a sense of my work! To do so, select any of the apps I created in the menu above.")
     #counts_cur += 1
-   
-   
+
+st.markdown("""---""")
+st.write("Made with love from Madrid, Spain <3")
    
