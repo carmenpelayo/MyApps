@@ -16,8 +16,6 @@ import webbrowser
 st.title("Welcome to my world!")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
 
-st.markdown("""---""")
-
 #RESUME
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional", "Apps", "Contact"])
 with tab1:
@@ -73,7 +71,7 @@ with col1:
 
 with col2:
    st.subheader("Check my 30-sec presentation video!")
-   st.image("Personal-Web/art3")
+   st.image("Personal-Web/art3.png")
     
    
 #USER INTERACTION
