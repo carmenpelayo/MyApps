@@ -22,10 +22,10 @@ st.markdown("""---""")
 col1, col2 = st.columns(2)
 
 with col1:
-   st.image("Personal-Web/watchdef.png")
+   st.subheader("Check my 30-secs intro video!")
 
 with col2:
-    video_file = open("Personal-Web/IMG_3807.mp4", 'rb')
+    video_file = open("Personal-Web/introvideo.mp4", 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
@@ -75,22 +75,21 @@ with tab5:
 st.markdown("""---""")
    
 #USER INTERACTION
-st.subheader('**What brings you here?**')
-mot_vals = ['Just curiosity.', 'I want you in my team!']
-counts_cur = 0
-counts_hire = 0
-motivation = st.radio("", tuple(mot_vals), key=3)
-if motivation == "I want you in my team!":
-    st.write("😁 Happy to hear that! You can contact me at:")
-    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-    st.markdown(linkedin, unsafe_allow_html=True)
-    st.write("[LinkedIn](%s)" % linkedin)
-    st.write("carmenpelayofdez@gmail.com")
-    counts_hire +=1
-elif motivation == "Just curiosity.":
-    st.write("😊 Sounds good!You can check my apps to get a sense of my work! To do so, select any of the apps I created in the menu above.")
-    counts_cur += 1
+#st.subheader('**What brings you here?**')
+#mot_vals = ['Just curiosity.', 'I want you in my team!']
+#counts_cur = 0
+#counts_hire = 0
+#motivation = st.radio("", tuple(mot_vals), key=3)
+#if motivation == "I want you in my team!":
+    #st.write("😁 Happy to hear that! You can contact me at:")
+    #linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
+    #st.markdown(linkedin, unsafe_allow_html=True)
+    #st.write("[LinkedIn](%s)" % linkedin)
+    #st.write("carmenpelayofdez@gmail.com")
+    #counts_hire +=1
+#elif motivation == "Just curiosity.":
+    #st.write("😊 Sounds good!You can check my apps to get a sense of my work! To do so, select any of the apps I created in the menu above.")
+    #counts_cur += 1
    
-st.image("Personal-Web/love.png")
    
    
