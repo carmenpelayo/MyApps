@@ -17,7 +17,7 @@ st.title("Welcome to my world!")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
 
 #RESUME
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Additional"])
+tab1, tab2, tab3 = st.tabs(["Education", "Work", "Additional"])
 with tab1:
     st.subheader("Education")
     st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
