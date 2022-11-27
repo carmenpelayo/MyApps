@@ -59,9 +59,8 @@ with tab5:
     linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
     st.markdown(linkedin, unsafe_allow_html=True)
     st.write("carmenpelayofdez@gmail.com")
-    with open("dummy.pdf", "rb") as pdf_file:
+    with open("Resume_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
-
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Resume_CarmenPelayo.pdf", mime='application/octet-stream')
 
 st.markdown("""---""")
