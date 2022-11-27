@@ -10,8 +10,9 @@ from PIL import Image
 import scipy
 from scipy.spatial import distance
 from scipy.stats import zscore
+import webbrowser
 
-
+# Webpage
 st.title("Welcome to my world!")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
 
@@ -59,9 +60,17 @@ with tab5:
     linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
     st.markdown(linkedin, unsafe_allow_html=True)
     st.write("carmenpelayofdez@gmail.com")
+    
+    #Download Resume button
     with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
+    
+    #LinkedIn button
+    redirect("https://www.linkedin.com/in/carmenpelayofernandez/")
+    linkedin = st.button(‘LinkedIn’)
+    if linkedin:
+      webbrowser.open("https://www.linkedin.com/in/carmenpelayofernandez/")
 
 st.markdown("""---""")
    
