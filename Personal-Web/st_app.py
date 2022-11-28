@@ -36,6 +36,7 @@ with tab1:
     st.write("Minor Degree in *Economics*.")
     st.write("GPA: 3.62 (Converted from Spanish grading system using WES iGPA Calculator).")
     st.write("Honors in *Fundamentals of Software Production* and *Environmental Economics*.")
+    st.write("")
     st.write("**University of Wisconsin - Madison** (Study Abroad, 2021-2022)")
     st.write("Coursebook: Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.")
 
