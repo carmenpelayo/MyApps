@@ -29,7 +29,7 @@ st.markdown("""---""")
 
 #Resume
 st.subheader("Resume")
-tab1, tab2, tab3 = st.tabs(["Education", "Work", "Additional"])
+tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Documentation"])
 with tab1:
     st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
     st.write("B.S. in *Business Management and Technology*, **Universidad Carlos III de Madrid** (2018-2022)")
@@ -44,18 +44,12 @@ with tab3:
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
-#with tab4:
-    
-    st.subheader("Contact")
-    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-    st.markdown(linkedin, unsafe_allow_html=True)
-    st.write("carmenpelayofdez@gmail.com")
-    
+with tab4:
     #Download Resume button
     with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
-
+    
 st.markdown("""---""")
 
 #Presentation Video
@@ -73,17 +67,14 @@ with col2:
    
    #Contact
    st.subheader("Contact")
-   st.markdown("- **LinkedIn**")
    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-   st.markdown(linkedin, unsafe_allow_html=True)
-   st.markdown("- **E-Mail**")
-   st.write("carmenpelayofdez@gmail.com")
-   st.markdown("- **Phone**")
-   st.write("+34 685 33 88 17")
+   st.markdown("- **LinkedIn**:"linkedin, unsafe_allow_html=True)
+   st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
+   st.markdown("- **Phone**: +34 685 33 88 17")
    
    #Signature
    st.subheader("**Much love,**")
-   st.image("Personal-Web/art3.png", width=130)
+   st.image("Personal-Web/art3.png", width=175)
     
    
 #USER INTERACTION
