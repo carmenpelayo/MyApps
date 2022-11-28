@@ -19,8 +19,11 @@ st.markdown("""---""")
 #Apps
 st.subheader("Apps")
 st.write("**Location Recommendation Tool for Tech Businesses in Europe**")
+st.write("This tool aims to provide a decision-making support solution for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their operations in Europe. It can also be configured to fit other purposes, like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.")
 location_recommender = "https://locationrecommender.streamlitapp.com/"
 st.markdown(location_recommender, unsafe_allow_html=True)
+
+st.write("")
 
 st.markdown("**European Region Comparator**")         
 region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
@@ -39,18 +42,17 @@ with tab1:
     st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
 
 with tab2:
-    st.write("**DELOITTE CONSULTING. Enterprise Technology & Transformation Analyst**. Madrid, Spain. September 2022-Present.")
-    st.markdown("- Defining triggers for the automation of database inserts and updates using Salesforce Apex.")
-    st.markdown("- Building customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.")
+    st.write("**DELOITTE CONSULTING** (September 2022-Present)")
+    st.write("**Enterprise Technology & Transformation Analyst** (Madrid, Spain)")
+    st.write("Currently working on the definition of triggers for the automation of database inserts and updates using Salesforce Apex and the creation of customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.")
     st.write("")
-    st.write("**SPECTRUM BRANDS. Enterprise Architecture Intern**. Middleton, Wisconsin, United States. May-August 2022.")
-    st.markdown("- Analyzed the potential implementation of blockchain technologies in the organization’s supply chain.")
-    st.markdown("- Created a task assignment matrix for projects in the IT department.")
+    st.write("**SPECTRUM BRANDS** (May-August 2022)")
+    st.write("**Enterprise Architecture Intern** (Middleton, Wisconsin, United States)"
+    st.markdown("I analyzed the potential implementation of blockchain technologies in the organization’s supply chain and created a task assignment matrix for projects in the IT department.")
     st.write("")
-    st.write("**CLEVER ADS. Product Management Intern**. Madrid, Spain. June-Sept 2020.")
-    st.markdown("Studied the launch of a new niche product, Clever Hotel Ads.")
-    st.markdown("Designed corporate e-mails and pop-up web notifications using WordPress.")
-
+    st.write("**CLEVER ADS (June-Sept 2020).")
+    st.write("**Product Management Intern**. Madrid, Spain.")
+    st.write("I studied the launch of a new niche product, Clever Hotel Ads, and designed corporate e-mails and pop-up web notifications using WordPress.")
 
 with tab3:
     st.write("Honors in *Environmental Economics* (June 2021)")
