@@ -33,7 +33,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Documentat
 with tab1:
     st.write("**Universidad Carlos III de Madrid** (2018-2022)")
     st.write("Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.")
-    ST.write("Inaugural Class. Taught in English. GPA: 3.62. Honors in *Fundamentals of Software Production* and *Environmental Economics*. Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
+    st.write("Inaugural Class. Taught in English. GPA: 3.62. Honors in *Fundamentals of Software Production* and *Environmental Economics*. Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
     st.write("")
     st.write("**University of Wisconsin - Madison** (Study Abroad, 2021-2022)")
     st.write("Coursebook: Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.")
@@ -70,7 +70,6 @@ with col2:
    #Contact
    st.subheader("Contact")
    st.markdown("- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/", unsafe_allow_html=True)
-   st.markdown("[LinkedIn](https://www.linkedin.com/in/carmenpelayofernandez/")
    st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
    st.markdown("- **Phone**: +34 685 33 88 17")
    
