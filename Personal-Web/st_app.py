@@ -83,7 +83,7 @@ with col2:
    
    #Signature
    st.subheader("**Much love,**")
-   st.image("Personal-Web/art3.png")
+   st.image("Personal-Web/art3.png", width=200)
     
    
 #USER INTERACTION
