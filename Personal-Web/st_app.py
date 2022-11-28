@@ -12,12 +12,12 @@ from scipy.spatial import distance
 from scipy.stats import zscore
 import webbrowser
 
-# Webpage
 st.title("Welcome to my world!")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
+st.markdown("""---""")
 
-#My apps
-st.subheader("My Apps")
+#Apps
+st.subheader("Apps")
 st.write("**Location Recommendation Tool for Tech Businesses in Europe**")
 location_recommender = "https://locationrecommender.streamlitapp.com/"
 st.markdown(location_recommender, unsafe_allow_html=True)
@@ -25,10 +25,10 @@ st.markdown(location_recommender, unsafe_allow_html=True)
 st.markdown("**European Region Comparator**")         
 region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
 st.markdown(region_comparator, unsafe_allow_html=True)
-
 st.markdown("""---""")
 
 #RESUME
+st.subheader("Resume")
 tab1, tab2, tab3 = st.tabs(["Education", "Work", "Additional"])
 with tab1:
     st.write("Academic exchange at **University of Wisconsin - Madison** (2021-2022)")
@@ -45,9 +45,7 @@ with tab3:
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
 #with tab4:
-
-
-#with tab5:
+    
     st.subheader("Contact")
     linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
     st.markdown(linkedin, unsafe_allow_html=True)
@@ -69,9 +67,10 @@ with col1:
    st.video(video_bytes)   
 
 with col2:
-   st.subheader("Check my 30-sec presentation video!")
+   st.subheader("Intro Video")
+   st.write("*Put me a face!*")
    st.markdown("""---""")
-   st.subheader("Contact Info :)")
+   t.subheader("Contact")
    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
    st.markdown(linkedin, unsafe_allow_html=True)
    st.write("carmenpelayofdez@gmail.com")
