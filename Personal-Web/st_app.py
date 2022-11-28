@@ -31,10 +31,13 @@ st.markdown("""---""")
 st.subheader("Resume")
 tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Documentation"])
 with tab1:
-    st.markdown("""**University of Wisconsin - Madison** (2021-2022)
-                   Relevant Coursebook: Relevant Coursebook: Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management""")
-    st.write("Bachelor of Science in *Business Management and Technology*, **Universidad Carlos III de Madrid** (2018-2022)")
-    st.write("Minor Degree in *Economics*, **Universidad Carlos III de Madrid** (2019-2022)")
+    st.write("**Universidad Carlos III de Madrid** (2018-2022)")
+    st.write("Bachelor of Science in *Business Management and Technology*. Inaugural Class. Taught in English.")
+    st.write("Minor Degree in *Economics*.")
+    st.write("GPA: 3.62 (Converted from Spanish grading system using WES iGPA Calculator).")
+    st.write("Honors in *Fundamentals of Software Production* and *Environmental Economics*.")
+    st.write("**University of Wisconsin - Madison** (Study Abroad, 2021-2022)")
+    st.write("Coursebook: Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.")
 
 with tab2:
     st.write("Enterprise Architecture Internship, **Spectrum Brands, Inc.** (Middleton, WI, May-Aug 2022)")
