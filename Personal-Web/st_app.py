@@ -32,12 +32,7 @@ st.subheader("Resume")
 tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Documentation"])
 with tab1:
     st.write("**Universidad Carlos III de Madrid** (2018-2022)")
-    st.write("Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.")
-    st.markdown("""- Inaugural Class.
-    - Taught in English.""")
-    
-    st.write("GPA: 3.62 (Converted from Spanish grading system using WES iGPA Calculator).")
-    st.write("Honors in *Fundamentals of Software Production* and *Environmental Economics*.")
+    st.write("Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*. Inaugural Class. Taught in English. GPA: 3.62. Honors in *Fundamentals of Software Production* and *Environmental Economics*. Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
     st.write("")
     st.write("**University of Wisconsin - Madison** (Study Abroad, 2021-2022)")
     st.write("Coursebook: Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.")
@@ -47,7 +42,7 @@ with tab2:
     st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
 with tab3:
-    st.write("Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry*, July 2022. Grade 10/10.")
+    st.write(")
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
