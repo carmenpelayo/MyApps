@@ -33,7 +33,7 @@ st.markdown("""---""")
 
 #Resume
 st.subheader("Resume")
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Certificates", "Documentation"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Certifications", "Documentation"])
 with tab1:
     st.write("**UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
     st.write("**Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.**")
@@ -61,6 +61,9 @@ with tab3:
     
 with tab4:
     st.write("**Introduction to Management Information Systems Certification**. EdX. April 2021.")
+    st.write("**Google Ads Search Certification**. Google. June 2020")   
+    st.write("**Fundamentals of Digital Marketing Certification**. Google. April 2020.")
+    st.write("**Camp Counselor Certification**. Junta de Andalucía. February 2019.")
              
 with tab5:
     #Download Resume button
