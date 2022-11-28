@@ -25,14 +25,15 @@ st.markdown(location_recommender, unsafe_allow_html=True)
 
 st.write("")
 
-st.markdown("**European Region Comparator**")         
+st.write("**European Region Comparator**") 
+st.write("This app evaluates 270 European regions in 21 socio-economic parameters.")
 region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
 st.markdown(region_comparator, unsafe_allow_html=True)
 st.markdown("""---""")
 
 #Resume
 st.subheader("Resume")
-tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Documentation"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Certificates", "Activities", "Documentation"])
 with tab1:
     st.write("**UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
     st.write("**Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.**")
@@ -42,23 +43,26 @@ with tab1:
     st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
 
 with tab2:
-    st.write("**DELOITTE CONSULTING** (September 2022-Present)")
-    st.write("**Enterprise Technology & Transformation Analyst** (Madrid, Spain)")
+    st.write("**DELOITTE CONSULTING**")
+    st.write("**Enterprise Technology & Transformation Analyst**. September 2022-Present in Madrid, Spain.")
     st.write("Currently working on the definition of triggers for the automation of database inserts and updates using Salesforce Apex and the creation of customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.")
     st.write("")
-    st.write("**SPECTRUM BRANDS** (May-August 2022)")
-    st.write("**Enterprise Architecture Intern** (Middleton, Wisconsin, United States")
+    st.write("**SPECTRUM BRANDS**")
+    st.write("**Enterprise Architecture Intern**. May-August 2022 in Middleton, Wisconsin, United States.")
     st.write("I analyzed the potential implementation of blockchain technologies in the organization’s supply chain and created a task assignment matrix for projects in the IT department.")
     st.write("")
-    st.write("**CLEVER ADS (June-Sept 2020).")
-    st.write("**Product Management Intern**. Madrid, Spain.")
+    st.write("**CLEVER ADS**")
+    st.write("**Product Management Intern**. June-Sept 2020 in Madrid, Spain.")
     st.write("I studied the launch of a new niche product, Clever Hotel Ads, and designed corporate e-mails and pop-up web notifications using WordPress.")
 
 with tab3:
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
-
+    
 with tab4:
+    st.write
+
+with tab5:
     #Download Resume button
     with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
@@ -77,11 +81,13 @@ with col1:
 with col2:
    #Intro Video
    st.subheader("Put a face to this site!")
+   st.subheader("<----------------------")
    st.write("**Watch a 23-sec video of me presenting my webpage :)**")
    
    #Contact
    st.subheader("Contact")
    st.markdown("- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/", unsafe_allow_html=True)
+   st.markdown("- **GitHub**: https://github.com/carmenpelayo/", unsafe_allow_html=True)
    st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
    st.markdown("- **Phone**: +34 685 33 88 17")
    
