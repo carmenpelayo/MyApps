@@ -48,7 +48,7 @@ with tab2:
     st.write("")
     st.write("**SPECTRUM BRANDS** (May-August 2022)")
     st.write("**Enterprise Architecture Intern** (Middleton, Wisconsin, United States)"
-    st.markdown("I analyzed the potential implementation of blockchain technologies in the organization’s supply chain and created a task assignment matrix for projects in the IT department.")
+    st.write("I analyzed the potential implementation of blockchain technologies in the organization’s supply chain and created a task assignment matrix for projects in the IT department.")
     st.write("")
     st.write("**CLEVER ADS (June-Sept 2020).")
     st.write("**Product Management Intern**. Madrid, Spain.")
