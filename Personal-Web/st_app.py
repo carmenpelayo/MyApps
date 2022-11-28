@@ -36,9 +36,14 @@ with tab1:
     st.write("Inaugural Class. Taught in English. GPA: 3.62. Honors in *Fundamentals of Software Production* and *Environmental Economics*. Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
     st.write("")
     st.write("**University of Wisconsin - Madison** (Study Abroad, 2021-2022)")
-    st.write("Coursebook: Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.")
+    st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
 
 with tab2:
+    st.write("**Deloitte**. Madrid, Spain. September 2022-Present.)")
+    st.write("Enterprise Technology & Transformation Analyst")
+    st.markdown("""> - Defining triggers for the automation of database inserts and updates using Salesforce Apex.
+    > - Building customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.""")
+
     st.write("Enterprise Architecture Internship, **Spectrum Brands, Inc.** (Middleton, WI, May-Aug 2022)")
     st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
