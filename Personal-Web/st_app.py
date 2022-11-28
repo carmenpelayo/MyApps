@@ -83,7 +83,7 @@ with col2:
    
    #Signature
    st.write("**Much love,**")
-   st.image("Personal-Web/art3.png")
+   st.image("Personal-Web/art3.png, width=0.5")
     
    
 #USER INTERACTION
