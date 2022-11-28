@@ -27,7 +27,7 @@ region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
 st.markdown(region_comparator, unsafe_allow_html=True)
 st.markdown("""---""")
 
-#RESUME
+#Resume
 st.subheader("Resume")
 tab1, tab2, tab3 = st.tabs(["Education", "Work", "Additional"])
 with tab1:
@@ -67,15 +67,22 @@ with col1:
    st.video(video_bytes)   
 
 with col2:
-   st.subheader("Put a face to this site! ")
-   st.markdown("""---""")
+   #Intro Video
+   st.subheader("Put a face to this site!")
+   st.write("**Watch a 23-sec video of me presenting my webpage :)**")
+   
+   #Contact
    st.subheader("Contact")
-   st.markdown("- LinkedIn")
+   st.markdown("- **LinkedIn**")
    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
    st.markdown(linkedin, unsafe_allow_html=True)
-   st.markdown("- E-Mail")
+   st.markdown("- **E-Mail**")
    st.write("carmenpelayofdez@gmail.com")
-   st.markdown("""---""")
+   st.markdown("- **Phone**")
+   st.write("+34 685 33 88 17")
+   
+   #Signature
+   st.write("**Much love,**")
    st.image("Personal-Web/art3.png")
     
    
