@@ -70,7 +70,7 @@ with col2:
    st.subheader("Intro Video")
    st.write("*Put me a face!*")
    st.markdown("""---""")
-   t.subheader("Contact")
+   st.subheader("Contact")
    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
    st.markdown(linkedin, unsafe_allow_html=True)
    st.write("carmenpelayofdez@gmail.com")
