@@ -67,8 +67,7 @@ with col2:
    
    #Contact
    st.subheader("Contact")
-   linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
-   st.markdown("- **LinkedIn**:"linkedin, unsafe_allow_html=True)
+   st.markdown("- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/", unsafe_allow_html=True)
    st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
    st.markdown("- **Phone**: +34 685 33 88 17")
    
