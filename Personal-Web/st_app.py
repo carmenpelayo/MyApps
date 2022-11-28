@@ -82,8 +82,8 @@ with col2:
    st.write("+34 685 33 88 17")
    
    #Signature
-   st.write("**Much love,**")
-   st.image("Personal-Web/art3.png, width=400")
+   st.subheader("**Much love,**")
+   st.image("Personal-Web/art3.png, width=100")
     
    
 #USER INTERACTION
