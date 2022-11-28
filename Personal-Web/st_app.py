@@ -42,7 +42,6 @@ with tab2:
     st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
 with tab3:
-    st.write(")
     st.write("Honors in *Environmental Economics* (June 2021)")
     st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
 
