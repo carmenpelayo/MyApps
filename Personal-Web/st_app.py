@@ -33,7 +33,7 @@ st.markdown("""---""")
 
 #Resume
 st.subheader("Resume")
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Certificates", "Activities", "Documentation"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Certificates", "Documentation"])
 with tab1:
     st.write("**UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
     st.write("**Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.**")
@@ -56,12 +56,12 @@ with tab2:
     st.write("I studied the launch of a new niche product, Clever Hotel Ads, and designed corporate e-mails and pop-up web notifications using WordPress.")
 
 with tab3:
-    st.write("Honors in *Environmental Economics* (June 2021)")
-    st.write("Honors in *Fundamentals of Software Production for Digital Business* (June 2020)")
+    st.write("**Undergraduate Research**. *Knowledge Reuse Group*, Universidad Carlos III de Madrid. September  2021–June 2022.")
+             
     
 with tab4:
-    st.write
-
+    st.write("**Introduction to Management Information Systems Certification**. EdX. April 2021.")
+             
 with tab5:
     #Download Resume button
     with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
@@ -81,7 +81,6 @@ with col1:
 with col2:
    #Intro Video
    st.subheader("Put a face to this site!")
-   st.subheader("<----------------------")
    st.write("**Watch a 23-sec video of me presenting my webpage :)**")
    
    #Contact
