@@ -39,13 +39,18 @@ with tab1:
     st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
 
 with tab2:
-    st.write("**Deloitte**. Enterprise Technology & Transformation Analyst.")
-    st.write("Madrid, Spain. September 2022-Present.")
-    st.markdown(""" - Defining triggers for the automation of database inserts and updates using Salesforce Apex.
-                    - Building customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.""")
+    st.write("**Deloitte. *Enterprise Technology & Transformation Analyst*. ** Madrid, Spain. September 2022-Present.")
+    st.markdown("- Defining triggers for the automation of database inserts and updates using Salesforce Apex.")
+    st.markdown("- Building customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.")
+    st.write("")
+    st.write("**Spectrum Brands. *Enterprise Architecture Intern*. ** Middleton, Wisconsin, United States. May-August 2022.")
+    st.markdown("- Analyzed the potential implementation of blockchain technologies in the organization’s supply chain.")
+    st.markdown("- Created a task assignment matrix for projects in the IT department.")
+    st.write("")
+    st.write("**Clever Ads. *Product Management Intern*. ** Madrid, Spain. June-Sept 2020.")
+    st.markdown("Studied the launch of a new niche product, Clever Hotel Ads.")
+    st.markdown("Designed corporate e-mails and pop-up web notifications using WordPress.")
 
-    st.write("Enterprise Architecture Internship, **Spectrum Brands, Inc.** (Middleton, WI, May-Aug 2022)")
-    st.write("Product Management Internship, **Clever Ads** (Madrid, ES, June-Sept 2020)")
 
 with tab3:
     st.write("Honors in *Environmental Economics* (June 2021)")
