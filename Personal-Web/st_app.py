@@ -33,8 +33,8 @@ tab1, tab2, tab3, tab4 = st.tabs(["Education", "Work", "Additional", "Documentat
 with tab1:
     st.write("**Universidad Carlos III de Madrid** (2018-2022)")
     st.write("Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.")
-    st.markdown("- Inaugural Class.")
-    st.markdown("- Taught in English..")
+    st.markdown("""- Inaugural Class.
+    - Taught in English.""")
     
     st.write("GPA: 3.62 (Converted from Spanish grading system using WES iGPA Calculator).")
     st.write("Honors in *Fundamentals of Software Production* and *Environmental Economics*.")
@@ -74,9 +74,10 @@ with col2:
    
    #Contact
    st.subheader("Contact")
-   st.markdown("""- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/ - **E-Mail**: carmenpelayofdez@gmail.com - **Phone**: +34 685 33 88 17""", unsafe_allow_html=True)
-   #st.markdown("")
-   #st.markdown("")
+   st.markdown("- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/", unsafe_allow_html=True)
+   st.markdown("A [linkedin](https://www.linkedin.com/in/carmenpelayofernandez/ "Title")
+   st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
+   st.markdown("- **Phone**: +34 685 33 88 17")
    
    #Signature
    st.subheader("**Much love,**")
