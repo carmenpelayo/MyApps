@@ -67,13 +67,15 @@ with col1:
    st.video(video_bytes)   
 
 with col2:
-   st.subheader("Intro Video")
-   st.write("*Put me a face!*")
+   st.subheader("Put a face to this site! ")
    st.markdown("""---""")
    st.subheader("Contact")
+   st.markdown("- LinkedIn")
    linkedin = 'https://www.linkedin.com/in/carmenpelayofernandez/'
    st.markdown(linkedin, unsafe_allow_html=True)
+   st.markdown("- E-Mail")
    st.write("carmenpelayofdez@gmail.com")
+   st.markdown("""---""")
    st.image("Personal-Web/art3.png")
     
    
