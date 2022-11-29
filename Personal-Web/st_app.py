@@ -112,7 +112,7 @@ with col2:
    
    #Intro Video
    st.subheader("Welcome Video")
-   st.write("⬅️ **Put a face to this site by watch this 23-sec video of me presenting my website!**")
+   st.write("⬅️ **Put a face to this site by watching this 23-sec video of me presenting my website!**")
     
    #Signature
    st.write("**😊 Made with love by**")
