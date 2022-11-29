@@ -18,7 +18,7 @@ nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 nuts2 = nuts2.rename(columns = {"Region":"NUTS 2 Code"})
 
 #Database containing region values
-dfn = pd.read_excel("Region-Comparator/FINAL Regional Vectors.xlsx")
+dfn = pd.read_excel("Region-Comparator/region_vectors.xlsx")
 regions = dfn["NUTS 2 Code"].tolist()
 dfn = dfn.set_index("NUTS 2 Code")
 
