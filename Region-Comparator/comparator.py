@@ -13,7 +13,7 @@ from scipy.stats import zscore
 
 #DATABASE IMPORT AND PREPARATION
 #Database containing region names
-nuts = pd.read_excel("Region-Comparator/Regional Info DEF.xlsx")
+nuts = pd.read_excel("Region-Comparator/region_info.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 nuts2 = nuts2.rename(columns = {"Region":"NUTS 2 Code"})
 
