@@ -101,12 +101,6 @@ with col1:
    st.video(video_bytes)   
 
 with col2:
-   #Intro Video
-   st.subheader("Welcome Video")
-   st.write("⬅️ **Put a face to this site by watch this 23-sec video of me presenting my website!**")
-   
-   st.markdown("""---""") 
-   
    #Contact
    st.subheader("Contact")
    st.markdown("- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/", unsafe_allow_html=True)
@@ -114,7 +108,11 @@ with col2:
    st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
    st.markdown("- **Phone**: +34 685 33 88 17")
    
-   st.markdown("""---""")
+   st.markdown("""---""") 
+   
+   #Intro Video
+   st.subheader("Welcome Video")
+   st.write("⬅️ **Put a face to this site by watch this 23-sec video of me presenting my website!**")
     
    #Signature
    st.write("**😊 Made with love by**")
