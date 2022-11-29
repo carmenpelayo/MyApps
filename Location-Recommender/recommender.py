@@ -97,7 +97,7 @@ for w in range(len(weights)):
 #DATABASE IMPORT AND PREPARATION
 
 #Database containing region names
-nuts = pd.read_excel("Location-Recommender/Regional Info DEF.xlsx")
+nuts = pd.read_excel("Location-Recommender/region_info.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 
 #Database containing region values
