@@ -101,7 +101,7 @@ nuts = pd.read_excel("Location-Recommender/region_info.xlsx")
 nuts2 = nuts[["Region", "Region Name", "Country Name"]]
 
 #Database containing region values
-dfn = pd.read_excel("Location-Recommender/FINAL Regional Vectors.xlsx")
+dfn = pd.read_excel("Location-Recommender/region_vectors.xlsx")
 regions = dfn["NUTS 2 Code"].tolist()
 
 result = st.button('Recommend me!')
