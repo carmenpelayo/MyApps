@@ -103,7 +103,7 @@ with col1:
 with col2:
    #Intro Video
    st.subheader("Welcome Video")
-   st.write("**Put a face to this site by watch this 23-sec video of me presenting my website!** 😊")
+   st.write("⬅️ **Put a face to this site by watch this 23-sec video of me presenting my website!**")
    
    st.markdown("""---""") 
    
@@ -117,7 +117,7 @@ with col2:
    st.markdown("""---""")
     
    #Signature
-   st.subheader("**Made with love by**")
+   st.write("**😊 Made with love by**")
    st.image("Personal-Web/signature.png", width=175)
     
    
