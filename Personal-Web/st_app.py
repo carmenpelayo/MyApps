@@ -29,6 +29,13 @@ st.write("This app can be employed to compare European regions in various socio-
 st.markdown("Check it out at: https://europeanregioncomparator.streamlitapp.com/", unsafe_allow_html=True)
 st.markdown("""---""")
 
+st.write("")
+
+st.write("✨ **K-Means Spherical Clusterer (Coming Soon)**") 
+st.write("This app will gather a user's selection of European regions and number of groups (K) on which to perform a K-Means Spherical Clustering. As a result, a visual map will be returned to detect groups of locations with the most similar characteristics, potentially unveiling interesting relationships in the European territory.")
+st.markdown("Check the elementary program at: https://github.com/carmenpelayo/Carmen-Pelayo/tree/main/Clustering", unsafe_allow_html=True)
+st.markdown("""---""")
+
 #Resume
 st.subheader("Resume")
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Certifications", "Documentation"])
