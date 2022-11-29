@@ -48,15 +48,15 @@ with tab1:
     st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
 
 with tab2:
-    st.write("**DELOITTE CONSULTING**")
+    st.write("💻 **DELOITTE CONSULTING**")
     st.write("**Enterprise Technology & Transformation Analyst**. September 2022-Present in Madrid, Spain.")
     st.write("Currently working on the definition of triggers for the automation of database inserts and updates using Salesforce Apex and the creation of customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.")
     st.write("")
-    st.write("**SPECTRUM BRANDS**")
+    st.write("⚙️ **SPECTRUM BRANDS**")
     st.write("**Enterprise Architecture Intern**. May-August 2022 in Middleton, Wisconsin, United States.")
     st.write("I analyzed the potential implementation of blockchain technologies in the organization’s supply chain and created a task assignment matrix for projects in the IT department.")
     st.write("")
-    st.write("**CLEVER ADS**")
+    st.write("📊 **CLEVER ADS**")
     st.write("**Product Management Intern**. June-Sept 2020 in Madrid, Spain.")
     st.write("I studied the launch of a new niche product, Clever Hotel Ads, and designed corporate e-mails and pop-up web notifications using WordPress.")
 
