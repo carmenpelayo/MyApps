@@ -62,13 +62,20 @@ with tab2:
 
 with tab3:
     st.write("**Undergraduate Research**. *Knowledge Reuse Group*, Universidad Carlos III de Madrid. September  2021–June 2022.")
-             
-    
+    st.write("**Professional Competencies Seminar**. Universidad Politécnica de Madrid. February  2021–April 2022.")  
+    st.write("**StartUp Program**. PwC & Junior Achievement. September 2019–May 2020.")
+    st.write("**Entrepreneurship Seminar** (30 hours). Universidad Carlos III de Madrid. September 2019–December 2019.")
+    st.write("**StartUp Yourself Brazil Scholarship**. AIESEC & BBVA. May 2019.")    
+    st.write("**España Rumbo Al Sur Expedition**. Morocco Edition. August 2017.")
+    st.write("**Troop Member**. Grupo Scout Eslabón. 2010-2013.")
+      
 with tab4:
     st.write("**Introduction to Management Information Systems Certification**. EdX. April 2021.")
     st.write("**Google Ads Search Certification**. Google. June 2020")   
     st.write("**Fundamentals of Digital Marketing Certification**. Google. April 2020.")
     st.write("**Camp Counselor Certification**. Junta de Andalucía. February 2019.")
+    st.write("**C1 Advanced English Certification**. University of Cambridge. November 2016.")
+    st.write("**Grade 4 Piano Certification**. Associated Board of the Royal Schools of Music. 2013.")
              
 with tab5:
     #Download Resume button
