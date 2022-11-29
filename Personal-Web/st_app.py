@@ -40,11 +40,11 @@ st.markdown("""---""")
 st.subheader("Resume")
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Certifications", "Documentation"])
 with tab1:
-    st.write("**UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
+    st.write("💙 **UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
     st.write("**Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.**")
     st.write("Inaugural Class. Taught in English. GPA: 3.62. Honors in *Fundamentals of Software Production* and *Environmental Economics*. Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
     st.write("")
-    st.write("**UNIVERSITY OF WISCONSIN - MADISON** (Study Abroad, 2021-2022)")
+    st.write("❤️ **UNIVERSITY OF WISCONSIN - MADISON** (Study Abroad, 2021-2022)")
     st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
 
 with tab2:
