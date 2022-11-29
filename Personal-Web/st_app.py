@@ -69,6 +69,11 @@ with tab5:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
     
+    #Download Thesis button
+    with open("Personal-Web/BachelorThesis_CarmenPelayo.pdf", "rb") as pdf_file:
+      PDFbyte = pdf_file.read()
+    st.download_button(label="Download Bachelor Thesis", data=PDFbyte, file_name="Personal-Web/BachelorThesis_CarmenPelayo.pdf", mime='application/octet-stream')
+    
 st.markdown("""---""")
 
 #Presentation Video
