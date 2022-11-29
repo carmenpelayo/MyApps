@@ -79,11 +79,13 @@ with tab4:
              
 with tab5:
     #Download Resume button
+    st.write("You can download my one-page **resume** in PDF format here:")
     with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
     
     #Download Thesis button
+    st.write("You can download my 84-page **bachelor thesis** in PDF format here:")
     with open("Personal-Web/BachelorThesis_CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Bachelor Thesis", data=PDFbyte, file_name="Personal-Web/BachelorThesis_CarmenPelayo.pdf", mime='application/octet-stream')
