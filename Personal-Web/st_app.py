@@ -12,8 +12,9 @@ from scipy.spatial import distance
 from scipy.stats import zscore
 import webbrowser
 
-st.title("Welcome to my world! 💗")
-st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
+st.title("💗 Welcome to my site!")
+st.subheader("This is Carmen, a business strategist and data scientist looking for exciting new challenges to engage in.")
+st.write("In this website, you will find links redirecting to some **web applications** I have built, as well as my **resume** and **contact information**. *Enjoy!*")
 st.markdown("""---""")
 
 #Apps
@@ -31,7 +32,7 @@ st.markdown("Check it out at: https://europeanregioncomparator.streamlitapp.com/
 st.write("")
 
 st.write("✨ **K-Means Spherical Clusterer (Coming Soon)**") 
-st.write("This app will gather a user's selection of European regions and number of groups (K) on which to perform a K-Means Spherical Clustering. As a result, a visual map will be returned to detect groups of locations with the most similar characteristics, potentially unveiling interesting relationships in the European territory.")
+st.write("This app will gather a user's selection of European regions and a number of groups (K) on which to perform a K-Means Spherical Clustering. As a result, a visual map will be returned to detect groups of locations with the most similar characteristics, potentially unveiling interesting relationships in the European territory.")
 st.markdown("Check the elementary program at: https://github.com/carmenpelayo/Carmen-Pelayo/tree/main/Clustering", unsafe_allow_html=True)
 st.markdown("""---""")
 
