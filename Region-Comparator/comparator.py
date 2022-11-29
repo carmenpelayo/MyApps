@@ -24,7 +24,8 @@ dfn = dfn.set_index("NUTS 2 Code")
 
 #CONFIGURATOR
 st.header("📊 REGION COMPARATOR")
-st.write("This app evaluates 270 European regions in 21 socio-economic parameters. Use the *USER GUIDE* below to learn how to configure the search and interpret the results obtained.")
+st.write("This tool can be employed to compare European regions in various socio-economic factors in a visual, user-friendly way. Any amount of regions from the 270 available can be selected to observe the differences and similarities in scores for 21 dimensions (including the technological infrastructure, the availability of qualified personnel or the easiness to open a business).") 
+st.write("Use the *USER GUIDE* below to learn how to configure the search and interpret the results obtained.")
 st.subheader("Which regions would you like to compare?")
 reg = st.multiselect("", regions, "ES30")
 
