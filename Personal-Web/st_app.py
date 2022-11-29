@@ -18,17 +18,15 @@ st.markdown("""---""")
 
 #Apps
 st.subheader("Apps")
-st.write("**Location Recommendation Tool for Tech Businesses in Europe**")
+st.write("🔍 **Location Recommendation Tool for Tech Businesses in Europe**")
 st.write("This app aims to provide a decision-making support solution for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their operations in Europe. It delivers a customized location recommendation based on industry needs and firm-specific characteristics. Additionally, the app be configured to fit other purposes, like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.")
-location_recommender = "https://locationrecommender.streamlitapp.com/"
-st.markdown(location_recommender, unsafe_allow_html=True)
+st.markdown("Check it out at: https://locationrecommender.streamlitapp.com/", unsafe_allow_html=True)
 
 st.write("")
 
-st.write("**European Region Comparator**") 
+st.write("📊 **European Region Comparator**") 
 st.write("This app can be employed to compare European regions in various socio-economic factors in a visual, user-friendly way. Any amount of regions from the 270 available can be selected to observe the differences and similarities in scores for 21 dimensions (including the technological infrastructure, the availability of qualified personnel or the easiness to open a business).")
-region_comparator = "https://europeanregioncomparator.streamlitapp.com/"
-st.markdown(region_comparator, unsafe_allow_html=True)
+st.markdown("Check it out at: https://europeanregioncomparator.streamlitapp.com/", unsafe_allow_html=True)
 st.markdown("""---""")
 
 #Resume
@@ -84,7 +82,7 @@ with col1:
 with col2:
    #Intro Video
    st.subheader("Put a face to this site!")
-   st.write("**Watch a 23-sec video of me presenting my webpage :)**")
+   st.write("**Watch a 23-sec video of me presenting my webpage** 😊")
    
    #Contact
    st.subheader("Contact")
