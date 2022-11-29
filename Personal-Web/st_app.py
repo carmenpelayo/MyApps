@@ -13,7 +13,7 @@ from scipy.stats import zscore
 import webbrowser
 
 st.title("💗 Welcome to my site!")
-st.subheader("This is Carmen, a business strategist and data scientist looking for exciting new challenges to engage in.")
+st.subheader("This is Carmen, a business strategist and data scientist aiming to lead the next generation of sustainable, data-driven organizations.")
 st.write("In this website, you will find links redirecting to some **web applications** I have built, as well as my **resume** and **contact information**. *Enjoy!*")
 st.markdown("""---""")
 
