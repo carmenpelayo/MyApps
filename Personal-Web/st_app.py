@@ -27,7 +27,6 @@ st.write("")
 st.write("📊 **European Region Comparator**") 
 st.write("This app can be employed to compare European regions in various socio-economic factors in a visual, user-friendly way. Any amount of regions from the 270 available can be selected to observe the differences and similarities in scores for 21 dimensions (including the technological infrastructure, the availability of qualified personnel or the easiness to open a business).")
 st.markdown("Check it out at: https://europeanregioncomparator.streamlitapp.com/", unsafe_allow_html=True)
-st.markdown("""---""")
 
 st.write("")
 
