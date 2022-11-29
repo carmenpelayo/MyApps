@@ -12,7 +12,7 @@ from scipy.spatial import distance
 from scipy.stats import zscore
 import webbrowser
 
-st.title("Welcome to my world!")
+st.title("Welcome to my world! 💗")
 st.subheader("This is Carmen, a business strategist and data analyst looking for exciting new challenges to engage in.")
 st.markdown("""---""")
 
