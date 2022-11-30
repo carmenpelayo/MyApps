@@ -20,7 +20,7 @@ st.markdown("""---""")
 #Apps
 st.subheader("Apps")
 st.write("🔍 **Location Recommendation Tool for Tech Businesses in Europe**")
-st.write("This app aims to provide a decision-making support solution for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their operations in Europe. It delivers a customized location recommendation based on industry needs and firm-specific characteristics. Additionally, the app be configured to fit other purposes, like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.")
+st.write("This app aims to provide a decision-making support solution for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their operations in Europe. It delivers a customized location recommendation based on industry needs and firm-specific characteristics. Additionally, the app can be configured to fit other purposes, like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.")
 st.markdown("Check it out at: https://locationrecommender.streamlitapp.com/", unsafe_allow_html=True)
 
 st.write("")
