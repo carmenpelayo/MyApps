@@ -50,7 +50,7 @@ with tab1:
 with tab2:
     st.write("💻 **DELOITTE CONSULTING**")
     st.write("**Enterprise Technology & Transformation Analyst**. September 2022-Present in Madrid, Spain.")
-    st.write("Currently working on the definition of triggers for the automation of database inserts and updates using Salesforce Apex and the creation of customer journeys for e-mail and SMS communications using Salesforce Marketing Cloud.")
+    st.write("I am currently working full-time in the consulting unit, where I specialize in the field of Enterprise Technology and Transformation. My job consists of assisting firms in implementing a Salesforce CRM system. Specifically, I am managing the Marketing Cloud module of a manufacturing company, creating customer journeys and developing database automation triggers using Apex (a Java-based language).")
     st.write("")
     st.write("⚙️ **SPECTRUM BRANDS**")
     st.write("**Enterprise Architecture Intern**. May-August 2022 in Middleton, Wisconsin, United States.")
@@ -62,7 +62,25 @@ with tab2:
 
 with tab3:
     st.write("**Undergraduate Research**. *Knowledge Reuse Group*, Universidad Carlos III de Madrid. September  2021–June 2022.")
-    st.write("**Professional Competencies Seminar**. Universidad Politécnica de Madrid. February  2021–April 2022.")  
+    st.write("""**For the development of my bachelor thesis, I collaborated with the
+Knowledge Reuse Group, an initiative founded by the Universidad
+Carlos III de Madrid's School of Computer Science to leverage data
+from different disciplines with the aim of developing scientific solutions.
+During the academic year 2021-2022, I worked with Professor Jose
+Maria Alvarez Rodriguez to create a tool that recommends technologybased organizations where to locate their operations in Europe,
+according to individual attributes and market needs.""")
+    st.write("")
+    st.write("**Soft Skills and Professional Mentoring Seminar**. Universidad Politécnica de Madrid. February  2021–April 2022.")  
+    st.write("""I participated in a 3-month seminar where they prepared students to
+succeed in their professional careers by training soft skills and getting
+in contact with successful professionals, like CEOs and members of the
+Spanish government. The final activity of the seminar consisted of
+giving a 10-minute presentation about our career path and future
+goals in front of the rest of participants and all the professionals. I was
+recognized as one of the best-performing presenters in the room,
+receiving special credit from WiBLE's founder Javier Martinez, and
+Madrid Assembly Representative Pilar Martinez.""")
+    st.write("")
     st.write("**StartUp Program**. PwC & Junior Achievement. September 2019–May 2020.")
     st.write("**Entrepreneurship Seminar** (30 hours). Universidad Carlos III de Madrid. September 2019–December 2019.")
     st.write("**StartUp Yourself Brazil Scholarship**. AIESEC & BBVA. May 2019.")    
@@ -70,6 +88,7 @@ with tab3:
     st.write("**Troop Member**. Grupo Scout Eslabón. 2010-2013.")
       
 with tab4:
+    st.write("**Salesforce Administrator Certification**. Salesforce. January 2023.")
     st.write("**Introduction to Management Information Systems Certification**. EdX. April 2021.")
     st.write("**Google Ads Search Certification**. Google. June 2020")   
     st.write("**Fundamentals of Digital Marketing Certification**. Google. April 2020.")
