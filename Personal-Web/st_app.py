@@ -62,28 +62,32 @@ with tab2:
 
 with tab3:
     st.write("**Undergraduate Research**. *Knowledge Reuse Group*, Universidad Carlos III de Madrid. September  2021–June 2022.")
-    st.write("""**For the development of my bachelor thesis, I collaborated with the
-Knowledge Reuse Group, an initiative founded by the Universidad
-Carlos III de Madrid's School of Computer Science to leverage data
-from different disciplines with the aim of developing scientific solutions.
-During the academic year 2021-2022, I worked with Professor Jose
-Maria Alvarez Rodriguez to create a tool that recommends technologybased organizations where to locate their operations in Europe,
-according to individual attributes and market needs.""")
+    st.write("""For the development of my bachelor thesis, I collaborated with the Knowledge 
+                Reuse Group, an initiative founded by UC3M's School of Computer Science and 
+                Engineering to leverage data from multiple disciplines to develop scientific 
+                solutions. During the academic year 2021-2022, I worked with Professor Jose 
+                Maria Alvarez Rodriguez to create a tool that recommends technological entities 
+                where to locate their operations in Europe, according to individual attributes 
+                and market needs.""")
     st.write("")
     st.write("**Soft Skills and Professional Mentoring Seminar**. Universidad Politécnica de Madrid. February  2021–April 2022.")  
     st.write("""I participated in a 3-month seminar where they prepared students to
-succeed in their professional careers by training soft skills and getting
-in contact with successful professionals, like CEOs and members of the
-Spanish government. The final activity of the seminar consisted of
-giving a 10-minute presentation about our career path and future
-goals in front of the rest of participants and all the professionals. I was
-recognized as one of the best-performing presenters in the room,
-receiving special credit from WiBLE's founder Javier Martinez, and
-Madrid Assembly Representative Pilar Martinez.""")
+                succeed in their professional careers by training soft skills and getting
+                in contact with successful professionals, like CEOs and members of the
+                Spanish government. The final activity of the seminar consisted of
+                giving a 10-minute presentation about our career path and future
+                goals in front of the rest of participants and all the professionals. I was
+                recognized as one of the best-performing presenters in the room,
+                receiving special credit from WiBLE's founder Javier Martinez, and
+                Madrid Assembly Representative Pilar Martinez.""")
     st.write("")
     st.write("**StartUp Program**. PwC & Junior Achievement. September 2019–May 2020.")
     st.write("**Entrepreneurship Seminar** (30 hours). Universidad Carlos III de Madrid. September 2019–December 2019.")
-    st.write("**StartUp Yourself Brazil Scholarship**. AIESEC & BBVA. May 2019.")    
+    st.write("**StartUp Yourself Brazil Scholarship**. AIESEC & BBVA. May 2019.")   
+    st.write("""I was selected to intern at a marketing company in Brazil during the
+                summer of my freshman year of college. To earn this opportunity, I had
+                to prepare a video explaining why I wanted to do this internship, and
+                my video was the most voted one.""")
     st.write("**España Rumbo Al Sur Expedition**. Morocco Edition. August 2017.")
     st.write("**Troop Member**. Grupo Scout Eslabón. 2010-2013.")
       
