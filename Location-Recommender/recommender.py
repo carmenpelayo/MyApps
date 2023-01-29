@@ -28,12 +28,12 @@ input_vector = []
 
 # DIMENSION 1: Tech areas
 st.write('**In which technological areas is your entity specialized?**')
-areas = ['AI',
+areas = ['Artificial Intelligence',
          'Big Data',
          'Computation',
          'Cybersecurity',
          'Internet',
-         'IoT',
+         'Internet of Things',
          'Media & Communication',
          'Robotics',
          'Software']
