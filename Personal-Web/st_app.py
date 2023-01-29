@@ -42,7 +42,8 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Cert
 with tab1:
     st.write("💙 **UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
     st.write("**Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.**")
-    st.write("Inaugural Class. Taught in English. GPA: 3.62. Honors in *Fundamentals of Software Production* and *Environmental Economics*. Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
+    st.write("Inaugural Class. Taught in English. Honors in *Fundamentals of Software Production* and *Environmental Economics*. 
+    st.write("Bachelor Thesis: *Location Recommendation System for Businesses in the European ICT Industry* (Grade A+).")
     st.write("")
     st.write("❤️ **UNIVERSITY OF WISCONSIN - MADISON** (Study Abroad, 2021-2022)")
     st.write("Coursebook: *Data Science Programming I, Data Science Programming II, Machine Learning, Strategic Management, Corporate Finance, Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, Quantitative Tools for Economics, Business Ethics.*")
@@ -85,7 +86,7 @@ with tab3:
     st.write("**Entrepreneurship Seminar** (30 hours). Universidad Carlos III de Madrid. September 2019–December 2019.")
     st.write("**StartUp Yourself Brazil Scholarship**. AIESEC & BBVA. May 2019.")   
     st.write("""I was selected to intern at a marketing company in Brazil during the
-                summer of my freshman year of college. To earn this opportunity, I had
+                summer of my freshman year of college. To earn this scholarship, I had
                 to prepare a video explaining why I wanted to do this internship, and
                 my video was the most voted one.""")
     st.write("**España Rumbo Al Sur Expedition**. Morocco Edition. August 2017.")
@@ -103,9 +104,9 @@ with tab4:
 with tab5:
     #Download Resume button
     st.write("You can download my one-page **resume** in PDF format here:")
-    with open("Personal-Web/Resume_CarmenPelayo.pdf", "rb") as pdf_file:
+    with open("Personal-Web/CV_CarmenPelayo_Jan2023.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
-    st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/Resume_CarmenPelayo.pdf", mime='application/octet-stream')
+    st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/CV_CarmenPelayo_Jan2023.pdf", mime='application/octet-stream')
     
     #Download Thesis button
     st.write("You can download my 84-page **bachelor thesis** in PDF format here:")
