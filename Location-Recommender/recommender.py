@@ -15,7 +15,7 @@ st.write("""Given the high importance of making the right business location choi
          operations in Europe. This tool can also be configured to fit other purposes, like the search of specialized employment, 
          the visualization of socio-economic data or the discovery of available capital funding.
          """)
-st.write("To discover the European regions that better fit your entity's requirements and location preferences, complete the following form and then click on _Recommend me!_")
+st.write("To discover the European regions that best fit your entity's requirements and location preferences, complete the following form and then click on _Recommend me!_")
 
 st.markdown("""---""")
 
