@@ -41,7 +41,7 @@ st.subheader("Resume")
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Education", "Work", "Activities", "Certifications", "Documentation"])
 with tab1:
     st.write("❤️ **BOSTON UNIVERSITY** (2023-2024)")
-    st.write("**Master of Science in *Data Science**")
+    st.write("**Master of Science in *Data Science*.**")
     st.write("*Faculty of Computing and Data Sciences Merit Scholarship* recipient.")
     st.write("Coursework: *Machine Learning, Database Management Systems, Data Science Tools, AI Ethics*.")
     st.write("")
