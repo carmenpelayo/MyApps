@@ -109,7 +109,7 @@ with tab4:
 with tab5:
     #Download Resume button
     st.write("You can download my one-page **resume** in PDF format here:")
-    with open("Personal-Web/CV_CarmenPelayo_Jan2023.pdf", "rb") as pdf_file:
+    with open("Personal-Web/Resume-Oct2023.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/CV_CarmenPelayo_Jan2023.pdf", mime='application/octet-stream')
     
