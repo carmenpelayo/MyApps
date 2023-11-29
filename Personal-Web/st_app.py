@@ -27,12 +27,13 @@ st.write("")
 
 st.write("💲 **Automatic Trading Tool for ROI Optimization in Climate Markets at kalshi.com** (September 2023)")
 st.markdown("I assembled three machine learning models to predict temperatures based on 6 data sources. I was able to infer minute predictions from hourly variables, which then fed a multi-scenario trading tool I built to exchange contracts in real time at https://kalshi.com and maximize ROI in climate markets.", unsafe_allow_html=True)
-st.write("*This project was the **top graded** at my CS542 class (Machine Learning) at Boston University.*")
+st.write("*This project was the **top graded** in my CS542 class (Machine Learning) at Boston University.*")
 st.write("")
 
 st.write("🔍 **Location Recommendation Tool for Tech Businesses in Europe** (July 2022)")
 st.write("This app aims to provide a decision-making support solution for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their operations in Europe. It delivers a customized location recommendation based on industry needs and firm-specific characteristics. Additionally, the app can be configured to fit other purposes, like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.")
 st.markdown("Check it out at: https://locationrecommender.streamlitapp.com/", unsafe_allow_html=True)
+st.write("*This app was built as part of my bachelor thesis at Universidad Carlos III de Madrid, which received the **maximum score** (10/10).*")
 st.write("")
 
 st.write("📊 **European Region Comparator** (July 2022)") 
