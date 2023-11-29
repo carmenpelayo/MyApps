@@ -22,7 +22,7 @@ st.subheader("Apps & Projects")
 
 st.write("📈 **Predicting Building's Energy Consumption**")
 st.write("I built a machine learning model to predict energy consumption in buildings with minimal data. I implemented an autoML system for time series (autoTS) and identified the ExtraTreeRegressor algorithm as the best-performing estimator. The resulting model, which was trained over a >1.4M records dataset, led to an accuracy of 83% (on R-squared score) on unseen data. This enabled the creation of a system that predicts the optimal energy load in a building and adjusts the temperature accordingly to avoid electricity waste.")
-st.write("*This project won Schneider Electric's 'Cold Start Challenge at the **MIT Energy & Climate Hack 2023**.*")
+st.write("*This project won Schneider Electric's "Cold Start Challenge" at the **MIT Energy & Climate Hack 2023**.*")
 st.write("")
 
 st.write("🔍 **Location Recommendation Tool for Tech Businesses in Europe**")
