@@ -43,7 +43,7 @@ with tab1:
     st.write("❤️ **BOSTON UNIVERSITY** (2023-2024)")
     st.write("**Master of Science in *Data Science*.**")
     st.write("*Faculty of Computing and Data Sciences Merit Scholarship* recipient.")
-    st.write("Coursework: *Machine Learning, Database Management Systems, Data Science Tools, AI Ethics*.")
+    st.write("Coursework: *Machine Learning, Deep Learning, Reinforcement Learning, Cryptography, Time Series & Forecasting, Database Management Systems, Data Science Tools, AI Ethics*.")
     st.write("")
     st.write("💙 **UNIVERSIDAD CARLOS III DE MADRID** (2018-2022)")
     st.write("**Bachelor of Science in *Business Management and Technology* with a Minor Degree in *Economics*.**")
@@ -109,7 +109,7 @@ with tab4:
 with tab5:
     #Download Resume button
     st.write("You can download my one-page **resume** in PDF format here:")
-    with open("Personal-Web/Resume-Oct2023.pdf", "rb") as pdf_file:
+    with open("Personal-Web/Resume-Dec2023-CarmenPelayo.pdf", "rb") as pdf_file:
       PDFbyte = pdf_file.read()
     st.download_button(label="Download Resume", data=PDFbyte, file_name="Personal-Web/CV_CarmenPelayo_Jan2023.pdf", mime='application/octet-stream')
     
