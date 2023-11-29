@@ -20,17 +20,22 @@ st.markdown("""---""")
 #Apps
 st.subheader("Apps & Projects")
 
-st.write("📈 **Predicting Building's Energy Consumption**")
+st.write("📈 **Predicting Building's Energy Consumption** (November 2023)")
 st.write("I built a machine learning model to predict energy consumption in buildings with minimal data. I implemented an autoML system for time series (autoTS) and identified the ExtraTreeRegressor algorithm as the best-performing estimator. The resulting model, which was trained over a >1.4M records dataset, led to an accuracy of 83% (on R-squared score) on unseen data. This enabled the creation of a system that predicts the optimal energy load in a building and adjusts the temperature accordingly to avoid electricity waste.")
-st.write("*This project won Schneider Electric's "Cold Start Challenge" at the **MIT Energy & Climate Hack 2023**.*")
+st.write("*This project won Schneider Electric's 'Cold Start Challenge' at the **MIT Energy & Climate Hack 2023**.*")
 st.write("")
 
-st.write("🔍 **Location Recommendation Tool for Tech Businesses in Europe**")
+st.write("💲 **Predicting Building's Energy Consumption** (September 2023)")
+st.markdown("I assembled three machine learning models to predict temperatures based on 6 data sources. I was able to infer minute predictions from hourly variables, which then fed a multi-scenario trading tool I built to exchange contracts in real time at https://kalshi.com and maximize ROI in climate markets.", unsafe_allow_html=True)
+st.write("*This project was the **top graded** at my CS542 class (Machine Learning) at Boston University.*")
+st.write("")
+
+st.write("🔍 **Location Recommendation Tool for Tech Businesses in Europe** (July 2022)")
 st.write("This app aims to provide a decision-making support solution for entities operating in the ICT (Information and Communication Technologies) industry that are interested in locating their operations in Europe. It delivers a customized location recommendation based on industry needs and firm-specific characteristics. Additionally, the app can be configured to fit other purposes, like the search of specialized employment, the visualization of socio-economic data or the discovery of available capital funding.")
 st.markdown("Check it out at: https://locationrecommender.streamlitapp.com/", unsafe_allow_html=True)
 st.write("")
 
-st.write("📊 **European Region Comparator**") 
+st.write("📊 **European Region Comparator** (July 2022)") 
 st.write("This app can be employed to compare European regions in various socio-economic factors in a visual, user-friendly way. Any amount of regions from the 270 available can be selected to observe the differences and similarities in scores for 21 dimensions (including the technological infrastructure, the availability of qualified personnel or the easiness to open a business).")
 st.markdown("Check it out at: https://europeanregioncomparator.streamlitapp.com/", unsafe_allow_html=True)
 st.write("")
