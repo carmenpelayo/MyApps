@@ -25,7 +25,7 @@ st.write("I built a machine learning model to predict energy consumption in buil
 st.write("*This project won Schneider Electric's 'Cold Start Challenge' at the **MIT Energy & Climate Hack 2023**.*")
 st.write("")
 
-st.write("💲 **Predicting Building's Energy Consumption** (September 2023)")
+st.write("💲 **Automatic Trading Tool for ROI Optimization in Climate Markets at kalshi.com** (September 2023)")
 st.markdown("I assembled three machine learning models to predict temperatures based on 6 data sources. I was able to infer minute predictions from hourly variables, which then fed a multi-scenario trading tool I built to exchange contracts in real time at https://kalshi.com and maximize ROI in climate markets.", unsafe_allow_html=True)
 st.write("*This project was the **top graded** at my CS542 class (Machine Learning) at Boston University.*")
 st.write("")
