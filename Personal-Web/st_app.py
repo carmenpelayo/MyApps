@@ -165,7 +165,6 @@ with col2:
    st.markdown("- **LinkedIn**: https://www.linkedin.com/in/carmenpelayofernandez/", unsafe_allow_html=True)
    st.markdown("- **GitHub**: https://github.com/carmenpelayo/", unsafe_allow_html=True)
    st.markdown("- **E-Mail**: carmenpelayofdez@gmail.com")
-   st.markdown("- **Phone**: +34 685 33 88 17 / +1 617 206 7050")
    
    st.markdown("""---""") 
    
